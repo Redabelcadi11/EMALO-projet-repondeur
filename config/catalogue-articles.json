@@ -1,0 +1,2686 @@
+[
+  {
+    "code_article": "00000100",
+    "libelle_article": "GRAISSE BOEUF 2.5K X4P"
+  },
+  {
+    "code_article": "00000422",
+    "libelle_article": "DELICE D'AUBERGINE ET OLIVES NOIRES  SUD GASTRONOMIE  90 GR"
+  },
+  {
+    "code_article": "00000498",
+    "libelle_article": "GLUCOSE SIROP DISGROUP 7K"
+  },
+  {
+    "code_article": "00000613",
+    "libelle_article": "SAUCE POISSON TIPAROS 700ML"
+  },
+  {
+    "code_article": "00000641",
+    "libelle_article": "CORNICHONS 60/79 4/4"
+  },
+  {
+    "code_article": "00000823",
+    "libelle_article": "POCHES PATISSIERES JETABLES DISGROUP 300X540MM X100P"
+  },
+  {
+    "code_article": "00000901",
+    "libelle_article": "RHUBARBE ROUGE DISGROUP 1K"
+  },
+  {
+    "code_article": "00001205",
+    "libelle_article": "FILET DE SAINT PIERRE A/P 150/200 X 800G"
+  },
+  {
+    "code_article": "00001502",
+    "libelle_article": "PAVE MORUE MENU IQF +150GR  X 7KG"
+  },
+  {
+    "code_article": "00002475",
+    "libelle_article": "COUTEAU BOIS 16CM X100P"
+  },
+  {
+    "code_article": "00002649",
+    "libelle_article": "SEL MER FIN 5K"
+  },
+  {
+    "code_article": "00002652",
+    "libelle_article": "SEL MER GROS 5K"
+  },
+  {
+    "code_article": "00002768",
+    "libelle_article": "FLOCON AVOINE 1K"
+  },
+  {
+    "code_article": "00003004",
+    "libelle_article": "CREPE MAISON SUCREE VANILLE PLIEE EN 2 27CM 50G X40P"
+  },
+  {
+    "code_article": "00005016",
+    "libelle_article": "GLACON 2K X5P"
+  },
+  {
+    "code_article": "00005101",
+    "libelle_article": "PASTA PRO PENNE RIGATE 5K"
+  },
+  {
+    "code_article": "00005333",
+    "libelle_article": "SAUCE BASQUE SAKARI DOUCE 1L"
+  },
+  {
+    "code_article": "0000P735",
+    "libelle_article": "LARDON NATURE 1 KG S/AT"
+  },
+  {
+    "code_article": "00010002",
+    "libelle_article": "GAMBAS NÂ°2 SAUVAGE AFRIQUE 20/30 X2K"
+  },
+  {
+    "code_article": "00010009",
+    "libelle_article": "GAMBAS NÂ°2 ARGENTINE 20/30 CONGELEE TERRE 2K"
+  },
+  {
+    "code_article": "00010010",
+    "libelle_article": "GAMBAS ENTIERE CRUE AFRIQUE 4/6 2K"
+  },
+  {
+    "code_article": "00010011",
+    "libelle_article": "GAMBAS NÂ°1 ARGENTINE 10/20 CONGELEE TERRE X2K"
+  },
+  {
+    "code_article": "00010019",
+    "libelle_article": "GAMBAS CRUE 30/40  ELEVAGE 2K"
+  },
+  {
+    "code_article": "00010027",
+    "libelle_article": "GAMBAS CRUE 20/30 ELEVAGE 2K"
+  },
+  {
+    "code_article": "00010042",
+    "libelle_article": "COQUILLE ST JACQUES PREMIUM ERLITA 90GR X 22P"
+  },
+  {
+    "code_article": "00010105",
+    "libelle_article": "FRITE FRY 'N DIP MC CAIN 2.5K"
+  },
+  {
+    "code_article": "00010113",
+    "libelle_article": "FRITE PATATAS BRAVAS LUTOSA 2.5K"
+  },
+  {
+    "code_article": "00010114",
+    "libelle_article": "FRITE ALLUMETTE CRISPY SALTED 7/7 LUTOSA 2.5K"
+  },
+  {
+    "code_article": "00010116",
+    "libelle_article": "FRITE DIPSTERS SANS PEAU LUTOSA 2.5K"
+  },
+  {
+    "code_article": "00010120",
+    "libelle_article": "POIVRONS ROUGE/VERT/JAUNE LANIERES BIO 2.5KG"
+  },
+  {
+    "code_article": "00010123",
+    "libelle_article": "FRITE DIPSTERS AVEC PEAU LUTOSA 2.5K"
+  },
+  {
+    "code_article": "00010156",
+    "libelle_article": "FRITE CRISPERS MC CAIN 2.5K"
+  },
+  {
+    "code_article": "00010208",
+    "libelle_article": "PETITS POIS EXTRA FINS MINUTE BONDUELLE 2.5K"
+  },
+  {
+    "code_article": "00010212",
+    "libelle_article": "CAROTTES RONDELLES MINUTE BONDUELLE 2.5K"
+  },
+  {
+    "code_article": "00010219",
+    "libelle_article": "OIGNONS EMINCES BIO 2.5KG"
+  },
+  {
+    "code_article": "00010251",
+    "libelle_article": "POELEE LEGUMES NAVARRE SAUTE BB VERLEAL 640GR"
+  },
+  {
+    "code_article": "00010266",
+    "libelle_article": "POELEE RATATOUILLE CUISINEE A L'HUILE D'OLIVE BONDUELLE 2.5K"
+  },
+  {
+    "code_article": "00010295",
+    "libelle_article": "COURGETTES C-10 ERLITA AxC 2K"
+  },
+  {
+    "code_article": "00010307",
+    "libelle_article": "MARRONS 1K"
+  },
+  {
+    "code_article": "00010410",
+    "libelle_article": "CHOUX VERTS 5KG"
+  },
+  {
+    "code_article": "00010440",
+    "libelle_article": "LANGOUSTINE NÂ°1 ROYAUME UNI 10/15 X1.5K"
+  },
+  {
+    "code_article": "00010447",
+    "libelle_article": "LANGOUSTINE NÂ°0 ROYAUME UNI 8/10 X1.5K"
+  },
+  {
+    "code_article": "00010459",
+    "libelle_article": "PUREE GOURMANDE LUTOSA 2.5K"
+  },
+  {
+    "code_article": "00010492",
+    "libelle_article": "GBECH CARPACCIO DE POULPE 50G X15P"
+  },
+  {
+    "code_article": "00010509",
+    "libelle_article": "CROQUE MONSIEUR PETIT BENOIT 220G X24P"
+  },
+  {
+    "code_article": "00010531",
+    "libelle_article": "BASE PIZZA TOMATEE DIAM 30 310G X25P"
+  },
+  {
+    "code_article": "00010552",
+    "libelle_article": "PIZZA ROYALE BANDE 700G X8P"
+  },
+  {
+    "code_article": "00010566",
+    "libelle_article": "PAIN OGI GOXO TRANCHE 1.8CM X 12P"
+  },
+  {
+    "code_article": "00010610",
+    "libelle_article": "ENTRECOTE SURG U.E. +4K"
+  },
+  {
+    "code_article": "00010620",
+    "libelle_article": "CARRE DE BOEUF UE SURGELE +/-5K"
+  },
+  {
+    "code_article": "00010625",
+    "libelle_article": "COTE D'AGNEAU SURGELE 40/60 G BASCO +/-1.3K"
+  },
+  {
+    "code_article": "00010628",
+    "libelle_article": "EPAULE AGNEAU ENTIERE +/- 1.3K"
+  },
+  {
+    "code_article": "00010651",
+    "libelle_article": "STEAK HACHE BOUCHER ROND VBF 15%MG 120G X50P SURG"
+  },
+  {
+    "code_article": "00010723",
+    "libelle_article": "FILET DE MORUE A/P PREM CONG 500/1000G 10% 11K"
+  },
+  {
+    "code_article": "00010743",
+    "libelle_article": "FILET DE MERLU PETIT  A/P 150/300G X5K"
+  },
+  {
+    "code_article": "00010747",
+    "libelle_article": "FILET DE SOLE TROPICALE 80/120G X1K"
+  },
+  {
+    "code_article": "00010763",
+    "libelle_article": "FILET DE BAR ELEVAGE A/P GLAZ 20% 80/120G 5K"
+  },
+  {
+    "code_article": "00010800",
+    "libelle_article": "COUTEAUX 10/15 X1K"
+  },
+  {
+    "code_article": "00010811",
+    "libelle_article": "WINGS DE POULET TEX MEX ( 50% AILERON - 50% MANCHON ) 5K"
+  },
+  {
+    "code_article": "00010812",
+    "libelle_article": "CUISSE POULET JAUNE APD VRAC SURG  230/260G X5K"
+  },
+  {
+    "code_article": "00010814",
+    "libelle_article": "FILET POULET UE 190GR X5K"
+  },
+  {
+    "code_article": "00010821",
+    "libelle_article": "CORDON BLEU DE DINDE CUIT 125G X5K"
+  },
+  {
+    "code_article": "00010823",
+    "libelle_article": "ESCALOPE ITALIENNE DINDE SURG 150G X5K"
+  },
+  {
+    "code_article": "00010834",
+    "libelle_article": "MAGRET DE CANARD SURG UE +/-350G"
+  },
+  {
+    "code_article": "00010900",
+    "libelle_article": "CHIPIRONS PATAGONICA AVEC PEAU  NETTOYES PEREIRA 0.9K"
+  },
+  {
+    "code_article": "00010903",
+    "libelle_article": "CHIPIRON PATAGONICA NETTOYE ERLITA 900 G X8 BTES"
+  },
+  {
+    "code_article": "00010998",
+    "libelle_article": "CHIPIRON PATAGONICA C4 CAB 0.9 X 7P"
+  },
+  {
+    "code_article": "00011008",
+    "libelle_article": "OS A MOELLE GOUTTIERE +/- 7KG"
+  },
+  {
+    "code_article": "00011009",
+    "libelle_article": "RIS DE VEAU (GORGE) ROSE SURG UE"
+  },
+  {
+    "code_article": "00011103",
+    "libelle_article": "CROQUETTE JAMBON ARTISANALE ERLITA 50G X5K"
+  },
+  {
+    "code_article": "00011106",
+    "libelle_article": "CROQUETTE PREMIUM PULLED PORK 30GR X4K"
+  },
+  {
+    "code_article": "00011115",
+    "libelle_article": "RABAS - LAMELLE DE CALAMAR PANEE 1K"
+  },
+  {
+    "code_article": "00011130",
+    "libelle_article": "LASAGNE BOLOGNAISE 2K"
+  },
+  {
+    "code_article": "00011227",
+    "libelle_article": "PAIN MINI BERRIBERLYS 55G X65P"
+  },
+  {
+    "code_article": "00011238",
+    "libelle_article": "PAIN BAGUETTE LEVAIN TRADICETTE 280GR X 30P"
+  },
+  {
+    "code_article": "00011239",
+    "libelle_article": "PAIN BAGUETTE DUCHESSE FARINEE 280G X28P"
+  },
+  {
+    "code_article": "00011241",
+    "libelle_article": "TALOA PRE CUIT SURG 100G X25P"
+  },
+  {
+    "code_article": "00011254",
+    "libelle_article": "PAIN CIABATTA 180G X40P"
+  },
+  {
+    "code_article": "00011255",
+    "libelle_article": "PETIT PAIN MIGNON 50G X80P"
+  },
+  {
+    "code_article": "00011256",
+    "libelle_article": "PAIN CIABATTA 250G X30P"
+  },
+  {
+    "code_article": "00011294",
+    "libelle_article": "PAIN PANINI PANECILLO 120G X72P"
+  },
+  {
+    "code_article": "00011307",
+    "libelle_article": "PUREE GRIOTTE 100% BOIRON 1K"
+  },
+  {
+    "code_article": "00011354",
+    "libelle_article": "FRUIT GROSEILLE ENTIER BOIRON 1K"
+  },
+  {
+    "code_article": "00011355",
+    "libelle_article": "FRUIT MELANGE FRUITS ROUGES ENTIER BOIRON 1K"
+  },
+  {
+    "code_article": "00011362",
+    "libelle_article": "FRAISE ENTIERE EQUEUTEE 1KG"
+  },
+  {
+    "code_article": "00011384",
+    "libelle_article": "PUREE MANGUE 100% BOIRON 10K"
+  },
+  {
+    "code_article": "00011402",
+    "libelle_article": "GATEAU BASQUE X 12 PARTS 900 GR SOLUTION DESSERT"
+  },
+  {
+    "code_article": "00011487",
+    "libelle_article": "GAUFRE MC CAIN 80G X 27 P"
+  },
+  {
+    "code_article": "00011500",
+    "libelle_article": "RAMIER SURG PAC 280 GR X10P"
+  },
+  {
+    "code_article": "00011508",
+    "libelle_article": "FILET DE CERF DOS +/-2K"
+  },
+  {
+    "code_article": "00011627",
+    "libelle_article": "CARRE DE BOEUF DETALONNE SURGELE S/V +/- 5K"
+  },
+  {
+    "code_article": "00011628",
+    "libelle_article": "ENTRECOTE S/V ENTIERE SURG BASCO +/-3K ***"
+  },
+  {
+    "code_article": "00011634",
+    "libelle_article": "BOEUF BOURGUIGNON EXTRA MAIGRE S/V SURGELE BASCO +/-3.5K"
+  },
+  {
+    "code_article": "00011636",
+    "libelle_article": "NOIX JOUE DE BOEUF SURGELE BASCO +/-2.5K"
+  },
+  {
+    "code_article": "00011644",
+    "libelle_article": "SAUTE DE PORC SURGELE BASCO S/V +/-3.5K"
+  },
+  {
+    "code_article": "00011655",
+    "libelle_article": "ENTRECOTE TRANCHEE SURGELE BASCO 300/350G X5P S/V"
+  },
+  {
+    "code_article": "00011674",
+    "libelle_article": "GNOCCHI DE PDT SANS ADDITIF 5K"
+  },
+  {
+    "code_article": "00011724",
+    "libelle_article": "COULANT GOURMAND CHOCOLAT DIAM70 110G X27P"
+  },
+  {
+    "code_article": "00011790",
+    "libelle_article": "MYRTILLE SAUVAGE 1KG ***"
+  },
+  {
+    "code_article": "00012073",
+    "libelle_article": "TARTE POMMES X10 PARTS 750G  SOLUTION DESSERT"
+  },
+  {
+    "code_article": "00012257",
+    "libelle_article": "PAVE SAUMON SS PEAU ATL. 140/160g X 3K"
+  },
+  {
+    "code_article": "00013169",
+    "libelle_article": "AIGUILLETTE DE POULET CUIT PANE HALAL 1K X5P"
+  },
+  {
+    "code_article": "00013385",
+    "libelle_article": "MYRTILLE SAUVAGE 10KG"
+  },
+  {
+    "code_article": "00015210",
+    "libelle_article": "MOULE CUITE PLEINE EAU GROSSE CHILI 1K"
+  },
+  {
+    "code_article": "00015312",
+    "libelle_article": "PETONCLE 30/40 800GR"
+  },
+  {
+    "code_article": "00015719",
+    "libelle_article": "FILET DE MORUE 1000/1500 10% 11K"
+  },
+  {
+    "code_article": "00016307",
+    "libelle_article": "FRAMBOISE WILLAMETTE ENTIERE 2.5KG"
+  },
+  {
+    "code_article": "00017115",
+    "libelle_article": "PAELLADOR ROYAL MIXTE 500G X12P"
+  },
+  {
+    "code_article": "00017116",
+    "libelle_article": "PAELLADOR \"DEL SENORITO\" 440G X12P"
+  },
+  {
+    "code_article": "00017122",
+    "libelle_article": "CRUJIJAMBON 230G X12P"
+  },
+  {
+    "code_article": "00017127",
+    "libelle_article": "PAELLADOR SPAGHETTI ALLA CARBONARA 350G X12P"
+  },
+  {
+    "code_article": "00017128",
+    "libelle_article": "PAELLADOR SPAGHETTI ALLA BOLOGNESE 350G X12P"
+  },
+  {
+    "code_article": "00017208",
+    "libelle_article": "PAIN BURGER BRETZEL SESAME DIAM 100CM 85G X25P"
+  },
+  {
+    "code_article": "00017306",
+    "libelle_article": "AIGUILLETTE POULET MULTIGRAINES 1K"
+  },
+  {
+    "code_article": "00017344",
+    "libelle_article": "PAIN BUNS GOURMAND MULTIGRAINS DORE 10.8CMX30P SURG"
+  },
+  {
+    "code_article": "00017349",
+    "libelle_article": "EFFILOCHE QUEUE DE TORO 3K"
+  },
+  {
+    "code_article": "00017370",
+    "libelle_article": "PAIN BUNS BRIOCHE NATURE AMBIANT 11CM X36P"
+  },
+  {
+    "code_article": "00017435",
+    "libelle_article": "TARTE CITRON PREDECOUPEE 750G X10P"
+  },
+  {
+    "code_article": "00017437",
+    "libelle_article": "TARTE MYRTILLES 900G"
+  },
+  {
+    "code_article": "00020101",
+    "libelle_article": ".VANILLE CREME GLACEE FRIGECREME  5L"
+  },
+  {
+    "code_article": "00020136",
+    "libelle_article": "SOLIPROPRE CREME A RECURER 1KG"
+  },
+  {
+    "code_article": "00020147",
+    "libelle_article": "5L CAFE ESSENTIELLE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020148",
+    "libelle_article": "5L CHOCOLAT ESSENTIELLE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020149",
+    "libelle_article": "5L VANILLE ESSENTIELLE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020150",
+    "libelle_article": "5L VANILLE DELICE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020160",
+    "libelle_article": "6L MENTHE CHOCOLAT MONTE CREME GLACEE  ARTISANALE"
+  },
+  {
+    "code_article": "00020187",
+    "libelle_article": "6L COOKIES BLACK \"OREO\" MONTE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020190",
+    "libelle_article": ".VANILLE MFS 5L"
+  },
+  {
+    "code_article": "00020191",
+    "libelle_article": ".CHOCOLAT MFS 5L"
+  },
+  {
+    "code_article": "00020199",
+    "libelle_article": ".CITRON SORBET MFS 5L"
+  },
+  {
+    "code_article": "00020220",
+    "libelle_article": "-POMME VERTE +MCX SORBET FRIGECREME 2.5L"
+  },
+  {
+    "code_article": "00020244",
+    "libelle_article": "2.5L RHUM RAISINS CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020248",
+    "libelle_article": "2.5L MARRON CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020254",
+    "libelle_article": "2.5L CITRON VERT SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020255",
+    "libelle_article": "2.5L GET 27 SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020259",
+    "libelle_article": "2.5L LITCHI SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020261",
+    "libelle_article": "2.5L PECHE JAUNE SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020264",
+    "libelle_article": "2.5L FRAMBOISE SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020269",
+    "libelle_article": "2.5L AMANDE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020270",
+    "libelle_article": "2.5L CHOCOLAT ROCHER CHOCO NOISETTE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020277",
+    "libelle_article": "2.5L  EXOTIQUE MARTINIQUE SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00020284",
+    "libelle_article": "2.5L MELON SORBET ARTISANAL ***"
+  },
+  {
+    "code_article": "00020290",
+    "libelle_article": "2.5L VANILLE DELICE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020291",
+    "libelle_article": "2.5L CHOCOLAT CRAQUANT CREME GLACEE  ARTISANALE"
+  },
+  {
+    "code_article": "00020292",
+    "libelle_article": "-CAFE EXPRESSO CREME GLACEE ARTISANALE 2.5L"
+  },
+  {
+    "code_article": "00020295",
+    "libelle_article": "2.5L CARAMEL BEURRE SEL DE GUERANDE CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00020512",
+    "libelle_article": "LIEGEOIS CHOCOLAT 140ML X20P"
+  },
+  {
+    "code_article": "00020514",
+    "libelle_article": "LIEGEOIS CAFE CAPUCCINO 140ML X20P"
+  },
+  {
+    "code_article": "00020844",
+    "libelle_article": "MAXXI CIRCUS CITRON FRAISE ORANGE X20P ***"
+  },
+  {
+    "code_article": "00021623",
+    "libelle_article": "2.5L CITRON JAUNE DELICE SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00021641",
+    "libelle_article": "PLAQUE TIRAMISU 30P 1.8K"
+  },
+  {
+    "code_article": "00021650",
+    "libelle_article": "2.5L THE VERT MATCHA CREME GLACEE ARTISANALE"
+  },
+  {
+    "code_article": "00021655",
+    "libelle_article": "2.5L FRAISE BASILIC SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00021656",
+    "libelle_article": "2.5L FRAISE EXCELLENCE FRANCE SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00022386",
+    "libelle_article": "SAUCE AROMATISEE PIZZA ROBO 5/1"
+  },
+  {
+    "code_article": "00024196",
+    "libelle_article": "RAISINS SECS GOLDEN DISGROUP 1 KG"
+  },
+  {
+    "code_article": "00024280",
+    "libelle_article": "GOUSSE VANILLE GOURMET NOIRE TUBE VERRE X10P"
+  },
+  {
+    "code_article": "00026344",
+    "libelle_article": "TOMATE ENTIERE PELEE CONFITE ROBO 4/4"
+  },
+  {
+    "code_article": "00030100",
+    "libelle_article": "EPAULE DD"
+  },
+  {
+    "code_article": "00030106",
+    "libelle_article": "JAMBON DD NAVARRE +/-7K"
+  },
+  {
+    "code_article": "00030205",
+    "libelle_article": "JAMBON SUP MICHE SANS NITRITE ET SANS CONSERVATEUR AJOUTE"
+  },
+  {
+    "code_article": "00030220",
+    "libelle_article": "JAMBON A/C PORC FERMIER  7.5 KG"
+  },
+  {
+    "code_article": "00030300",
+    "libelle_article": "JAMBON AC NAVARRE +/-8KG"
+  },
+  {
+    "code_article": "00030605",
+    "libelle_article": "JAMBON SEC DESOSSE VPF +/-5.5K"
+  },
+  {
+    "code_article": "00031105",
+    "libelle_article": "JAMBON BAYONNE IGP 12MOIS +/-6.5K"
+  },
+  {
+    "code_article": "00031109",
+    "libelle_article": "1/2 COPPA DES PYRENEES"
+  },
+  {
+    "code_article": "00032601",
+    "libelle_article": "JAMBON CUIT SUP DECOUENNE PC"
+  },
+  {
+    "code_article": "00032608",
+    "libelle_article": "JAMBONNEAU CUIT SUP FICELLE +/-540G X6P"
+  },
+  {
+    "code_article": "00033021",
+    "libelle_article": "FUET EXTRA EMBALLE 160G"
+  },
+  {
+    "code_article": "00033023",
+    "libelle_article": "FUET EXTRA POIVRE EMBALLE 150G"
+  },
+  {
+    "code_article": "00033026",
+    "libelle_article": "FUET EXTRA PIMENT EMBALLE 150G"
+  },
+  {
+    "code_article": "00034506",
+    "libelle_article": "LOMO EXTRA ADOBADO ERLITA +/-4.5K"
+  },
+  {
+    "code_article": "00034530",
+    "libelle_article": "CHORIZO CULAR VELA EXTRA DOUX +/-1.8K"
+  },
+  {
+    "code_article": "00034536",
+    "libelle_article": "JAMBON SERRANO GRANDE RESERVE DESOSSE 24 MOIS"
+  },
+  {
+    "code_article": "00034550",
+    "libelle_article": "CHORIZO PIZZA TRANCHE 1KG"
+  },
+  {
+    "code_article": "00035001",
+    "libelle_article": "CALAMAR LANIERE A L'ENCRE 1K"
+  },
+  {
+    "code_article": "00035319",
+    "libelle_article": "FARINE SEMOLA DI GRANO DURO 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "00035449",
+    "libelle_article": "JAMBON SERRANO RESERVA 15 MOIS SSN 5KG"
+  },
+  {
+    "code_article": "00035606",
+    "libelle_article": "SAUCISSE PERCHE CHARCUTIER 2.5 KG"
+  },
+  {
+    "code_article": "00037414",
+    "libelle_article": "LARDONS ALLUMETTES FUMEES S/AT 1K"
+  },
+  {
+    "code_article": "00038603",
+    "libelle_article": "1/2 PATE MEDAILLON AUX OLIVES +/-1.5K"
+  },
+  {
+    "code_article": "00039701",
+    "libelle_article": "PATE TETE CORNICHONS 2.5 KG"
+  },
+  {
+    "code_article": "00040225",
+    "libelle_article": "PAELLA VALENCIANA ELOISE 2.7 KG"
+  },
+  {
+    "code_article": "00040950",
+    "libelle_article": "PIGEON RAMIER SURG +/-300G X20P"
+  },
+  {
+    "code_article": "00041438",
+    "libelle_article": "LS CROQUE MONSIEUR GRATINES .180 GR X2P"
+  },
+  {
+    "code_article": "00041448",
+    "libelle_article": "BLOC FOIE GRAS MI-CUIT DE CANARD FRANCE 30% MCX SOULARD 400G"
+  },
+  {
+    "code_article": "00041451",
+    "libelle_article": "TERRINE DE FOIE GRAS CANARD ENTIER MI CUIT SOULARD 500G"
+  },
+  {
+    "code_article": "00042021",
+    "libelle_article": "GRATIN DE LEGUMES DU TIAN 300 GR"
+  },
+  {
+    "code_article": "00042241",
+    "libelle_article": "BOUDIN DE CAMPAGNE 900 GR /1KG"
+  },
+  {
+    "code_article": "00044129",
+    "libelle_article": "SAUCISSE HOT DOG GROSSE 17CM / 80GRS X10P"
+  },
+  {
+    "code_article": "00044390",
+    "libelle_article": "CHOUCROUTE PAYSANNE 5/1"
+  },
+  {
+    "code_article": "00046119",
+    "libelle_article": "LASAGNE BOLOGNAISE FROMAGE FRAIS 5K"
+  },
+  {
+    "code_article": "00046205",
+    "libelle_article": "LASAGNE BOLOGNAISE \"MAMMA MIA\" PUR BOEUF  3 KG"
+  },
+  {
+    "code_article": "00047004",
+    "libelle_article": "TORSADE SURIMI 800GR"
+  },
+  {
+    "code_article": "00047005",
+    "libelle_article": "CAROTTES RAPEES \"VEGAN\" 800GR"
+  },
+  {
+    "code_article": "00047007",
+    "libelle_article": "TABOULE ORIENTAL 800GR"
+  },
+  {
+    "code_article": "00047008",
+    "libelle_article": "MUSEAU DE PORC VINAIGRETTE 800 GR"
+  },
+  {
+    "code_article": "00047013",
+    "libelle_article": "FARFALLES BOULE ET BILLE 800GR"
+  },
+  {
+    "code_article": "00047017",
+    "libelle_article": "PIEMONTAISE JAMBON 800GR"
+  },
+  {
+    "code_article": "00047053",
+    "libelle_article": "SALADE MARCO POLO 800GR"
+  },
+  {
+    "code_article": "00047054",
+    "libelle_article": "SALADE PECHEUR AU THON 800GR"
+  },
+  {
+    "code_article": "00047055",
+    "libelle_article": "RIZ NICOIS 800GR"
+  },
+  {
+    "code_article": "00047600",
+    "libelle_article": "GAZPACHO KAIKU 1L"
+  },
+  {
+    "code_article": "00047692",
+    "libelle_article": "JUS CITRON JAUNE 1L"
+  },
+  {
+    "code_article": "00050099",
+    "libelle_article": "BRIOCHE TRESSEE AUX OEUFS FRAIS 630G"
+  },
+  {
+    "code_article": "00050248",
+    "libelle_article": "JAMBON TORCHON DD 4TR X8"
+  },
+  {
+    "code_article": "00050286",
+    "libelle_article": "TERRINE DE SANGLIER AUX BAIES DE GENIEVRE 175 GR"
+  },
+  {
+    "code_article": "00050287",
+    "libelle_article": "TERRINE DE CHEVREUIL AUX AIRELLES 175 GR"
+  },
+  {
+    "code_article": "00P51315",
+    "libelle_article": "SUCRE SEMOULE 1K"
+  },
+  {
+    "code_article": "00050350",
+    "libelle_article": "TORTILLA CHORIZO SANS ADDITIF 500G ERLITA"
+  },
+  {
+    "code_article": "00050351",
+    "libelle_article": "TORTILLA AUX OIGNONS SANS ADDITIF 500G ERLITA"
+  },
+  {
+    "code_article": "00050354",
+    "libelle_article": "TORTILLA NATURE SANS ADDITIF 500G ERLITA"
+  },
+  {
+    "code_article": "00050474",
+    "libelle_article": "CONFITURE CERISE NOIRE MAIA EZPELETA 50% DE FRUITS 1K"
+  },
+  {
+    "code_article": "00050486",
+    "libelle_article": "CONFITURE MYRTILLE MAIA EZPELETA 28G X48P"
+  },
+  {
+    "code_article": "00050493",
+    "libelle_article": "CONFITURE CERISE NOIRE MAIA EZPELETA 250G"
+  },
+  {
+    "code_article": "00050494",
+    "libelle_article": "CONFITURE CERISE NOIRE PIMENT D'ESPELETTE MAIA EZPE 250G *"
+  },
+  {
+    "code_article": "00050502",
+    "libelle_article": "POIS CHICHES AU NATUREL 3/1"
+  },
+  {
+    "code_article": "00050503",
+    "libelle_article": "CONFITURE CERISE NOIRE MAIA EZPELETA 120G"
+  },
+  {
+    "code_article": "00050513",
+    "libelle_article": "POIRE SIROP DEMIE 5/1"
+  },
+  {
+    "code_article": "00050530",
+    "libelle_article": "PRUNEAUX DENOYAUTES AU SIROP 5/1"
+  },
+  {
+    "code_article": "00050601",
+    "libelle_article": "LASAGNE BOLOGNAISE PRIMERA 1K"
+  },
+  {
+    "code_article": "00050615",
+    "libelle_article": "CAPRES AU VINAIGRE 4/4"
+  },
+  {
+    "code_article": "00050619",
+    "libelle_article": "MAYONNAISE \"HAUTE FERMETE\" LESIEUR 5L"
+  },
+  {
+    "code_article": "00050623",
+    "libelle_article": "MAYONNAISE 3600ML"
+  },
+  {
+    "code_article": "00050636",
+    "libelle_article": "OLIVE FARCIE AUX ANCHOIS ACEITUNEROS 2/1"
+  },
+  {
+    "code_article": "00050639",
+    "libelle_article": "PULPE FINE DE TOMATES MUTTI 5/1"
+  },
+  {
+    "code_article": "00050650",
+    "libelle_article": "SAUCE PIZZA AROMATISEE MUTTI 5/1"
+  },
+  {
+    "code_article": "00050653",
+    "libelle_article": "TOMATE FRITO ORLANDO BRICK 2.1K"
+  },
+  {
+    "code_article": "00050666",
+    "libelle_article": "GUINDILLAS PIQUANTES ERLITA 1.7K"
+  },
+  {
+    "code_article": "00050805",
+    "libelle_article": "TOMATE CONCASSEE DANTZA 5/1"
+  },
+  {
+    "code_article": "00050806",
+    "libelle_article": "TOMATE TRITUREE DANTZA 5/1"
+  },
+  {
+    "code_article": "00050809",
+    "libelle_article": "TOMATE ENTIERE AU JUS 5/1"
+  },
+  {
+    "code_article": "00050817",
+    "libelle_article": "DOUBLE CONCENTRE DE TOMATE 28% 4/4"
+  },
+  {
+    "code_article": "00050848",
+    "libelle_article": "PIQUILLOS LANIERES NAVARRE 3/1"
+  },
+  {
+    "code_article": "00050886",
+    "libelle_article": "POIS CHICHES AU NATUREL BONDUELLE 4/4"
+  },
+  {
+    "code_article": "00050957",
+    "libelle_article": "PIPERADE BASQUAISE 5/1"
+  },
+  {
+    "code_article": "00051015",
+    "libelle_article": "JAMBON SUPERIEUR AU TORCHON DD 20 TR X800G"
+  },
+  {
+    "code_article": "00051212",
+    "libelle_article": "HUILE TOURNESOL ERLITA 1L"
+  },
+  {
+    "code_article": "00051250",
+    "libelle_article": "VINAIGRE DE VIN ROUGE 1,5L"
+  },
+  {
+    "code_article": "00051268",
+    "libelle_article": "VINAIGRE BLANC 8Â° 1,5L"
+  },
+  {
+    "code_article": "00051316",
+    "libelle_article": "TERRINE D'AVOCAT AU CRABE 1.5 KG"
+  },
+  {
+    "code_article": "00051321",
+    "libelle_article": "FARINE VERTE TIPE 00 W250 STAGIONI 10K"
+  },
+  {
+    "code_article": "00051322",
+    "libelle_article": "FARINE BLEU CIEL 00 W200 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "00051323",
+    "libelle_article": "FARINE BLEU W330 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "00051324",
+    "libelle_article": "FARINE STACCAPIZZA SPADONI 1K"
+  },
+  {
+    "code_article": "00051326",
+    "libelle_article": "FARINE ROUGE 00 W390 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "00051337",
+    "libelle_article": "CHAPELURE BRUNE 1K"
+  },
+  {
+    "code_article": "00051338",
+    "libelle_article": "CHAPELURE PANKO GTC 1K"
+  },
+  {
+    "code_article": "00051346",
+    "libelle_article": "CHIPS SAVEUR PESTO 125G X10P"
+  },
+  {
+    "code_article": "00051351",
+    "libelle_article": "RIZ ARBORIO RISOTTO 1K"
+  },
+  {
+    "code_article": "00051354",
+    "libelle_article": "RIZ LONG GRAIN ETUVE 5K"
+  },
+  {
+    "code_article": "00051355",
+    "libelle_article": "RIZ BASMATI 5K"
+  },
+  {
+    "code_article": "00051359",
+    "libelle_article": "RIZ LONG CAMBODGE PARFUME 5K"
+  },
+  {
+    "code_article": "00051375",
+    "libelle_article": "TORTILLA CHIPS NATURE AMIGOS 450G"
+  },
+  {
+    "code_article": "00051409",
+    "libelle_article": "CUMIN MOULU 350G"
+  },
+  {
+    "code_article": "00051421",
+    "libelle_article": "SEL FIN 1K"
+  },
+  {
+    "code_article": "00051638",
+    "libelle_article": "FOND TARTE SABLEE STANDARD 28CM X12P"
+  },
+  {
+    "code_article": "00051650",
+    "libelle_article": "SAUCE PIZZA AROMATISEE BAG IN BOX MUTTI 2X5KG"
+  },
+  {
+    "code_article": "00051735",
+    "libelle_article": "BARRY CHOCOLAT FORCE NOIRE 50% 5K"
+  },
+  {
+    "code_article": "00051744",
+    "libelle_article": "VERMICELLES MULTICOLORES VAHINE 1K"
+  },
+  {
+    "code_article": "00051750",
+    "libelle_article": "AMANDE EFFILEE 1K"
+  },
+  {
+    "code_article": "00051751",
+    "libelle_article": "AMANDE POUDRE BLANCHE 1K"
+  },
+  {
+    "code_article": "00051756",
+    "libelle_article": "AMANDE ENTIERE DECORTIQUEE 1K"
+  },
+  {
+    "code_article": "00051764",
+    "libelle_article": "NOISETTE DECORTIQUEE 1K"
+  },
+  {
+    "code_article": "00051768",
+    "libelle_article": "ABRICOT SEC 1K"
+  },
+  {
+    "code_article": "00051830",
+    "libelle_article": "BARRY BRILLANCE NOIRE 2K"
+  },
+  {
+    "code_article": "00051888",
+    "libelle_article": "NOIX DE CAJOU 1K"
+  },
+  {
+    "code_article": "00052114",
+    "libelle_article": "PATE CROUTE SNACK SUPERIEUR S/V 20 X 60 GR"
+  },
+  {
+    "code_article": "00052300",
+    "libelle_article": "SAUCE CHEDDAR CHEESE 1.4K"
+  },
+  {
+    "code_article": "00052315",
+    "libelle_article": "SAUCE MIEL MOUTARDE NAWHALS 950ML"
+  },
+  {
+    "code_article": "00052318",
+    "libelle_article": "SAUCE DOSETTES MAYONNAISE HEINZ X200P"
+  },
+  {
+    "code_article": "00053324",
+    "libelle_article": "FARINE PIZZA 00 SUPERIEURE 1K"
+  },
+  {
+    "code_article": "00053326",
+    "libelle_article": "FARINE MORA MOUTURE COMPLETE EXTRA VIERGE 10K"
+  },
+  {
+    "code_article": "00056500",
+    "libelle_article": "PAELLA FRUITS DE MER ET POULET  1 KG  \"RT\""
+  },
+  {
+    "code_article": "00056501",
+    "libelle_article": "BRANDADE DE MORUE 1 KG  \"RT\""
+  },
+  {
+    "code_article": "00056502",
+    "libelle_article": "COUSCOUS ROYAL 1 KG   \"RT\""
+  },
+  {
+    "code_article": "00057104",
+    "libelle_article": "COQUILLE ST JACQUES A LA NORMANDE GLACEE 180G X 4"
+  },
+  {
+    "code_article": "00057112",
+    "libelle_article": "GRATIN DE SAUMON AUX EPINARDS 3KG"
+  },
+  {
+    "code_article": "00057138",
+    "libelle_article": "PARMENTIER DE CANARD ELOISE 3K"
+  },
+  {
+    "code_article": "00057316",
+    "libelle_article": "QUICHE LORRAINE CLUB 2.8KG"
+  },
+  {
+    "code_article": "00057317",
+    "libelle_article": "QUICHE AUX ASPERGES VERTES 2.8 KG"
+  },
+  {
+    "code_article": "00058082",
+    "libelle_article": "LAIT DE COCO 85% NOIX DE COCO REAL THAI 1L"
+  },
+  {
+    "code_article": "00058151",
+    "libelle_article": "TRIPES A LA TOMATE 3KG"
+  },
+  {
+    "code_article": "00060203",
+    "libelle_article": "SAUTE DE PORC S/V +/-3.5K"
+  },
+  {
+    "code_article": "00060217",
+    "libelle_article": "EPAULE FRAICHE PORC AVEC OS AxC +/-7K"
+  },
+  {
+    "code_article": "00060225",
+    "libelle_article": "MAIGRE DE PORC AxC +/-1K"
+  },
+  {
+    "code_article": "00060236",
+    "libelle_article": "CARRE PORC FERMIER DETALONNE A/C IGP SUD OUEST +/-2.6K"
+  },
+  {
+    "code_article": "00060254",
+    "libelle_article": "EPAULE PORCELET SURG DESOSSEE FICELEE +/-1.5K"
+  },
+  {
+    "code_article": "00060257",
+    "libelle_article": "COTE DE PORC ECHINE 200G X5P"
+  },
+  {
+    "code_article": "00060274",
+    "libelle_article": "ECHINE DE PORC DESOSSEE S/V +/-2.5K"
+  },
+  {
+    "code_article": "00060298",
+    "libelle_article": "SAFRAN GUDVOR 10G"
+  },
+  {
+    "code_article": "00060318",
+    "libelle_article": "ESCALOPE VEAU NOIX S/V X 5P +/-1K"
+  },
+  {
+    "code_article": "00060399",
+    "libelle_article": "FAUX FILET FRAIS BASCO ENTIER S/V 3.5K"
+  },
+  {
+    "code_article": "00060402",
+    "libelle_article": "FAUX FILET FRAIS TRANCHE +/-300G"
+  },
+  {
+    "code_article": "00060411",
+    "libelle_article": "FILET DE BOEUF FRAIS BARDE +/-3K"
+  },
+  {
+    "code_article": "00060416",
+    "libelle_article": "CARRE DE BOEUF DETALONNE +/-10K"
+  },
+  {
+    "code_article": "00060417",
+    "libelle_article": "COTE DE BOEUF DETALONNEE INDIV.+/-1K"
+  },
+  {
+    "code_article": "00060445",
+    "libelle_article": "PALERON DE BOEUF S/V +/-3K"
+  },
+  {
+    "code_article": "00060520",
+    "libelle_article": "TARTARE BOEUF AUX COUTEAUX 3%MG CHAROLAIS 16PX90GR SURG."
+  },
+  {
+    "code_article": "00060561",
+    "libelle_article": "BOEUF BOURGUIGNON EXTRA MAIGRE S/V +/-3.5K"
+  },
+  {
+    "code_article": "00064002",
+    "libelle_article": "VENTRECHE ROULEE ARTISANALE 2.5 KG ENV."
+  },
+  {
+    "code_article": "00064109",
+    "libelle_article": "PATE LANDAIS 11% DE FOIE GRAS 90G"
+  },
+  {
+    "code_article": "00064711",
+    "libelle_article": "CHORIZO PINTXO GRANEL BOLSA ERLITA 3K"
+  },
+  {
+    "code_article": "00064712",
+    "libelle_article": "TXISTORRA  IRURA BOLSA 3 KG"
+  },
+  {
+    "code_article": "00065641",
+    "libelle_article": "TRAVERS DE PORC VPF S/V X2 +/-2.8K"
+  },
+  {
+    "code_article": "00066004",
+    "libelle_article": "BOUDIN CAMPAGNE LS"
+  },
+  {
+    "code_article": "00068016",
+    "libelle_article": "CUISSE CND CONFITE SEAU x10"
+  },
+  {
+    "code_article": "00070107",
+    "libelle_article": "JAMBON SUPERIEUR DD 20 TR X 1KG CHEF RAYMOND"
+  },
+  {
+    "code_article": "00070111",
+    "libelle_article": "1/2 JAMBON DOUGRILL CHOIX +/-3.7K"
+  },
+  {
+    "code_article": "00070123",
+    "libelle_article": "LARDONS FUMES 8X6 S/AT 1K"
+  },
+  {
+    "code_article": "00070132",
+    "libelle_article": "BACON CUIT TRANCHE S/PEAU 1K"
+  },
+  {
+    "code_article": "00070157",
+    "libelle_article": "CHAIR A SAUCISSE +/- 2K"
+  },
+  {
+    "code_article": "00072013",
+    "libelle_article": "PEKA LES PARISIENNES 2K"
+  },
+  {
+    "code_article": "00072014",
+    "libelle_article": "PEKA GRATIN DAUPHINOIS 2K"
+  },
+  {
+    "code_article": "00072018",
+    "libelle_article": "PEKA POMME DE TERRE A LA PROVENCALE 2K"
+  },
+  {
+    "code_article": "00072057",
+    "libelle_article": "POMME DE TERRE PARISIENNE CUITE 2K"
+  },
+  {
+    "code_article": "00072902",
+    "libelle_article": "POMME DE TERRE GRENAILLE CUITE AU FOUR 2 KG"
+  },
+  {
+    "code_article": "00080122",
+    "libelle_article": "MOUSSE PUR CANARD TP 2.2K"
+  },
+  {
+    "code_article": "00080126",
+    "libelle_article": "ROULEAU DE MOUSSE CANARD 1.5K"
+  },
+  {
+    "code_article": "00090101",
+    "libelle_article": "JAMBON SERRANO RESERVA MOLINA +/-5KG"
+  },
+  {
+    "code_article": "00090105",
+    "libelle_article": "MORUE MIETTES DESSALEE S/V 1K"
+  },
+  {
+    "code_article": "00090111",
+    "libelle_article": "JAMBON SERRANO BODEGA 12MOIS  VOLATIN+/-5K"
+  },
+  {
+    "code_article": "00090116",
+    "libelle_article": "TXISTORRA ERLITA +/-1.5K"
+  },
+  {
+    "code_article": "00090122",
+    "libelle_article": "PIQUILLOS LANIERES PERU 3/1"
+  },
+  {
+    "code_article": "00090123",
+    "libelle_article": "PIQUILLOS ENTIERS EXTRA PERU 80/100 3/1"
+  },
+  {
+    "code_article": "00090131",
+    "libelle_article": "LOMO TRANCHE PIMENT ADOBADO ERLITA 30TR 1,8K"
+  },
+  {
+    "code_article": "00090148",
+    "libelle_article": "TRUFFE NOIRE MORCEAUX EXTRA 110G"
+  },
+  {
+    "code_article": "00090300",
+    "libelle_article": "VENTRECHE TRANCHEE ROUGE ERLITA 30TR 1.3K"
+  },
+  {
+    "code_article": "00092450",
+    "libelle_article": "JAMBON CUIT SUP LE FAVORY AC 7 KG"
+  },
+  {
+    "code_article": "00092600",
+    "libelle_article": "RIS DE VEAU SAUCE AUX CEPES ELOISE 2.4K"
+  },
+  {
+    "code_article": "00092608",
+    "libelle_article": "BARQUETTE DE 6 CORDONS BLEU SELECTION BOUCHER 900 GR"
+  },
+  {
+    "code_article": "00092613",
+    "libelle_article": "POMMES DE TERRES SARLADAISE ELOISE 2.4 KG"
+  },
+  {
+    "code_article": "00092614",
+    "libelle_article": "BARQUETTE D'AIGUILLETTE DE POULET CORN FLAKES 1 KG"
+  },
+  {
+    "code_article": "00092652",
+    "libelle_article": "SAUTE DE POULET JAUNE S/OS-S/PEAU S/V 2.5 KG  X2"
+  },
+  {
+    "code_article": "00095604",
+    "libelle_article": "CUISSE DE POULET JAUNE LOCAL DEJOINTEE  230G S/AT X 12"
+  },
+  {
+    "code_article": "00095619",
+    "libelle_article": "FILET DE POULET JAUNE SELECTION DU BOUCHER  250G S/V X10"
+  },
+  {
+    "code_article": "00095625",
+    "libelle_article": "POULET FERMIER JAUNE L.R. SUD OUEST 1.5K X8P"
+  },
+  {
+    "code_article": "00095665",
+    "libelle_article": "SAUTE DE CANARD SANS OS /AVEC PEAU 5 KG"
+  },
+  {
+    "code_article": "00095667",
+    "libelle_article": "OEUFS ARRADOY GROS 63/73 X180P"
+  },
+  {
+    "code_article": "00095668",
+    "libelle_article": "OEUFS GROS TERROIR PLEIN AIR COLIS X 16BTE DE 6"
+  },
+  {
+    "code_article": "00095675",
+    "libelle_article": "COEUR DE CANARD GRAS +/-1 KG"
+  },
+  {
+    "code_article": "00095679",
+    "libelle_article": "ESCALOPES DE DINDE 140/150G S/V X10P"
+  },
+  {
+    "code_article": "00095680",
+    "libelle_article": "ESCALOPES DE DINDE +/-130G S/V X10P"
+  },
+  {
+    "code_article": "00095715",
+    "libelle_article": "SAUTE DE DINDE SS OS /SS PEAU 50-70GR S/V POCHE DE 2.5KG"
+  },
+  {
+    "code_article": "00095718",
+    "libelle_article": "EMINCE DE CUISSE DE DINDE POCHE S/VIDE 2.5 KG"
+  },
+  {
+    "code_article": "00095733",
+    "libelle_article": "SAUTE DE POULET JAUNE LOCAL S/OS-S/PEAU S/AT 2.5K"
+  },
+  {
+    "code_article": "00095740",
+    "libelle_article": "POULET FERMIER JAUNE L.R. SUD OUEST 1.5K X4P"
+  },
+  {
+    "code_article": "00095786",
+    "libelle_article": "CUISSE DE POULET JAUNE SELECTION DU BOUCHER 300G S/V  X10P"
+  },
+  {
+    "code_article": "00095793",
+    "libelle_article": "CUISSE POULET FERMIER JAUNE BIO COUPEE EN 2 S/V X 6 PIECES"
+  },
+  {
+    "code_article": "00095815",
+    "libelle_article": "PAVES DE CUISSE DE DINDE S/V +/-130G X 30 P"
+  },
+  {
+    "code_article": "00095828",
+    "libelle_article": "CORDONS BLEU DE DINDE RESTAU 125G X8P"
+  },
+  {
+    "code_article": "00095842",
+    "libelle_article": "GESIERS VOLAILLES EMINCES CONFITES POCHE 2.520KG"
+  },
+  {
+    "code_article": "00095859",
+    "libelle_article": "HAUT DE CUISSE DE POULET JAUNE LOCAL 150G S/AT X30P"
+  },
+  {
+    "code_article": "00095911",
+    "libelle_article": "CUISSE POULET JAUNE DE CHEZ NOUS 220/240GR S/V X 8"
+  },
+  {
+    "code_article": "00095913",
+    "libelle_article": "HAUT CUISSE POULET JAUNE DE CHEZ NOUS 140/150GR S/V X10"
+  },
+  {
+    "code_article": "00096541",
+    "libelle_article": "CONFIT D'OIGNONS POT DE 100 GR"
+  },
+  {
+    "code_article": "00096542",
+    "libelle_article": "CONFIT DE FIGUES POT DE 100GR"
+  },
+  {
+    "code_article": "000BF618",
+    "libelle_article": "MAIS SUPERSWEET S/V BONDUELLE 3/1"
+  },
+  {
+    "code_article": "000BF636",
+    "libelle_article": "OLIVE RECETA MAESTRO ANDALUZ ACEITUNEROS 5/1"
+  },
+  {
+    "code_article": "000BF642",
+    "libelle_article": "CHUTNEY D'OIGNONS 550G"
+  },
+  {
+    "code_article": "000BS009",
+    "libelle_article": "GAMBAS NÂ°2 ARGENTINE 20/30 CONGELE BORD X2K"
+  },
+  {
+    "code_article": "000BS011",
+    "libelle_article": "GAMBAS NÂ°1 ARGENTINE 10/20 CONGELE BORD X2K"
+  },
+  {
+    "code_article": "000P0122",
+    "libelle_article": "ANDOUILLE BEARNAISE 900 GR"
+  },
+  {
+    "code_article": "000P0124",
+    "libelle_article": "PATE BASQUE AU PIMENT D'ESPELETTE 1.6 KG"
+  },
+  {
+    "code_article": "000P1858",
+    "libelle_article": "JAMBON SERRANO 4D 9 MOIS STG DEL PAIS"
+  },
+  {
+    "code_article": "000S0029",
+    "libelle_article": "BOULETTE CRUE AU BOEUF 51% MG 30G X5KG UE"
+  },
+  {
+    "code_article": "000S0092",
+    "libelle_article": "OMELETTE NATURE DEMI LUNE 60 x 90 GR"
+  },
+  {
+    "code_article": "000S0101",
+    "libelle_article": "QUICHE LORRAINE BANDE 8 X1K"
+  },
+  {
+    "code_article": "000S0103",
+    "libelle_article": "TARTE AUX POIREAUX BANDE 1K X8P"
+  },
+  {
+    "code_article": "000S0251",
+    "libelle_article": "POELEE BRETONNE CUIT ARDO 2.5KG"
+  },
+  {
+    "code_article": "000S0252",
+    "libelle_article": "POELEE CAMPAGNARDE 2.5KG"
+  },
+  {
+    "code_article": "000S0261",
+    "libelle_article": "HARICOTS VERTS EF No 2"
+  },
+  {
+    "code_article": "000S0262",
+    "libelle_article": "CHAMPIGNONS PARIS EMINCES NÂ°2 2.5K"
+  },
+  {
+    "code_article": "000S0267",
+    "libelle_article": "BROCOLIS IQF 40/60 X 2.5K"
+  },
+  {
+    "code_article": "000S0269",
+    "libelle_article": "CAROTTES JEUNES T/FINES 14/18 X2.5KG"
+  },
+  {
+    "code_article": "000S0270",
+    "libelle_article": "CAROTTES RONDELLES IMPORT 2.5K"
+  },
+  {
+    "code_article": "000S0271",
+    "libelle_article": "CHOUX DE BRUXELLES 25/30 X2.5KG"
+  },
+  {
+    "code_article": "000S0274",
+    "libelle_article": "CHOUX FLEURS GRATIN 5/15"
+  },
+  {
+    "code_article": "000S0275",
+    "libelle_article": "CHOUX FLEURS 30/60 X 2.5K"
+  },
+  {
+    "code_article": "000S0277",
+    "libelle_article": "COURGETTES EN RONDELLES 2.5K"
+  },
+  {
+    "code_article": "000S0284",
+    "libelle_article": "HARICOT VERT ROMANO 2.5K"
+  },
+  {
+    "code_article": "000S0285",
+    "libelle_article": "HARICOTS VERTS TF 2.5K"
+  },
+  {
+    "code_article": "000S0286",
+    "libelle_article": "JULIENNE DE LEGUMES 2.5KG"
+  },
+  {
+    "code_article": "000S0287",
+    "libelle_article": "LEGUME POTAGE SANS POIS 2.5KG"
+  },
+  {
+    "code_article": "000S0289",
+    "libelle_article": "LEGUMES POUR COUSCOUS 2.5KG"
+  },
+  {
+    "code_article": "000S0290",
+    "libelle_article": "LEGUMES RATATOUILLE NICOISE 2.5KG"
+  },
+  {
+    "code_article": "000S0291",
+    "libelle_article": "MACEDOINE DE LEGUMES 2.5KG"
+  },
+  {
+    "code_article": "000S0293",
+    "libelle_article": "MINESTRONE ITALIENNE 2.5K"
+  },
+  {
+    "code_article": "000S0297",
+    "libelle_article": "PETITS POIS TRES FINS 2.5K"
+  },
+  {
+    "code_article": "000S0298",
+    "libelle_article": "POIREAUX COUPES 50/50 X 2.5KG"
+  },
+  {
+    "code_article": "000S0301",
+    "libelle_article": "PRINTANIERE DE LEGUMES 2.5KG"
+  },
+  {
+    "code_article": "000S0457",
+    "libelle_article": "OEUF ARRADOY GROS 63/73 X360P"
+  },
+  {
+    "code_article": "000S0458",
+    "libelle_article": "OEUF ARRADOY GROS 63/73 X90P"
+  },
+  {
+    "code_article": "000S0558",
+    "libelle_article": "BEAUFILETS DE COLIN D'ALASKA PANES S/A 100G X 5KG"
+  },
+  {
+    "code_article": "000S0563",
+    "libelle_article": "PANE DE COLIN D'ALASKA S/A 120GRX6KG"
+  },
+  {
+    "code_article": "000S0684",
+    "libelle_article": "FRITE STEAKHOUSE LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S0685",
+    "libelle_article": "FRITE ALLUMETTE 7/7 BI-TEMP LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S0688",
+    "libelle_article": "POMME DE TERRE RISSOLEE LUTOSA 9MM 2.5K"
+  },
+  {
+    "code_article": "000S0689",
+    "libelle_article": "POMME SAUTEE RONDELLE LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S0693",
+    "libelle_article": "FRITE 10X10 BI-TEMP LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S0695",
+    "libelle_article": "POMME DE TERRE NOISETTE LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S0697",
+    "libelle_article": "ROSTI EN GALETTE PRE-FRITE PAILLASSON LUTOSA 30P X1K"
+  },
+  {
+    "code_article": "000S0732",
+    "libelle_article": "TARTE NORMANDE PD 10 PARTS 800G SOLUTION DESSERT"
+  },
+  {
+    "code_article": "000S0751",
+    "libelle_article": "PAUPIETTE DE VEAU S/FICELLE CRUE 140G X35P"
+  },
+  {
+    "code_article": "000S0785",
+    "libelle_article": "COQUES CHOUX 140 P"
+  },
+  {
+    "code_article": "000S0801",
+    "libelle_article": "AIGUILLETTE POULET PANEE CORN FLAKES 35/55G X5K"
+  },
+  {
+    "code_article": "000S0833",
+    "libelle_article": "CUIS/POULET FR SCIEES X20"
+  },
+  {
+    "code_article": "000S0834",
+    "libelle_article": "POULET PAC 1.2KG FRAIS"
+  },
+  {
+    "code_article": "000S1196",
+    "libelle_article": "PIZZA FROMAGE BANDE 10X500GR"
+  },
+  {
+    "code_article": "000S1217",
+    "libelle_article": "BOEUF BRAISE CUIT (PALERON)"
+  },
+  {
+    "code_article": "000S1223",
+    "libelle_article": "ROTI PORC FILET CUIT"
+  },
+  {
+    "code_article": "000S1224",
+    "libelle_article": "ROTI CUIT DE DINDE"
+  },
+  {
+    "code_article": "000S1227",
+    "libelle_article": "PAIN CLUB PRECUIT 28cm 140G X70P NEUHAUSER"
+  },
+  {
+    "code_article": "000S1237",
+    "libelle_article": "FRIAND FROMAGE 48X110GR"
+  },
+  {
+    "code_article": "000S1280",
+    "libelle_article": "PANIER JAMBON/FROMAGE 40PX110G"
+  },
+  {
+    "code_article": "000S1349",
+    "libelle_article": "PETIT PAIN BLANC 60GR X 150P"
+  },
+  {
+    "code_article": "000S1356",
+    "libelle_article": "OMELETTE GASTRONOME 50X90 GR"
+  },
+  {
+    "code_article": "000S1390",
+    "libelle_article": "PANIER EPINARDS RICOTTA 40 X110G"
+  },
+  {
+    "code_article": "000S1391",
+    "libelle_article": "PANIER 5 LEGUMES DU POTAGER 40 X110G"
+  },
+  {
+    "code_article": "000S1424",
+    "libelle_article": "DOS COLIN D ALASKA 120/160G SP  X5KG"
+  },
+  {
+    "code_article": "000S1431",
+    "libelle_article": "POMMES RISSOLEES CAMPAGNARDES (12/18/25) LUTOSA"
+  },
+  {
+    "code_article": "000S1432",
+    "libelle_article": "POMME DE TERRE QUARTIER A/PEAU LUTOSA 2.5K"
+  },
+  {
+    "code_article": "000S1433",
+    "libelle_article": "POMME QUARTIER A/P AIL/FINE HERB LUTOSA 2.5 KG"
+  },
+  {
+    "code_article": "000S1509",
+    "libelle_article": "ECLAIRS CHOCOLAT 70 X 45 GR"
+  },
+  {
+    "code_article": "000S1539",
+    "libelle_article": "PAIN SANDWICH MEDIA CAMPESINA 175G  28 CM X44P"
+  },
+  {
+    "code_article": "000S1541",
+    "libelle_article": "PETIT PAIN PERENE CAMPAGNE 70G X100P"
+  },
+  {
+    "code_article": "000S1542",
+    "libelle_article": "PAIN PERENE CAMPAGNE 450G X25P"
+  },
+  {
+    "code_article": "000S1553",
+    "libelle_article": "PAVE POISSON BLC BORDELAIS 33 x 160G"
+  },
+  {
+    "code_article": "000S3494",
+    "libelle_article": "GRATIN A LA DAUPHINOISE 28P X100G"
+  },
+  {
+    "code_article": "000S4914",
+    "libelle_article": "FILET MERLU BLANC FACON FISH&CHIPS +/-200G X5K"
+  },
+  {
+    "code_article": "000S7053",
+    "libelle_article": "CROISSANT PAC VIENN   60GR X 100PCES"
+  },
+  {
+    "code_article": "000S7069",
+    "libelle_article": "PAIN AU CHOCOLAT VIENN  PAC 75GR X 80PCES"
+  },
+  {
+    "code_article": "00101115",
+    "libelle_article": "CROQUETTE PREMIUM CECINA 30GR X4K"
+  },
+  {
+    "code_article": "00110219",
+    "libelle_article": "OIGNONS CUBES IMPORT VIRTO 2.5K"
+  },
+  {
+    "code_article": "00110220",
+    "libelle_article": "POIVRONS LANIERES ROUGES ET VERTS VIRTO 2.5K"
+  },
+  {
+    "code_article": "00110530",
+    "libelle_article": "SFIZIOSA BASE PIZZA 33CM X 20P"
+  },
+  {
+    "code_article": "00110601",
+    "libelle_article": "STEAK HACHE BOUCHER ROND VBF 15%MG 150GX20P SURG"
+  },
+  {
+    "code_article": "00110603",
+    "libelle_article": "STEAK HACHE BOUCHER ROND VBF 15%MG 125GX24P SURG"
+  },
+  {
+    "code_article": "00110904",
+    "libelle_article": "CHIPIRON ECOSSE 100/170 5K"
+  },
+  {
+    "code_article": "00111010",
+    "libelle_article": "RIS DE JEUNE BOVIN UE SURG 500-900G"
+  },
+  {
+    "code_article": "00111012",
+    "libelle_article": "CROQUETTE GOURMET 40G JAMBON IBERIQUE ARTISANALE ERLITA X3K"
+  },
+  {
+    "code_article": "00111015",
+    "libelle_article": "CROQUETTE MORUE TXAPELA GOURMET ERLITA 40G X3K"
+  },
+  {
+    "code_article": "00111215",
+    "libelle_article": "PLAQUE PIZZA 59X39 CM X10P"
+  },
+  {
+    "code_article": "00111238",
+    "libelle_article": "PAIN PANINI 120G X50P"
+  },
+  {
+    "code_article": "00111239",
+    "libelle_article": "PAIN BAGUETTE PRECUITE 280G 58CM X33P"
+  },
+  {
+    "code_article": "00111551",
+    "libelle_article": "MINI PAIN \"INCONTOURNABLE\" LABEL ROUGE 40G X200P"
+  },
+  {
+    "code_article": "00111903",
+    "libelle_article": "CHIPIRON PATAGONICA NETTOYE GROS 12CM X900G"
+  },
+  {
+    "code_article": "00117345",
+    "libelle_article": "PAIN BUNS BURGER MAIS 10.5 CM X75P"
+  },
+  {
+    "code_article": "00120122",
+    "libelle_article": "TEEPOL MULTI-USAGES 5L"
+  },
+  {
+    "code_article": "00120153",
+    "libelle_article": "PAPIER CUISSON SULFURISE DISGR. 60X40 X500P"
+  },
+  {
+    "code_article": "00120183",
+    "libelle_article": "DEVIDOIR WRAPMASTER 45CM"
+  },
+  {
+    "code_article": "00120209",
+    "libelle_article": "POCHE SOUS VIDE 200X300 CUISSON X100PCES"
+  },
+  {
+    "code_article": "00120249",
+    "libelle_article": "DEPLAC PRODUIT NETTOYANT DÃGRAISSANT A FROID A CHAUD 6K"
+  },
+  {
+    "code_article": "00120311",
+    "libelle_article": "BOITE PIZZA 33CM X100P"
+  },
+  {
+    "code_article": "00120332",
+    "libelle_article": "CUILLERE MIGNARDISE CRISTAL 100MM X250P"
+  },
+  {
+    "code_article": "00120513",
+    "libelle_article": "NORDICA MINI 125ML X30P"
+  },
+  {
+    "code_article": "00120901",
+    "libelle_article": "BOITE SALADE KFRAFT BRUN 15CM 1000ML X50P"
+  },
+  {
+    "code_article": "00121202",
+    "libelle_article": "CROQUETTE JAMBON 45G X6K"
+  },
+  {
+    "code_article": "00140101",
+    "libelle_article": "POULET FERMIER JAUNE NU 1.5K  X8P SURG"
+  },
+  {
+    "code_article": "00140200",
+    "libelle_article": "FILET POULET JAUNE 130/150G X10P"
+  },
+  {
+    "code_article": "00140210",
+    "libelle_article": "CUISSE POULET 100% DEJOINTEE JAUNE S/V FRAIS  200/240G X10P"
+  },
+  {
+    "code_article": "00150035",
+    "libelle_article": "CROISSANT REFLETS GELFINOR PAC 75G X96P"
+  },
+  {
+    "code_article": "00150049",
+    "libelle_article": "PAIN CHOCOLAT MINI PAC BANQUET D'OR 35G X192P"
+  },
+  {
+    "code_article": "00150107",
+    "libelle_article": "GAUFRE DE LIEGE 90G X 27P"
+  },
+  {
+    "code_article": "00150360",
+    "libelle_article": "TORTILLA OIGNON AGOTZAINA 1.2K"
+  },
+  {
+    "code_article": "00151847",
+    "libelle_article": "PINSA DI MARCO 230GR X16P"
+  },
+  {
+    "code_article": "00160571",
+    "libelle_article": "COTE DE BOEUF TOMAHAWK CHAROLAIS SUR 1KGX 5P"
+  },
+  {
+    "code_article": "00202006",
+    "libelle_article": "6L NOUGAT DE MONTELIMAR MONTE CREME GLACEE  ARTISANALE"
+  },
+  {
+    "code_article": "00202015",
+    "libelle_article": "6L ACE \"ORANGE CAROTTE CITRON\" MONTE CREME GLACEE ARTISANAL"
+  },
+  {
+    "code_article": "00202019",
+    "libelle_article": "2.5L THYM SORBET ARTISANAL"
+  },
+  {
+    "code_article": "00215153",
+    "libelle_article": "VIN BLANC VCE 11Â° 10L"
+  },
+  {
+    "code_article": "00215159",
+    "libelle_article": "VIN ROUGE VCE 11Â° 10L"
+  },
+  {
+    "code_article": "00350937",
+    "libelle_article": "CONFIT DE CANARD 10 CUISSES FR 5/1"
+  },
+  {
+    "code_article": "00351277",
+    "libelle_article": "VINAIGRE VIN DOSETTES 10ML X100P"
+  },
+  {
+    "code_article": "00351303",
+    "libelle_article": "BARILLA LINGUINE 5K"
+  },
+  {
+    "code_article": "00351319",
+    "libelle_article": "DE CECCO LINGUINE NÂ°7 1K"
+  },
+  {
+    "code_article": "00351337",
+    "libelle_article": "CHAPELURE BLANCHE 1K"
+  },
+  {
+    "code_article": "00351344",
+    "libelle_article": "VINAIGRE CIDRE ANDREA MILANO 1L"
+  },
+  {
+    "code_article": "00351378",
+    "libelle_article": "RABAS PANE PREMIUM 1K"
+  },
+  {
+    "code_article": "00351756",
+    "libelle_article": "AMANDE ENTIERE ÃMONDÃE 1K"
+  },
+  {
+    "code_article": "00352344",
+    "libelle_article": "SAUCE SWEET CHILI THAI ROUGE POUR VOLAILLES 725ML"
+  },
+  {
+    "code_article": "00401120",
+    "libelle_article": "LAIT 1/2 ECREME UHT 6X1L"
+  },
+  {
+    "code_article": "00401130",
+    "libelle_article": "LAIT ENTIER 100% NAVARRE LACTURALE 1LX6"
+  },
+  {
+    "code_article": "00401140",
+    "libelle_article": "LAIT ENTIER UHT 6X1L"
+  },
+  {
+    "code_article": "00401203",
+    "libelle_article": "CREME UHT 35% HELIOR 6X1L"
+  },
+  {
+    "code_article": "00401204",
+    "libelle_article": "CREME UHT 20% DE CUISINE MG 12X1L"
+  },
+  {
+    "code_article": "00401215",
+    "libelle_article": "CREME UHT 35% SUPER.GASTR. PRESIDENT 1Lx6"
+  },
+  {
+    "code_article": "00401301",
+    "libelle_article": "CREME FRAICHE EPAISSE AOP 40% ISIGNY 5K"
+  },
+  {
+    "code_article": "00401302",
+    "libelle_article": "CREME FRAICHE EPAISSE 30% \"GRAND FERMAGE\" 5L"
+  },
+  {
+    "code_article": "00401304",
+    "libelle_article": "CAMEMBERT PETIT LABEL BLEU ISIGNY 150G"
+  },
+  {
+    "code_article": "00401320",
+    "libelle_article": "FROMAGE BLANC COTENTAISE 40% 5K"
+  },
+  {
+    "code_article": "00401321",
+    "libelle_article": "FROMAGE BLANC COTENTAISE 20% 5K"
+  },
+  {
+    "code_article": "00401440",
+    "libelle_article": "CREME BRULEE PRESIDENT 1L"
+  },
+  {
+    "code_article": "00401460",
+    "libelle_article": "CREME SUCREE CHANTILLY DEBIC 700ML"
+  },
+  {
+    "code_article": "00402055",
+    "libelle_article": "YAOURT GREC 10% MG 1K"
+  },
+  {
+    "code_article": "00402061",
+    "libelle_article": "CAILLE DE BREBIS MAMIA ULTZAMA 140MLX6P"
+  },
+  {
+    "code_article": "00402352",
+    "libelle_article": "FROMAGE FOUETTE ARLA PRO 25% 1.5K"
+  },
+  {
+    "code_article": "00402407",
+    "libelle_article": "VEGETOP 26% DEBIC 1L"
+  },
+  {
+    "code_article": "00403020",
+    "libelle_article": "BEURRE DOUX 250G"
+  },
+  {
+    "code_article": "00403021",
+    "libelle_article": "BEURRE 1/2 SEL 250G"
+  },
+  {
+    "code_article": "00404003",
+    "libelle_article": "EMMENTAL RAPE UE 1K"
+  },
+  {
+    "code_article": "00404100",
+    "libelle_article": "BREBIS ARRADOY +/-3K"
+  },
+  {
+    "code_article": "00404103",
+    "libelle_article": "BREBIS BRIQUE LE CAUSSENARD +/-3K"
+  },
+  {
+    "code_article": "00404520",
+    "libelle_article": "EDAM PAIN CADI 45%MG +/- 2.7K"
+  },
+  {
+    "code_article": "00404549",
+    "libelle_article": "CHEDDAR ORANGE 3 MOIS 50 TRANCHES BURGER 9X9 1K"
+  },
+  {
+    "code_article": "00404810",
+    "libelle_article": "MOZZARELLA DI BUFALA  125G ( 16P )"
+  },
+  {
+    "code_article": "00404828",
+    "libelle_article": "MOZZARELLA RAPE 45% \"CANTADORA\" 2.5K"
+  },
+  {
+    "code_article": "00404831",
+    "libelle_article": "BURRATA VACHE 125G X6P"
+  },
+  {
+    "code_article": "00404851",
+    "libelle_article": "MASCARPONE 42%MG 500G"
+  },
+  {
+    "code_article": "00404854",
+    "libelle_article": "RICOTTA 1.5K"
+  },
+  {
+    "code_article": "00404863",
+    "libelle_article": "GRANA PADANO AOP PETALES 500G"
+  },
+  {
+    "code_article": "00404868",
+    "libelle_article": "PARMIGIANO REGGIANO DOP 18 MOIS +/-1.1K"
+  },
+  {
+    "code_article": "00404871",
+    "libelle_article": "GRANA PADANO AOP RAPE 1K"
+  },
+  {
+    "code_article": "00404878",
+    "libelle_article": "PARMIGIANO REGGIANO RAPE DOP 1K"
+  },
+  {
+    "code_article": "00405000",
+    "libelle_article": "MOZZARELLA FIORDILATTE 42%MG  2.5K X4BT"
+  },
+  {
+    "code_article": "00406100",
+    "libelle_article": "OEUF ARRADOY MOYEN 53/63 X90P"
+  },
+  {
+    "code_article": "00406110",
+    "libelle_article": "OEUF ARRADOY MOYEN 53/63 X180P"
+  },
+  {
+    "code_article": "00406120",
+    "libelle_article": "OEUF ARRADOY MOYEN 53/63 X360P"
+  },
+  {
+    "code_article": "00406130",
+    "libelle_article": "OEUF ARRADOY MOYEN PLEIN AIR 53/63 X90P"
+  },
+  {
+    "code_article": "00406131",
+    "libelle_article": "OEUF ARRADOY GROS PLEIN AIR 63/73 X90P"
+  },
+  {
+    "code_article": "00406140",
+    "libelle_article": "OEUF ARRADOY BIO MOYEN/GROS 53/63 X90P"
+  },
+  {
+    "code_article": "00406313",
+    "libelle_article": "BLANC OEUF LIQUIDE 2L"
+  },
+  {
+    "code_article": "00406315",
+    "libelle_article": "ENTIER OEUF LIQUIDE 2L"
+  },
+  {
+    "code_article": "00441310",
+    "libelle_article": "CREME FRAICHE EPAISSE 30% \"GRANCOEUR\" 1L"
+  },
+  {
+    "code_article": "00444200",
+    "libelle_article": "CHEVRE BUCHE \"GRANCOEUR\" 1K"
+  },
+  {
+    "code_article": "00444201",
+    "libelle_article": "CHEVRE PUR BUCHETTE \"GRANCOEUR\" 180G"
+  },
+  {
+    "code_article": "00444820",
+    "libelle_article": "MOZZARELLA COSSETTE 40% MAESTRELA  2.5K"
+  },
+  {
+    "code_article": "00444832",
+    "libelle_article": "BURRATA DI BUFALA GAROFALO 125G X8P"
+  },
+  {
+    "code_article": "00444855",
+    "libelle_article": "MOZZARELLA COSSETTE 40% UE 2KG"
+  },
+  {
+    "code_article": "00450639",
+    "libelle_article": "PULPE FINE DE TOMATES BAG IN BOX MUTTI 2X5KG"
+  },
+  {
+    "code_article": "00500000",
+    "libelle_article": "AXOA DE VEAU PIMENT ESPELETTE  ELOISE  2.4K"
+  },
+  {
+    "code_article": "00500423",
+    "libelle_article": "SAUCE ALIOLI 1 KG"
+  },
+  {
+    "code_article": "00500701",
+    "libelle_article": "TAGLIATELLE AUX OEUFS 6MM FRAIS ROYANS 1KG"
+  },
+  {
+    "code_article": "00500900",
+    "libelle_article": "TOMATE CONFITE A L'HUILE 1K"
+  },
+  {
+    "code_article": "00500915",
+    "libelle_article": "PREPARATION TORTILLA AVEC OIGNON CN 1KG"
+  },
+  {
+    "code_article": "00500917",
+    "libelle_article": "FRITE FRAICHE AGRIA ERLITA S/P 10*10 AxC 10K"
+  },
+  {
+    "code_article": "00500921",
+    "libelle_article": "AIL GOUSSE EPLUCHEE EXTRA 1K"
+  },
+  {
+    "code_article": "00501344",
+    "libelle_article": "SALADE TABOULE AUX RAISIN ELOISE 2.5K"
+  },
+  {
+    "code_article": "00501346",
+    "libelle_article": "SALADE CAROTTES RAPEES ELOISE 2.5K"
+  },
+  {
+    "code_article": "00501352",
+    "libelle_article": "BRANDADE DE MORUE PIMENT ESPELETTE ELOISE 2.7K"
+  },
+  {
+    "code_article": "00501355",
+    "libelle_article": "PAELLA POULET ET FRUITS DE MER ELOISE 2.7K"
+  },
+  {
+    "code_article": "00501365",
+    "libelle_article": "RIZ PILAF ELOISE 2 KG"
+  },
+  {
+    "code_article": "00501425",
+    "libelle_article": "SALADE TABOULE AUX RAISINS ELOISE 1.25K"
+  },
+  {
+    "code_article": "00501446",
+    "libelle_article": "HACHIS PARMENTIER DE BOEUF ELOISE 3K"
+  },
+  {
+    "code_article": "00501513",
+    "libelle_article": "SALADE VEGETARIENNE ELOISE 250G"
+  },
+  {
+    "code_article": "00501551",
+    "libelle_article": "CAILLE ROTIE AUX RAISINS ELOISE 2.7 KG"
+  },
+  {
+    "code_article": "00507000",
+    "libelle_article": "SAUCE PIZZA CLASSICA MUTTI 2X5K"
+  },
+  {
+    "code_article": "00507003",
+    "libelle_article": "PUREE DE TOMATES PASSATA ROBO 3K"
+  },
+  {
+    "code_article": "00507117",
+    "libelle_article": "KETCHUP SEAU HEINZ 5L"
+  },
+  {
+    "code_article": "00507119",
+    "libelle_article": "TOMATE FRITO ORLANDO 780GR"
+  },
+  {
+    "code_article": "00660417",
+    "libelle_article": "COTE DE BOEUF COUPE CIDRERIE INDIV.+/-1K"
+  },
+  {
+    "code_article": "00802000",
+    "libelle_article": "MAGRET DE CANARD FRANCE S/V +/-350G"
+  },
+  {
+    "code_article": "00805127",
+    "libelle_article": "BLOC FOIE GRAS MI-CUIT CANARD SUD-OUEST 30% AGRONEGOCE X1K"
+  },
+  {
+    "code_article": "00807020",
+    "libelle_article": "CONFIT CANARD 12 CUISSES FRANCE  5/1"
+  },
+  {
+    "code_article": "00B49902",
+    "libelle_article": "BOX JAMBON SERRANO AVEC INTERC. 90GR ( ETIQUETTE MELON )"
+  },
+  {
+    "code_article": "00P41022",
+    "libelle_article": "ROSETTE PUR PORC SUPERIEURE +/- 2.7 KG SIGNATURE CHARCUTIERE"
+  },
+  {
+    "code_article": "00P50315",
+    "libelle_article": "SUCRE SEMOULE 25K"
+  },
+  {
+    "code_article": "00P50316",
+    "libelle_article": "SUCRE CRISTAL 25K"
+  },
+  {
+    "code_article": "00P50845",
+    "libelle_article": "ASPERGE MENDAVIA PEROU 13/16 600G"
+  },
+  {
+    "code_article": "00P51268",
+    "libelle_article": "VINAIGRE BLANC 8Â° 10L"
+  },
+  {
+    "code_article": "00P51317",
+    "libelle_article": "FARINE BLE T55 DISGROUP 1K"
+  },
+  {
+    "code_article": "00P57157",
+    "libelle_article": "1/2 JAMBON SUP DD NAVARRE +/-3.75K"
+  },
+  {
+    "code_article": "00P67101",
+    "libelle_article": "EMMENTAL RAPE BRIN MOYEN VALMARTIN 1K"
+  },
+  {
+    "code_article": "01011135",
+    "libelle_article": "SALADE AUX ECREVISSES ELOISE 2.5K"
+  },
+  {
+    "code_article": "01011141",
+    "libelle_article": "SALADE MUSEAU DE PORC PROVENCALE ELOISE 2.5K"
+  },
+  {
+    "code_article": "01140200",
+    "libelle_article": "FILET POULET D'ICI 6KG SURG."
+  },
+  {
+    "code_article": "01173008",
+    "libelle_article": "TRAVERS DE PORC RIBS SURGELE 600G X15P"
+  },
+  {
+    "code_article": "01300086",
+    "libelle_article": "OIGNONS EMINCES POLOG. 2.5kg"
+  },
+  {
+    "code_article": "01670338",
+    "libelle_article": "MOZZARELLA TRANCHE IQF BARQUETTE 1,3 KILOS"
+  },
+  {
+    "code_article": "02150329",
+    "libelle_article": "SUCRE GLACE DADDY 1K"
+  },
+  {
+    "code_article": "02150333",
+    "libelle_article": "SUCRE ROUX POUDRE CASSONNADE 1K"
+  },
+  {
+    "code_article": "03050601",
+    "libelle_article": "MOUTARDE 5K"
+  },
+  {
+    "code_article": "03051106",
+    "libelle_article": "THON MORCEAUX HUILE TOURNESOL 1K"
+  },
+  {
+    "code_article": "03051202",
+    "libelle_article": "HUILE GIDOLEIC 10L"
+  },
+  {
+    "code_article": "03051204",
+    "libelle_article": "HUILE GIDOLIVE 5L"
+  },
+  {
+    "code_article": "03051212",
+    "libelle_article": "HUILE GIDOLIVE SPECIAL PLANCHA 1L"
+  },
+  {
+    "code_article": "03051218",
+    "libelle_article": "HUILE PEPINS DE RAISINS 5L"
+  },
+  {
+    "code_article": "03051223",
+    "libelle_article": "HUILE OLIVE EXTRA VIERGE 5L 100% ARBEQUINA"
+  },
+  {
+    "code_article": "03051224",
+    "libelle_article": "HUILE OLIVE EXTRA VIERGE 1L 100% ARBERQUINA"
+  },
+  {
+    "code_article": "03051226",
+    "libelle_article": "HUILE OLIVE ORUJO ERLITA 5L"
+  },
+  {
+    "code_article": "03051246",
+    "libelle_article": "STABILISATEUR GLACE ET SORBET NEUTROSE LOUIS FRANCOIS 1K"
+  },
+  {
+    "code_article": "03051253",
+    "libelle_article": "HUILE OLIVE EXTRA VIERGE 2L 100% PICUAL"
+  },
+  {
+    "code_article": "03051321",
+    "libelle_article": "FARINE BLE PATISSIERE T45 1K"
+  },
+  {
+    "code_article": "03051322",
+    "libelle_article": "FARINE 00/NAPOLETANA 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "03051324",
+    "libelle_article": "FARINE DE TYPE 1 EXTRA MIA INTEGRATA 5 STAGIONI 10K"
+  },
+  {
+    "code_article": "03051354",
+    "libelle_article": "RIZ NOUVO MARATELLI ARAGON 5KG"
+  },
+  {
+    "code_article": "03051400",
+    "libelle_article": "THYM 150GRS"
+  },
+  {
+    "code_article": "03051409",
+    "libelle_article": "CURCUMA MOULU 1K"
+  },
+  {
+    "code_article": "03051429",
+    "libelle_article": "POIVRE BLANC MOULU 1K"
+  },
+  {
+    "code_article": "03051468",
+    "libelle_article": "PIMENT ESPELETTE AOP 40G"
+  },
+  {
+    "code_article": "03051723",
+    "libelle_article": "BARRY MICRO COPEAUX CHOCOLAT BLANC 1K"
+  },
+  {
+    "code_article": "03051749",
+    "libelle_article": "LAIT DE COCO UHT GTC 1L"
+  },
+  {
+    "code_article": "03051765",
+    "libelle_article": "NOISETTE ENTIERE EMONDEE 1K"
+  },
+  {
+    "code_article": "03051810",
+    "libelle_article": "JUS ORANGE 1LX12"
+  },
+  {
+    "code_article": "03151207",
+    "libelle_article": "HUILE DE FRITURE ERLITA 10L"
+  },
+  {
+    "code_article": "03151232",
+    "libelle_article": "HUILE TOURNESOL ERLITA 25L"
+  },
+  {
+    "code_article": "03151310",
+    "libelle_article": "HUILE TOURNESOL 5L"
+  },
+  {
+    "code_article": "0MAIA007",
+    "libelle_article": "CHORIZO DOUX EN U  .220gr ***"
+  },
+  {
+    "code_article": "0MAIA017",
+    "libelle_article": "JAMBON SERRANO GRAND RESERVA PULIDO ERLITA +/- 5KG"
+  },
+  {
+    "code_article": "0MAIA024",
+    "libelle_article": "SAUCISSON BASQUE NATURE \"NU\" .200gr"
+  },
+  {
+    "code_article": "0MAIA025",
+    "libelle_article": "SAUCISSON BASQUE  PIMENT ESPELETTE \"NU\" .200GR"
+  },
+  {
+    "code_article": "0MAIA027",
+    "libelle_article": "SAUCISSON BASQUE AUX CEPES \"NU\" .200gr"
+  },
+  {
+    "code_article": "30120105",
+    "libelle_article": "SERVIETTE 1 PLI 29x29cm X 500"
+  },
+  {
+    "code_article": "42151672",
+    "libelle_article": "SPECULOOS POUDRE 750G"
+  },
+  {
+    "code_article": "42151674",
+    "libelle_article": "SPECULOOS CONCASSE LOTUS 750G"
+  },
+  {
+    "code_article": "P0000018",
+    "libelle_article": "AMANDE POUDRE NATURELLE DISGROUP / KG"
+  },
+  {
+    "code_article": "P0000058",
+    "libelle_article": "ISOMALT IRCA SUCRE INVERTI 1K"
+  },
+  {
+    "code_article": "P0000112",
+    "libelle_article": "BATONS BOULANGERS 43% X500 BARRY 1.6K"
+  },
+  {
+    "code_article": "P0000210",
+    "libelle_article": "EMMENTAL RAPE FRANC. DISGROUP / 1 KGx10"
+  },
+  {
+    "code_article": "P0000256",
+    "libelle_article": "CHAMPIGNONS COUPES SURGELES / 2.5 KGS"
+  },
+  {
+    "code_article": "P0000284",
+    "libelle_article": "COLORANT ROUGE CONDIFA 50CL"
+  },
+  {
+    "code_article": "P0000383",
+    "libelle_article": "EAU DE FLEUR ORANGER DISGROUP 1L"
+  },
+  {
+    "code_article": "P0000397",
+    "libelle_article": "JAMBON SEC CHEF RAYMOND / 500 G (x6)"
+  },
+  {
+    "code_article": "P0000399",
+    "libelle_article": "BOBINE ESSUIE MAINS GM X6P"
+  },
+  {
+    "code_article": "P0000431",
+    "libelle_article": "FILM ALIMENTAIRE DISGROUP 300 X 45CM"
+  },
+  {
+    "code_article": "P0000437",
+    "libelle_article": "FOND TARTE SUCREE 270 SURGELES / 8"
+  },
+  {
+    "code_article": "P0000555",
+    "libelle_article": "JAUNE D'OEUF LIQUIDE AROVO 1kgx10"
+  },
+  {
+    "code_article": "P0000596",
+    "libelle_article": "LAIT CONCENTRE SUCRE / 1 KG"
+  },
+  {
+    "code_article": "P0000597",
+    "libelle_article": "LAIT CONCENTRE SUCRE / 397 GRS"
+  },
+  {
+    "code_article": "P0000637",
+    "libelle_article": "LE COMPLET 50 % AIT / 15 KGS"
+  },
+  {
+    "code_article": "P0000682",
+    "libelle_article": "FRUIT MYRTILLE ENTIERE DISGROUP SURGELEE 1KG"
+  },
+  {
+    "code_article": "P0000700",
+    "libelle_article": "DES ABRICOTS 1K"
+  },
+  {
+    "code_article": "P0000706",
+    "libelle_article": "NOIX BRISURES STANDARD 1K"
+  },
+  {
+    "code_article": "P0000773",
+    "libelle_article": "PASTIS CARTH''ANIS 45 Â° / L X 6*P"
+  },
+  {
+    "code_article": "P0000786",
+    "libelle_article": "EMMENTAL TRANCHE ESSENTIEL / 2X500G"
+  },
+  {
+    "code_article": "P0000787",
+    "libelle_article": "PATE DE PISTACHE FABBRI 1.2K"
+  },
+  {
+    "code_article": "P0000889",
+    "libelle_article": "RAISIN TURQUIE JUMBO / KG"
+  },
+  {
+    "code_article": "P0001052",
+    "libelle_article": "THON NATUREL MORCEAUX MDD 600 GRS (6)"
+  },
+  {
+    "code_article": "P0001067",
+    "libelle_article": "VANILLE NATUREL. AR. SAVEUR VANIFLOR / L*P"
+  },
+  {
+    "code_article": "P0001245",
+    "libelle_article": "FRAMBOISE ENTIERE DISGROUP 1K"
+  },
+  {
+    "code_article": "P0001272",
+    "libelle_article": "ECLAIR CHOCOLAT P'TIT BENOIT 110G X14P"
+  },
+  {
+    "code_article": "P0001646",
+    "libelle_article": "JAUNE OEUF LIQUIDE FRANCE LIOT 1L DISGROUP"
+  },
+  {
+    "code_article": "P0001648",
+    "libelle_article": "OEUF GROS DEMI CAISSE 63/73 / 180"
+  },
+  {
+    "code_article": "P0001669",
+    "libelle_article": "AGAR AGAR POUDRE LOUIS FRANCOIS 1K"
+  },
+  {
+    "code_article": "P0002040",
+    "libelle_article": "CREME UHT 35% ELLE & VIRE EXCELLENCE 6X1L*P"
+  },
+  {
+    "code_article": "P0002120",
+    "libelle_article": "FIGUES CUBES / KG x 10"
+  },
+  {
+    "code_article": "P0002388",
+    "libelle_article": "BACON 40 TRANCHES CROS 500G"
+  },
+  {
+    "code_article": "P0002394",
+    "libelle_article": "MIEL TOUTES FLEURS MDD 500 GRS"
+  },
+  {
+    "code_article": "P0002413",
+    "libelle_article": "CHOCOLAT AU LAIT GHANA 40,5 % 1K"
+  },
+  {
+    "code_article": "P0002414",
+    "libelle_article": "CHOCOLAT NOIR MEXIQUE 66 % 1K"
+  },
+  {
+    "code_article": "P0002417",
+    "libelle_article": "VANILLE EXTRAIT TAHITENSIS 0.5L"
+  },
+  {
+    "code_article": "P0002591",
+    "libelle_article": "BEURRE TARTINABLE TARTIMALIN DOUX 1kgx6"
+  },
+  {
+    "code_article": "P0002857",
+    "libelle_article": "POULET FILET CRU 190 G / 5 KG"
+  },
+  {
+    "code_article": "P0002916",
+    "libelle_article": "MASCARPONE ZANETTI / 500 GRS (x6)"
+  },
+  {
+    "code_article": "P0002981",
+    "libelle_article": "GANTS VINYL TAILLE S 100P"
+  },
+  {
+    "code_article": "P0002986",
+    "libelle_article": "FARINE TRADITION  FRANCAISE T65 DISGROUP 25K"
+  },
+  {
+    "code_article": "P0002991",
+    "libelle_article": "OLIVE NOIRE DENOYAUTEE HORECA 5/1"
+  },
+  {
+    "code_article": "P0003048",
+    "libelle_article": "BLANC OEUF LIQUIDE 1L BLANC DES CHEFS"
+  },
+  {
+    "code_article": "P0003062",
+    "libelle_article": "CASSIS ENTIER DISGROUP 1K"
+  },
+  {
+    "code_article": "P0003078",
+    "libelle_article": "CHORIZO GRANDE TRANCHE / 500 G (x8)"
+  },
+  {
+    "code_article": "P0003092",
+    "libelle_article": "FETA GRECQUE BREBIS MINI DES / 900 G"
+  },
+  {
+    "code_article": "P0003140",
+    "libelle_article": "VANILLE AROME DISGROUP 1L"
+  },
+  {
+    "code_article": "P0003146",
+    "libelle_article": "CREME SUCREE VANILLEE 33.5% UHT DEBIC 2L"
+  },
+  {
+    "code_article": "P0003157",
+    "libelle_article": "BEURRE DOUX PRESIDENT 500G"
+  },
+  {
+    "code_article": "P0003160",
+    "libelle_article": "EMINCE FILET POULET ROTI IMPORT  / KG(4)"
+  },
+  {
+    "code_article": "P0003230",
+    "libelle_article": "TOMME DE BREBIS TRANCHES / 400 G (x8"
+  },
+  {
+    "code_article": "P0003233",
+    "libelle_article": "SPECULOOS A TARTINER 720G"
+  },
+  {
+    "code_article": "P0003335",
+    "libelle_article": "NOISETTE HACHEE / KG"
+  },
+  {
+    "code_article": "P0003392",
+    "libelle_article": "MANGUE MORCEAUX  2.5 K"
+  },
+  {
+    "code_article": "P0003394",
+    "libelle_article": "SUCRE CRISTAL CRISTALCO 20K*P"
+  },
+  {
+    "code_article": "P0003412",
+    "libelle_article": "JAMBON SERRANO ARROYO TRANCHE 500G"
+  },
+  {
+    "code_article": "P0003519",
+    "libelle_article": "'CROC''BILL, RIZ SOUFLE ENROBE / 1 L'"
+  },
+  {
+    "code_article": "P0003607",
+    "libelle_article": "OIGNONS ROTIS COLONA / 500 G"
+  },
+  {
+    "code_article": "P0003881",
+    "libelle_article": "FRUIT ROUGE MELANGE DISGROUP / KGS"
+  },
+  {
+    "code_article": "P0003882",
+    "libelle_article": "GRIOTTE ENTIERE DISGROUP / KGS"
+  },
+  {
+    "code_article": "P0004139",
+    "libelle_article": "POULET FILET ROTI FRAIS SOUS VIDE /1 KG"
+  },
+  {
+    "code_article": "P0004298",
+    "libelle_article": "CANNELE DE BORDEAUX MINI X80P"
+  },
+  {
+    "code_article": "P0004509",
+    "libelle_article": "CHUNKS CHOCOLAT NOIR IRCA 1K"
+  },
+  {
+    "code_article": "P0004543",
+    "libelle_article": "MIX MOZZARELLA  50% EMMENTAL 50% JULIENNE 1K"
+  },
+  {
+    "code_article": "P0004635",
+    "libelle_article": "EAU SOURCE DU ROY 1.5 L / 6"
+  },
+  {
+    "code_article": "P0004964",
+    "libelle_article": "AIGUILLETTE POULET PANEE MULTIGRAIN X 1 KG"
+  }
+]

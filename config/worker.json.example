@@ -1,0 +1,19 @@
+{
+    "enabled":  false,
+    "analysis_enabled":  false,
+    "require_remote":  false,
+    "url":  "http://127.0.0.1:8780",
+    "timeout_seconds":  120,
+    "ssh":  {
+                "enabled":  false,
+                "host":  "",
+                "user":  "",
+                "port":  22,
+                "identity_file":  "",
+                "local_host":  "127.0.0.1",
+                "local_port":  8780,
+                "remote_host":  "127.0.0.1",
+                "remote_port":  8780,
+                "connect_timeout_seconds":  15
+            }
+}

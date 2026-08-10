@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "polenta_arto_gorria",
+      "mention_all": ["polenta"],
+      "label_all": ["polenta arto gorria bio 500g"],
+      "bonus": 70,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "fromage_blanc_framboise_isigny",
+      "mention_all": ["fromage blanc framboise saint isere"],
+      "label_all": ["fromage blanc framboise isigny 3k"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "blanc_de_poulet",
+      "mention_all": ["blanc de poulet"],
+      "label_all": ["filet de poulet jaune selection du boucher 250g s v x10"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "vinaigre_cidre_andrea_milano",
+      "mention_all": ["vinaigre de cidre"],
+      "label_all": ["vinaigre cidre andrea milano 1l"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "poche_a_douille",
+      "mention_all": ["poche a douille"],
+      "label_all": ["poches patissieres jetables disgroup 300x540mm x100p"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "epices_mexicaines_tacomix",
+      "mention_all": ["epices mexicaines"],
+      "label_all": ["tacomix melange mexicain 220g"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    },
+    {
+      "id": "glacons",
+      "mention_all": ["glacons", "glace"],
+      "label_all": ["glacon 2k x5p"],
+      "bonus": 80,
+      "enabled": true,
+      "origin": "validation_corpus_train"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "admin":  {
+                  "password_hash":  "REPLACE_WITH_SHA256_HEX",
+                  "role":  "ADMIN",
+                  "active":  true
+              }
+}

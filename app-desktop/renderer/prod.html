@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMALO Repondeur</title>
+    <link rel="icon" type="image/png" href="assets/icons/emalo-repondeur-2026.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              night: "#1F2329",
+              nightSoft: "#2A3038",
+              ink: "#111827",
+              stone: "#F6F3EE",
+              panel: "#FFFCF8",
+              line: "#E7E2DA",
+              soft: "#F4F1EB",
+              emerald: "#059669",
+              sand: "#B9A58E",
+              danger: "#B91C1C",
+              warn: "#D97706",
+              ok: "#2E7D66",
+            },
+            boxShadow: {
+              panel: "0 24px 80px rgba(15, 23, 42, 0.10)",
+              float: "0 16px 40px rgba(15, 23, 42, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light;
+        --night: #1f2329;
+        --ink: #111827;
+        --stone: #f6f3ee;
+        --panel: #ffffff;
+        --line: #e7e2da;
+        --theme: #059669;
+        --theme-soft: rgba(5, 150, 105, 0.12);
+        --muted: rgba(17, 24, 39, 0.56);
+        --red: #b42318;
+        --blue: #1d4ed8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--stone);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      }
+      button, input, select { font: inherit; }
+      button { cursor: pointer; }
+      button:disabled { cursor: not-allowed; opacity: .45; }
+      .hidden { display: none !important; }
+      .fade-in { animation: fadeIn 0.18s ease-out; }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .input-ui {
+        height: 3.25rem;
+        width: 100%;
+        border-radius: 1rem;
+        border: 1px solid #ddd7ce;
+        background: #faf8f4;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+        font-weight: 650;
+        color: var(--ink);
+        outline: none;
+        transition: 0.16s ease;
+      }
+      .input-ui::placeholder { color: rgba(17, 24, 39, 0.32); }
+      .input-ui:focus { border-color: var(--theme); background: #fff; box-shadow: 0 0 0 4px var(--theme-soft); }
+      .login { min-height: 100vh; display: grid; grid-template-columns: 1.08fr .92fr; background: var(--stone); }
+      .login-hero {
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        padding: 4rem;
+      }
+      .login-hero::before {
+        content: "";
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        left: -8rem;
+        top: -8rem;
+        border-radius: 999px;
+        background: rgba(209, 250, 229, .72);
+        filter: blur(22px);
+      }
+      .login-hero::after {
+        content: "";
+        position: absolute;
+        width: 18rem;
+        height: 18rem;
+        right: 1.5rem;
+        bottom: 3rem;
+        border-radius: 999px;
+        background: rgba(246, 243, 238, .95);
+        filter: blur(18px);
+      }
+      .login-hero-content {
+        position: relative;
+        z-index: 1;
+        min-height: calc(100vh - 8rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .brand-row { display: flex; align-items: center; gap: .75rem; }
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 1rem;
+        background: var(--night);
+        color: #fff;
+        font-size: .86rem;
+        font-weight: 950;
+        box-shadow: 0 18px 50px rgba(31, 35, 41, .08);
+      }
+      .brand-kicker {
+        font-size: .68rem;
+        font-weight: 950;
+        color: rgba(17,24,39,.4);
+        text-transform: uppercase;
+        letter-spacing: .24em;
+      }
+      .brand-sub { margin-top: .12rem; font-size: .9rem; font-weight: 800; color: var(--ink); }
+      .hero-copy { margin-top: 4rem; max-width: 32rem; }
+      .hero-kicker {
+        font-size: .75rem;
+        font-weight: 950;
+        color: rgba(17,24,39,.45);
+        text-transform: uppercase;
+        letter-spacing: .24em;
+      }
+      .hero-title {
+        margin-top: 1rem;
+        font-size: 3.75rem;
+        line-height: 1.03;
+        font-weight: 950;
+        letter-spacing: 0;
+      }
+      .hero-text {
+        margin-top: 1.35rem;
+        max-width: 26rem;
+        color: rgba(17,24,39,.62);
+        font-size: .94rem;
+        line-height: 1.75;
+        font-weight: 650;
+      }
+      .login-chips { padding-bottom: .25rem; }
+      .chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: rgba(17,24,39,.62);
+        padding: .42rem .7rem;
+        font-size: .72rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+      .login-side { display: grid; place-items: center; padding: 2rem; }
+      .login-card {
+        width: min(100%, 440px);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        box-shadow: 0 18px 50px rgba(31, 35, 41, .08);
+      }
+      h1, h2, p { margin: 0; }
+      h1 { font-size: 2.12rem; line-height: 1.04; font-weight: 950; letter-spacing: 0; }
+      h2 { font-size: 1.05rem; }
+      .app { min-height: 100vh; padding: 1.1rem; }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: .8rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 1.25rem;
+        padding: 1rem;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 1.1rem;
+      }
+      .filters {
+        display: grid;
+        grid-template-columns: minmax(180px, 1fr) 170px 155px 155px auto auto;
+        gap: .55rem;
+        padding: .75rem;
+        align-items: end;
+        margin-bottom: .8rem;
+      }
+      .input {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: .95rem;
+        background: #fff;
+        padding: .68rem .78rem;
+        color: var(--ink);
+        outline: none;
+        transition: .16s ease;
+      }
+      .input:focus { border-color: var(--theme); box-shadow: 0 0 0 4px var(--theme-soft); }
+      .correction-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 13.5rem;
+        gap: .65rem;
+        align-items: start;
+        padding: .48rem 0;
+        border-top: 1px solid rgba(231, 226, 218, .72);
+      }
+      .correction-row:first-child { border-top: 0; padding-top: 0; }
+      .correction-input {
+        min-height: 2.5rem;
+        border-radius: .8rem;
+        padding: .55rem .7rem;
+        font-size: .82rem;
+        font-weight: 750;
+      }
+      .correction-status {
+        margin-top: .45rem;
+        min-height: 1rem;
+      }
+      .btn {
+        border: 1px solid var(--line);
+        border-radius: .95rem;
+        background: white;
+        color: var(--ink);
+        padding: .68rem .9rem;
+        font-weight: 850;
+        white-space: nowrap;
+        transition: .16s ease;
+      }
+      .btn:hover { background: #faf8f4; }
+      .btn-primary {
+        border-radius: 1rem;
+        background: var(--night);
+        color: white;
+        font-weight: 850;
+        transition: 0.16s ease;
+      }
+      .btn-primary:hover { transform: translateY(-1px); background: #2a3038; }
+      .btn-danger { border-color: #fecaca; background: #fff5f5; color: var(--red); }
+      .small { font-size: .82rem; }
+      .muted { color: var(--muted); }
+      .stats { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .8rem; }
+      .stat {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: .95rem;
+        padding: .62rem .82rem;
+        font-weight: 850;
+      }
+      .list { display: grid; gap: .55rem; }
+      .audio-row {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 1.1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 26px rgba(31, 35, 41, .035);
+      }
+      .audio-main {
+        display: grid;
+        grid-template-columns: 95px 76px 140px minmax(220px, 1fr) 145px auto;
+        gap: .75rem;
+        align-items: center;
+        padding: .75rem;
+      }
+      .file-name { font-weight: 800; overflow-wrap: anywhere; }
+      .actions { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: .25rem .55rem;
+        font-size: .76rem;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+      .b-new { background: #eef4ff; color: var(--blue); }
+      .b-trans { background: #f5f3ff; color: #5b21b6; }
+      .b-ready { background: #ecfdf3; color: var(--green); }
+      .b-sent { background: #e0f2fe; color: #075985; }
+      .b-problem { background: #fff1f2; color: var(--red); }
+      .b-history { background: #f2f4f7; color: #475467; }
+      .detail {
+        border-top: 1px solid var(--line);
+        padding: .85rem;
+        display: grid;
+        grid-template-columns: minmax(280px, .65fr) minmax(320px, 1fr);
+        gap: .75rem;
+        background: #faf8f4;
+      }
+      .box {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        padding: .75rem;
+      }
+      .products { display: grid; gap: .4rem; margin-top: .55rem; }
+      .product {
+        border: 1px solid var(--line);
+        border-radius: .9rem;
+        padding: .55rem;
+        background: #faf8f4;
+      }
+      .notice {
+        margin-bottom: .8rem;
+        border-radius: 1rem;
+        padding: .7rem .8rem;
+        border: 1px solid var(--line);
+        background: white;
+      }
+      .notice.ok { border-color: #bbf7d0; color: var(--green); }
+      .notice.err { border-color: #fecaca; color: var(--red); }
+      .loading {
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--night), var(--theme), var(--night));
+        background-size: 200% 100%;
+        animation: load .9s linear infinite;
+      }
+      @keyframes load { from { background-position: 0 0; } to { background-position: 200% 0; } }
+      @media (max-width: 1180px) {
+        .login { grid-template-columns: 1fr; }
+        .login-hero { min-height: 42vh; padding: 2rem; }
+        .login-hero-content { min-height: auto; gap: 2.2rem; }
+        .hero-copy { margin-top: 2rem; }
+        .hero-title { font-size: 2.65rem; }
+        .filters { grid-template-columns: 1fr 1fr; }
+        .audio-main { grid-template-columns: 88px 70px 1fr; }
+        .audio-main > :nth-child(3), .audio-main > :nth-child(5), .audio-main > :nth-child(6) { grid-column: 1 / -1; }
+        .actions { justify-content: flex-start; }
+        .detail { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-stone text-ink">
+    <section id="login-view" class="grid min-h-screen lg:grid-cols-[1.08fr_0.92fr]">
+      <div class="relative overflow-hidden bg-white px-8 py-10 lg:px-16 lg:py-16">
+        <div class="pointer-events-none absolute -left-28 -top-28 size-80 rounded-full bg-emerald-100/60 blur-3xl"></div>
+        <div class="pointer-events-none absolute bottom-16 right-10 size-72 rounded-full bg-stone blur-3xl"></div>
+
+        <div class="relative z-10 flex h-full w-full flex-col justify-between fade-in">
+          <div class="max-w-[590px]">
+            <div class="flex items-center gap-3">
+              <div class="grid size-11 place-items-center rounded-2xl bg-night text-sm font-black text-white shadow-float">ER</div>
+              <div>
+                <p class="text-[11px] font-black uppercase tracking-[0.24em] text-ink/40">EMALO</p>
+                <p class="text-sm font-bold text-ink">Repondeur</p>
+              </div>
+            </div>
+
+            <div class="mt-16 max-w-[510px]">
+              <p class="text-[12px] font-black uppercase tracking-[0.24em] text-ink/45">Plateforme interne groupe</p>
+              <h1 class="mt-4 text-[44px] font-black leading-[1.03] tracking-[-0.06em] text-ink lg:text-[60px]">
+                Repondeur commandes.
+                <br />Acces commandes vocales.
+              </h1>
+              <p class="mt-6 max-w-[420px] text-[15px] leading-7 text-ink/62">
+                Un espace clair pour traiter les commandes vocales clients et preparer les envois Copilote.
+              </p>
+            </div>
+          </div>
+
+          <div class="pb-1">
+            <p class="text-[10px] font-black uppercase tracking-[0.24em] text-ink/40">Module disponible</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-ink/65">REPONDEUR</span>
+              <span class="rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-ink/65">COMMANDES VOCALES</span>
+              <span class="rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-ink/65">COPILOTE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex items-center justify-center overflow-hidden bg-night px-6 py-10 lg:px-12 lg:py-14">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(5,150,105,0.14),transparent_32%)]"></div>
+
+        <div class="relative z-10 w-full max-w-[460px] fade-in">
+          <div class="rounded-[28px] border border-white/10 bg-panel p-8 shadow-[0_28px_80px_rgba(0,0,0,0.24)] lg:p-10">
+            <div class="mb-8">
+              <p class="text-[11px] font-black uppercase tracking-[0.24em] text-sand">Espace securise</p>
+              <h2 class="mt-5 text-[34px] font-black tracking-[-0.04em] text-ink">Connexion</h2>
+              <p class="mt-3 max-w-md text-[15px] leading-7 text-ink/56">Accede a l'espace repondeur commandes.</p>
+            </div>
+
+            <form id="login-form" class="space-y-5">
+              <label class="block">
+                <span class="mb-2.5 block text-sm font-bold text-ink/82">Utilisateur</span>
+                <input id="username" type="text" required placeholder="ex : admin" class="input-ui" value="admin" autocomplete="username" />
+              </label>
+              <label class="block">
+                <span class="mb-2.5 block text-sm font-bold text-ink/82">Mot de passe</span>
+                <input id="password" type="password" required placeholder="........" class="input-ui" autocomplete="current-password" />
+              </label>
+              <p id="login-error" class="hidden rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700"></p>
+              <button type="submit" class="btn-primary h-14 w-full text-base">Se connecter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app-view" class="app hidden">
+      <header class="topbar">
+        <div>
+          <h1>Commandes vocales</h1>
+          <p id="sync-status" class="small muted" style="margin-top:.25rem;">Automatisme Nextcloud en pause. Utiliser la synchronisation manuelle si besoin.</p>
+        </div>
+        <div class="actions">
+          <button id="sync-now" class="btn">Synchroniser Nextcloud manuellement</button>
+          <button id="create-last-50" class="btn btn-primary">Creer commandes 50 derniers audios charges</button>
+          <button id="logout" class="btn">Deconnexion</button>
+        </div>
+      </header>
+
+      <div id="message" class="notice hidden"></div>
+
+      <section class="panel filters">
+        <div>
+          <label class="small muted">Recherche</label>
+          <input id="search" class="input" placeholder="Telephone, fichier, client, produit..." />
+        </div>
+        <div>
+          <label class="small muted">Statut</label>
+          <select id="status-filter" class="input">
+            <option value="all">Tous</option>
+            <option value="problem">A rappeler</option>
+            <option value="sent">Envoyees Copilote</option>
+            <option value="ready">Commandes pretes</option>
+            <option value="new">Nouveaux audios</option>
+          </select>
+        </div>
+        <div>
+          <label class="small muted">Date debut</label>
+          <input id="date-start" class="input" type="date" />
+        </div>
+        <div>
+          <label class="small muted">Date fin</label>
+          <input id="date-end" class="input" type="date" />
+        </div>
+        <button id="clear-filters" class="btn">Effacer filtres</button>
+        <button id="refresh-ui" class="btn">Recharger</button>
+      </section>
+
+      <div id="stats" class="stats"></div>
+      <main id="audio-list" class="list"></main>
+    </section>
+
+    <script src="./auth-config.js"></script>
+    <script>
+      const PASSWORD_KEY = "repondeur.prod.admin.password";
+      const DEFAULT_PASSWORD = window.EMALO_REPONDEUR_DEFAULT_PASSWORD || "";
+      const PORTAL_URL = "http://127.0.0.1:8764/";
+      let data = JSON.parse(JSON.stringify((window.repondeur && window.repondeur.uiData) || {}));
+      const state = {
+        openKey: "",
+        search: "",
+        status: "all",
+        dateStart: "",
+        dateEnd: "",
+        busyKey: "",
+        busyAction: "",
+        transcriptions: {},
+      };
+
+      const $ = (id) => document.getElementById(id);
+      const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[ch]));
+      const norm = (value) => String(value ?? "").trim().toUpperCase();
+      const pass = () => localStorage.getItem(PASSWORD_KEY) || DEFAULT_PASSWORD;
+      const payload = (value) => btoa(unescape(encodeURIComponent(JSON.stringify(value))));
+      const hasElectronBridge = () => Boolean(window.repondeur && window.repondeur.run);
+
+      function showLoginView() {
+        $("app-view").classList.add("hidden");
+        $("login-view").classList.remove("hidden");
+        $("login-error").classList.add("hidden");
+        $("password").value = "";
+      }
+
+      function showAppView() {
+        $("login-view").classList.add("hidden");
+        $("app-view").classList.remove("hidden");
+      }
+
+      function returnToPortal() {
+        showLoginView();
+        if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+          window.location.href = PORTAL_URL;
+        }
+      }
+
+      async function readUiDataAsync() {
+        if (window.repondeur && window.repondeur.readUiData) {
+          return window.repondeur.readUiData();
+        }
+        if (window.location.protocol.startsWith("http")) {
+          const response = await fetch("/api/ui-data", { cache: "no-store" });
+          if (!response.ok) throw new Error(`Chargement donnees impossible (${response.status})`);
+          return response.json();
+        }
+        return null;
+      }
+
+      async function runBackend(args) {
+        if (hasElectronBridge()) {
+          return window.repondeur.run(args);
+        }
+        if (window.location.protocol.startsWith("http")) {
+          const response = await fetch("/api/run", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ args }),
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok && !result.message) {
+            result.message = `Erreur serveur (${response.status})`;
+          }
+          return result;
+        }
+        return { ok: false, message: "Aucun moteur applicatif disponible.", logs: [] };
+      }
+
+      function audioSrc(audio) {
+        if (window.location.protocol.startsWith("http")) {
+          return `/api/audio/${encodeURIComponent(audio.key)}`;
+        }
+        return audio.file_url || "";
+      }
+
+      function audioKey(value) {
+        const name = String(value || "").replace(/\\/g, "/").split("/").pop().replace("__transcription.json", "");
+        const stem = name.replace(/\.[^.]+$/, "");
+        return stem.replace(/[^A-Za-z0-9_.-]+/g, "-").replace(/^-+|-+$/g, "").toLowerCase();
+      }
+
+      function orderRefForAudio(audio) {
+        const stem = String(audio?.name || "").replace(/\.[^.]+$/, "").replace(/[^A-Za-z0-9_.-]+/g, "-").replace(/^-+|-+$/g, "");
+        return `NC-${stem.slice(0, 64) || "AUDIO"}`;
+      }
+
+      function sameAudio(audio, source) {
+        if (!audio || !source) return false;
+        return audioKey(audio.name) === audioKey(source) || audioKey(audio.path) === audioKey(source);
+      }
+
+      function orderForAudio(audio) {
+        const ref = orderRefForAudio(audio);
+        return (data.orders || []).find((order) => order.order_ref === ref || sameAudio(audio, order.source_audio)) || null;
+      }
+
+      function problemForAudio(audio) {
+        return (data.problematic || []).find((row) => sameAudio(audio, row.audio_source)) || null;
+      }
+
+      function audioState(audio) {
+        const order = orderForAudio(audio);
+        const problem = problemForAudio(audio);
+        if (problem || (order && (norm(order.statut) === "ERREUR" || (order.validation_errors || []).length))) {
+          return { code: "problem", label: "A rappeler", cls: "b-problem" };
+        }
+        if (order && norm(order.statut) === "ENVOYE") return { code: "sent", label: "Envoyee Copilote", cls: "b-sent" };
+        if (order && order.can_send) return { code: "ready", label: "Commande prete", cls: "b-ready" };
+        if (state.transcriptions[audio.key] || audio.transcribed) return { code: "transcribed", label: "Transcrite", cls: "b-trans" };
+        if (audio.handled) return { code: "history", label: "Historique", cls: "b-history" };
+        return { code: "new", label: "Nouveau", cls: "b-new" };
+      }
+
+      function matchesFilters(audio) {
+        const st = audioState(audio);
+        if (state.status === "problem" && st.code !== "problem") return false;
+        if (state.status === "sent" && st.code !== "sent") return false;
+        if (state.status === "ready" && st.code !== "ready") return false;
+        if (state.status === "new" && st.code !== "new") return false;
+        if (state.dateStart && audio.date && audio.date < state.dateStart) return false;
+        if (state.dateEnd && audio.date && audio.date > state.dateEnd) return false;
+        if (state.search) {
+          const order = orderForAudio(audio) || {};
+          const products = (order.products || []).flatMap((p) => [p.product_code, p.product_label, p.quantity, p.unit]);
+          const hay = [audio.name, audio.phone, audio.date, audio.time, order.client, order.client_code, order.copilote_numero, ...products].join(" ").toLowerCase();
+          if (!hay.includes(state.search.toLowerCase())) return false;
+        }
+        return true;
+      }
+
+      async function refreshDataAsync() {
+        const latest = await readUiDataAsync();
+        if (latest) data = JSON.parse(JSON.stringify(latest));
+      }
+
+      function refreshData() {
+        if (window.repondeur && window.repondeur.readUiData) {
+          const latest = window.repondeur.readUiData();
+          if (latest) data = JSON.parse(JSON.stringify(latest));
+        }
+      }
+
+      function showMessage(ok, text, logs) {
+        const box = $("message");
+        box.classList.remove("hidden", "ok", "err");
+        box.classList.add(ok ? "ok" : "err");
+        box.innerHTML = `<strong>${esc(text || "")}</strong>${logs && logs.length ? `<div class="small" style="margin-top:.35rem;">${logs.map(esc).join("<br>")}</div>` : ""}`;
+      }
+
+      async function run(args, label, key, action) {
+        state.busyKey = key || "";
+        state.busyAction = action || "";
+        render();
+        let res;
+        try {
+          res = await runBackend(args);
+        } catch (error) {
+          res = { ok: false, message: error.message || String(error), logs: [] };
+        }
+        await refreshDataAsync();
+        state.busyKey = "";
+        state.busyAction = "";
+        showMessage(!!res.ok, `${label} : ${res.message || "termine"}`, res.logs || []);
+        render();
+        return res;
+      }
+
+      async function transcribeAudio(key) {
+        const res = await run(["transcribe-audio", payload({ key })], "Transcription", key, "transcribe");
+        if (res.ok && res.result && res.result.transcription) {
+          state.transcriptions[key] = res.result.transcription;
+          state.openKey = key;
+          render();
+        }
+      }
+
+      async function createAudioOrder(key) {
+        const res = await run(["create-audio-order", payload({ keys: [key] })], "Creation commande", key, "create");
+        if (res.ok) {
+          state.openKey = key;
+          render();
+        }
+      }
+
+      async function createLoadedAudios(limit) {
+        const button = $("create-last-50");
+        button.disabled = true;
+        showMessage(true, `Traitement des ${limit} derniers audios charges...`, []);
+        try {
+          await refreshDataAsync();
+          const audios = (data.audio_files || []).slice(0, limit);
+          const keys = audios.map((audio) => audio.key).filter(Boolean);
+          if (!keys.length) {
+            showMessage(false, "Aucun audio disponible a traiter.", []);
+            render();
+            return;
+          }
+          await run(
+            ["process-audios", payload({ keys }), "--mode", "prod"],
+            `Creation commandes ${keys.length} derniers audios`,
+            "__bulk__",
+            "bulk-create",
+          );
+        } finally {
+          button.disabled = false;
+        }
+      }
+
+      async function sendAudioOrder(key) {
+        const audio = (data.audio_files || []).find((item) => item.key === key);
+        const order = orderForAudio(audio);
+        if (!order || !order.can_send) {
+          showMessage(false, "Creer une commande valide avant l'envoi Copilote.", []);
+          return;
+        }
+        await run(["send", "--mode", "prod", order.order_ref], "Envoi Copilote", key, "send");
+        state.openKey = key;
+      }
+
+      function currentRecognitionContext(audio, source) {
+        const problem = problemForAudio(audio) || {};
+        const order = orderForAudio(audio) || {};
+        const selected = source === "problem" ? problem : order;
+        const reasons = source === "problem"
+          ? String(problem.raisons_problematiques || "").split("|").map((item) => item.trim()).filter(Boolean)
+          : (order.validation_errors || []);
+        return {
+          orderRef: selected.order_ref || order.order_ref || "",
+          status: selected.statut || selected.status || "",
+          reasons,
+          transcription: state.transcriptions[audio.key] || problem.transcription || order.transcription || "",
+        };
+      }
+
+      async function saveTestCorrections(button) {
+        const block = button.closest("[data-correction-block]");
+        if (!block) return;
+        const key = block.dataset.key || "";
+        const audio = (data.audio_files || []).find((item) => item.key === key) || {};
+        const source = block.dataset.source || "";
+        const context = currentRecognitionContext(audio, source);
+        const clientInput = block.querySelector("input[data-correction='client']");
+        const productInputs = Array.from(block.querySelectorAll("input[data-correction='product']"));
+        const payloadData = {
+          source,
+          order_ref: context.orderRef,
+          status: context.status,
+          reasons: context.reasons,
+          transcription: context.transcription,
+          audio: {
+            key: audio.key || key,
+            name: audio.name || "",
+            path: audio.path || "",
+            phone: audio.phone || "",
+            date: audio.date || "",
+            time: audio.time || "",
+          },
+          client: {
+            recognized: block.dataset.clientRecognized === "1",
+            code: block.dataset.clientCode || "",
+            display: block.dataset.clientDisplay || "",
+            corrected_code: clientInput ? clientInput.value.trim() : "",
+          },
+          products: productInputs.map((input) => ({
+            order: input.dataset.order || "",
+            recognized: input.dataset.recognized === "1",
+            code: input.dataset.code || "",
+            label: input.dataset.label || "",
+            quantity: input.dataset.quantity || "",
+            unit: input.dataset.unit || "",
+            source_text: input.dataset.sourceText || "",
+            corrected_code: input.value.trim(),
+          })),
+        };
+
+        button.disabled = true;
+        const status = block.querySelector("[data-correction-status]");
+        if (status) status.textContent = "Enregistrement...";
+        let res;
+        try {
+          res = await runBackend(["save-test-corrections", payload(payloadData)]);
+        } catch (error) {
+          res = { ok: false, message: error.message || String(error), logs: [] };
+        }
+        button.disabled = false;
+        if (status) {
+          status.textContent = res.ok ? "Corrections enregistrees." : (res.message || "Erreur d'enregistrement.");
+          status.style.color = res.ok ? "var(--ok)" : "var(--red)";
+        }
+        showMessage(!!res.ok, res.message || "Corrections test enregistrees.", res.logs || []);
+      }
+
+      function renderStats(audios) {
+        const all = data.audio_files || [];
+        const counts = all.reduce((acc, audio) => {
+          const code = audioState(audio).code;
+          acc[code] = (acc[code] || 0) + 1;
+          return acc;
+        }, {});
+        $("stats").innerHTML = [
+          `Affiches: ${audios.length}`,
+          `Total: ${all.length}`,
+          `A rappeler: ${counts.problem || 0}`,
+          `Pretes: ${counts.ready || 0}`,
+          `Envoyees: ${counts.sent || 0}`,
+          `Nouveaux: ${counts.new || 0}`,
+        ].map((text) => `<span class="stat">${esc(text)}</span>`).join("");
+      }
+
+      function renderOrder(order, audio) {
+        if (!order) return `<div class="muted small">Aucune commande creee pour cet audio.</div>`;
+        const recognition = renderRecognitionBlock({
+          audio,
+          source: "order",
+          orderRef: order.order_ref || "",
+          status: order.statut || "",
+          reasons: order.validation_errors || [],
+          clientDisplay: order.client || order.client_name || order.client_display,
+          clientCode: order.client_code,
+          clientRecognized: Boolean(order.client_code),
+          products: order.product_recognition && order.product_recognition.length ? order.product_recognition : (order.products || []).map((p, index) => ({
+            order: index + 1,
+            recognized: Boolean(p.product_code),
+            product_code: p.product_code,
+            product_label: p.product_label,
+            quantity: p.quantity,
+            unit: p.unit,
+            source_text: p.source_text || "",
+          })),
+        });
+        const products = (order.products || []).map((p) => `
+          <div class="product">
+            <strong>${esc(p.product_code)} x ${esc(p.quantity)} ${esc(p.unit)}</strong>
+            <div class="small muted">${esc(p.product_label)}</div>
+          </div>
+        `).join("");
+        const errors = (order.validation_errors || []).length
+          ? `<div class="small" style="color:var(--red);margin-top:.45rem;">${order.validation_errors.map(esc).join("<br>")}</div>`
+          : "";
+        return `
+          <div><strong>${esc(order.order_ref)}</strong> <span class="muted small">${esc(order.statut)}</span></div>
+          <div class="small muted" style="margin-top:.3rem;">Client ${esc(order.client_code)} - ${esc(order.client)} | Livraison ${esc(order.date_livraison)}</div>
+          ${order.copilote_numero ? `<div class="small" style="color:var(--green);font-weight:800;margin-top:.3rem;">Copilote ${esc(order.copilote_numero)}</div>` : ""}
+          ${recognition}
+          ${errors}
+          <div class="products">${products || '<div class="small muted">Aucun produit.</div>'}</div>
+        `;
+      }
+
+      function renderRecognitionBlock(details) {
+        const products = details.products || [];
+        const rawClient = String(details.clientDisplay || "").trim();
+        const clientText = details.clientRecognized
+          ? `${rawClient || ""}${details.clientCode ? ` (${details.clientCode})` : ""}`
+          : (rawClient && rawClient.toLowerCase() !== "non reconnu" ? `Non reconnu (${rawClient})` : "Non reconnu");
+        const productRows = products.length ? products.map((product, index) => {
+          const label = product.recognized
+            ? `${product.product_label || ""}${product.product_code ? ` (${product.product_code})` : ""}`
+            : "Non reconnu";
+          const qty = [product.quantity, product.unit].filter(Boolean).join(" ");
+          const source = product.source_text ? `<div class="small muted" style="margin-top:.15rem;">Entendu : ${esc(product.source_text)}</div>` : "";
+          const order = product.order || index + 1;
+          return `
+            <div class="correction-row">
+              <div class="small">
+                <strong>Produit ${esc(order)} :</strong>
+                ${esc(label)}${qty ? ` <span class="muted">- ${esc(qty)}</span>` : ""}
+                ${source}
+              </div>
+              <input class="input correction-input" data-correction="product" data-order="${esc(order)}" data-recognized="${product.recognized ? "1" : "0"}" data-code="${esc(product.product_code || "")}" data-label="${esc(product.product_label || "")}" data-quantity="${esc(product.quantity || "")}" data-unit="${esc(product.unit || "")}" data-source-text="${esc(product.source_text || "")}" placeholder="Code article reel" />
+            </div>
+          `;
+        }).join("") : `
+          <div class="correction-row">
+            <div class="small"><strong>Produit 1 :</strong> Non reconnu</div>
+            <input class="input correction-input" data-correction="product" data-order="1" data-recognized="0" data-code="" data-label="" data-quantity="" data-unit="" data-source-text="" placeholder="Code article reel" />
+          </div>
+        `;
+        const audioKeyValue = details.audio && details.audio.key ? details.audio.key : "";
+        return `
+          <div class="box" data-correction-block="1" data-key="${esc(audioKeyValue)}" data-source="${esc(details.source || "")}" data-order-ref="${esc(details.orderRef || "")}" data-client-recognized="${details.clientRecognized ? "1" : "0"}" data-client-code="${esc(details.clientCode || "")}" data-client-display="${esc(rawClient || clientText)}" style="margin-top:.65rem;background:#fff;">
+            <div class="correction-row">
+              <div class="small"><strong>Client :</strong> ${esc(clientText)}</div>
+              <input class="input correction-input" data-correction="client" placeholder="Code client reel" />
+            </div>
+            <div style="margin-top:.1rem;">${productRows}</div>
+            <div style="display:flex;justify-content:flex-end;margin-top:.65rem;">
+              <button class="btn btn-primary" data-action="save-corrections" data-key="${esc(audioKeyValue)}">OK</button>
+            </div>
+            <div class="small muted correction-status" data-correction-status></div>
+          </div>
+        `;
+      }
+
+      function renderProblem(problem, audio) {
+        if (!problem) return "";
+        const recognition = renderRecognitionBlock({
+          audio,
+          source: "problem",
+          orderRef: problem.order_ref || "",
+          status: problem.statut || problem.status || "",
+          reasons: String(problem.raisons_problematiques || "").split("|").map((item) => item.trim()).filter(Boolean),
+          clientDisplay: problem.client_display || problem.client_nom || "",
+          clientCode: problem.client_code || "",
+          clientRecognized: Boolean(problem.client_recognized || problem.client_code),
+          products: problem.product_recognition || [],
+        });
+        return `
+          <div class="box" style="border-color:#fecaca;">
+            <h2 style="color:var(--red);">A rappeler</h2>
+            ${recognition}
+            <div class="small" style="margin-top:.35rem;">${esc(problem.raisons_problematiques || "Commande problematique")}</div>
+            ${problem.transcription ? `<div class="small muted" style="margin-top:.6rem;line-height:1.5;">${esc(problem.transcription)}</div>` : ""}
+          </div>
+        `;
+      }
+
+      function renderDetail(audio) {
+        const order = orderForAudio(audio);
+        const problem = problemForAudio(audio);
+        const text = state.transcriptions[audio.key] || (problem && problem.transcription) || "";
+        const anyBusy = !!state.busyKey;
+        const busy = state.busyKey === audio.key;
+        return `
+          <div class="detail">
+            <div class="box">
+              <h2>Audio</h2>
+              <audio controls preload="metadata" style="width:100%;margin-top:.55rem;" src="${esc(audioSrc(audio))}"></audio>
+              <div class="small muted" style="margin-top:.55rem;overflow-wrap:anywhere;">${esc(audio.path || "")}</div>
+              <div class="actions" style="justify-content:flex-start;margin-top:.7rem;">
+                <button class="btn btn-primary" data-action="transcribe" data-key="${esc(audio.key)}" ${anyBusy ? "disabled" : ""}>${busy && state.busyAction === "transcribe" ? "Transcription..." : "Transcrire la commande"}</button>
+                <button class="btn" data-action="create" data-key="${esc(audio.key)}" ${anyBusy ? "disabled" : ""}>${busy && state.busyAction === "create" ? "Creation..." : "Creer commande"}</button>
+                <button class="btn btn-danger" data-action="send" data-key="${esc(audio.key)}" ${anyBusy || !(order && order.can_send) ? "disabled" : ""}>${busy && state.busyAction === "send" ? "Envoi..." : "Envoyer a Copilote"}</button>
+              </div>
+            </div>
+            <div style="display:grid;gap:.75rem;">
+              <div class="box">
+                <h2>Transcription</h2>
+                <div class="small" style="margin-top:.45rem;line-height:1.5;white-space:pre-wrap;">${text ? esc(text) : "Cliquer sur Transcrire la commande pour afficher le texte."}</div>
+              </div>
+              <div class="box">
+                <h2>Commande retenue</h2>
+                <div style="margin-top:.45rem;">${renderOrder(order, audio)}</div>
+              </div>
+              ${renderProblem(problem, audio)}
+            </div>
+          </div>
+        `;
+      }
+
+      function rowHtml(audio) {
+        const st = audioState(audio);
+        const order = orderForAudio(audio);
+        const busy = state.busyKey === audio.key;
+        const anyBusy = !!state.busyKey;
+        const open = state.openKey === audio.key;
+        return `
+          <article class="audio-row">
+            <div class="audio-main">
+              <div><strong>${esc(audio.date || "-")}</strong></div>
+              <div class="small">${esc(audio.time || "")}</div>
+              <div><strong>${esc(audio.phone || "Tel. inconnu")}</strong></div>
+              <div>
+                <div class="file-name">${esc(audio.name)}</div>
+                <div class="small muted">${Math.round((Number(audio.size || 0) / 1024) || 0)} Ko${order ? ` | ${esc(order.client_code || "")}` : ""}</div>
+              </div>
+              <div><span class="badge ${st.cls}">${esc(st.label)}</span></div>
+              <div class="actions">
+                <button class="btn" data-action="detail" data-key="${esc(audio.key)}">${open ? "Fermer" : "Detail"}</button>
+                <button class="btn" data-action="transcribe" data-key="${esc(audio.key)}" ${anyBusy ? "disabled" : ""}>${busy && state.busyAction === "transcribe" ? "Transcription..." : "Transcrire"}</button>
+                <button class="btn" data-action="create" data-key="${esc(audio.key)}" ${anyBusy ? "disabled" : ""}>${busy && state.busyAction === "create" ? "Creation..." : "Creer commande"}</button>
+                <button class="btn btn-primary" data-action="send" data-key="${esc(audio.key)}" ${anyBusy || !order || !order.can_send ? "disabled" : ""}>${busy && state.busyAction === "send" ? "Envoi..." : "Envoyer"}</button>
+              </div>
+            </div>
+            ${busy ? '<div class="loading"></div>' : ""}
+            ${open ? renderDetail(audio) : ""}
+          </article>
+        `;
+      }
+
+      function render() {
+        const audios = (data.audio_files || []).filter(matchesFilters);
+        renderStats(audios);
+        $("sync-status").textContent = data.generated_at
+          ? `Dernier chargement : ${data.generated_at}`
+          : "Donnees locales non chargees.";
+        $("audio-list").innerHTML = audios.length
+          ? audios.map(rowHtml).join("")
+          : '<div class="panel" style="padding:1.2rem;text-align:center;color:var(--muted);">Aucun audio pour ces filtres.</div>';
+      }
+
+      function setFilterEvents() {
+        $("search").addEventListener("input", (event) => { state.search = event.target.value.trim(); render(); });
+        $("status-filter").addEventListener("change", (event) => { state.status = event.target.value; render(); });
+        $("date-start").addEventListener("change", (event) => { state.dateStart = event.target.value; render(); });
+        $("date-end").addEventListener("change", (event) => { state.dateEnd = event.target.value; render(); });
+        $("clear-filters").addEventListener("click", () => {
+          state.search = "";
+          state.status = "all";
+          state.dateStart = "";
+          state.dateEnd = "";
+          $("search").value = "";
+          $("status-filter").value = "all";
+          $("date-start").value = "";
+          $("date-end").value = "";
+          render();
+        });
+        $("refresh-ui").addEventListener("click", async () => {
+          await run(["generate-prod-ui-data"], "Rechargement", "", "refresh");
+        });
+        $("sync-now").addEventListener("click", async () => {
+          await run(["prod-sync"], "Synchronisation Nextcloud", "", "sync");
+        });
+        $("create-last-50").addEventListener("click", async () => {
+          await createLoadedAudios(50);
+        });
+        $("audio-list").addEventListener("click", (event) => {
+          const button = event.target.closest("button[data-action]");
+          if (!button) return;
+          const key = button.dataset.key;
+          const action = button.dataset.action;
+          if (action === "detail") {
+            state.openKey = state.openKey === key ? "" : key;
+            render();
+          } else if (action === "transcribe") {
+            state.openKey = key;
+            transcribeAudio(key);
+          } else if (action === "create") {
+            state.openKey = key;
+            createAudioOrder(key);
+          } else if (action === "send") {
+            state.openKey = key;
+            sendAudioOrder(key);
+          } else if (action === "save-corrections") {
+            saveTestCorrections(button);
+          }
+        });
+      }
+
+      function startAutoSync() {
+        $("sync-status").textContent = "Automatisme Nextcloud en pause. Aucun traitement ne se lance sans action manuelle.";
+      }
+
+      $("login-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if ($("username").value.trim() !== "admin" || $("password").value !== pass()) {
+          $("login-error").textContent = "Identifiants incorrects.";
+          $("login-error").classList.remove("hidden");
+          return;
+        }
+        showAppView();
+        await refreshDataAsync();
+        render();
+        startAutoSync();
+      });
+      $("logout").addEventListener("click", returnToPortal);
+
+      showLoginView();
+      setFilterEvents();
+    </script>
+  </body>
+</html>

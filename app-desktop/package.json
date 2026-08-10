@@ -1,0 +1,56 @@
+{
+  "name": "repondeur-commandes",
+  "productName": "Repondeur Commandes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Application repondeur commandes - Groupe EMALO",
+  "author": "EMALO",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.emalo.repondeur-commandes",
+    "productName": "Repondeur Commandes",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "renderer/assets/icons/emalo-repondeur-2026.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "installerIcon": "renderer/assets/icons/emalo-repondeur-2026.ico",
+      "uninstallerIcon": "renderer/assets/icons/emalo-repondeur-2026.ico",
+      "installerHeaderIcon": "renderer/assets/icons/emalo-repondeur-2026.ico",
+      "artifactName": "Repondeur-Commandes-Setup-${version}.exe",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Repondeur Commandes"
+    }
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

@@ -1,0 +1,58 @@
+# Secrets and machine-specific configuration
+config/*.json
+!config/openai-recognition.json
+!config/regles-apprentissage.json
+!config/synonymes-produits.json
+!config/references-articles-controle.json
+!config/catalogue-articles.json
+!config/*.json.example
+config/*.csv
+!config/*.csv.example
+!config/unites-articles.csv
+portal_config.json
+app-desktop/renderer/auth-config.js
+.env
+*.pem
+*.key
+
+# Customer, product, audio and order data
+ressources-originales/
+resultats/
+cache/
+copilote/runs/
+copilote/*.csv
+copilote/*.bin
+copilote/*-pid.txt
+app-desktop/renderer/repondeur-data.js
+app-desktop/renderer/live-data*.json
+app-desktop/renderer/admin-insights.json
+
+# Dependencies, models and generated artifacts
+.venv/
+.venv*/
+node_modules/
+app-desktop/node_modules/
+app-desktop/dist/
+ms-playwright/
+backups/
+sauvegardes/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.bak*
+*.log
+*.tmp
+
+# Tests containing production-derived personal fixtures
+tests/test_clients.py
+tests/test_contexte_asr.py
+tests/test_belloteka_regressions.py
+
+# Temporary evaluations and local tooling
+tmp_eval_*.py
+.tmp_*.py
+.codex
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

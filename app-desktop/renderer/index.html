@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repondeur Commandes</title>
+    <link rel="icon" type="image/png" href="assets/icons/emalo-repondeur-2026.png" />
+    <style>
+      :root {
+        --bg: #f4f0e8;
+        --panel: #ffffff;
+        --panel-soft: #faf7f1;
+        --line: #ded6ca;
+        --text: #17202a;
+        --muted: #667085;
+        --dark: #18202a;
+        --dark-2: #24303d;
+        --accent: #0f766e;
+        --accent-soft: rgba(15, 118, 110, 0.12);
+        --danger: #b42318;
+        --warning: #b45309;
+        --shadow: 0 18px 44px rgba(24, 32, 42, 0.08);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 28%),
+          radial-gradient(circle at top right, rgba(35, 99, 235, 0.05), transparent 24%),
+          linear-gradient(180deg, #f9f6ef 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      button, input, select, textarea { font: inherit; }
+      button { cursor: pointer; }
+      .hidden { display: none !important; }
+      .app-shell { min-height: 100vh; }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .surface {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(222, 214, 202, 0.95);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+      .btn {
+        border: 1px solid transparent;
+        border-radius: 14px;
+        padding: 0.75rem 1rem;
+        font-weight: 800;
+        transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: var(--dark);
+        color: white;
+        box-shadow: 0 8px 18px rgba(24, 32, 42, 0.18);
+      }
+      .btn-primary:hover { background: var(--dark-2); }
+      .btn-secondary {
+        background: white;
+        border-color: var(--line);
+        color: var(--text);
+      }
+      .btn-secondary:hover { background: #f8f5ef; }
+      .btn-danger {
+        background: #fff5f4;
+        border-color: #fec9c4;
+        color: var(--danger);
+      }
+      .btn-danger:hover { background: #fff0ee; }
+      .input {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fcfbf8;
+        padding: 0.85rem 1rem;
+        outline: none;
+        color: var(--text);
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+      .input:focus {
+        border-color: var(--accent);
+        background: white;
+        box-shadow: 0 0 0 4px var(--accent-soft);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 999px;
+        padding: 0.35rem 0.7rem;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .badge-pending { background: #ecfdf3; color: #047857; }
+      .badge-sent { background: #e0f2fe; color: #075985; }
+      .badge-error { background: #fff1f2; color: var(--danger); }
+      .badge-ignore { background: #f3f4f6; color: #475467; }
+      .badge-info { background: #eff6ff; color: #1d4ed8; }
+      .sidebar-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+        border-radius: 16px;
+        border: 1px solid transparent;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.76);
+        font-weight: 800;
+        text-align: left;
+      }
+      .sidebar-btn:hover { background: rgba(255, 255, 255, 0.08); color: white; }
+      .sidebar-btn.active {
+        background: white;
+        color: var(--dark);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+        padding: 0.95rem 1rem;
+      }
+      .metric-label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .metric-value {
+        margin-top: 0.35rem;
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--text);
+      }
+      .metric-value.accent { color: var(--accent); }
+      .metric-value.danger { color: var(--danger); }
+      .table-wrap {
+        overflow: auto;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 920px;
+      }
+      thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: var(--dark);
+        color: white;
+        text-align: left;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 0.9rem 0.95rem;
+      }
+      tbody td {
+        padding: 0.9rem 0.95rem;
+        border-top: 1px solid #ece6dc;
+        vertical-align: top;
+        font-size: 14px;
+      }
+      tbody tr:hover { background: #faf7f1; }
+      tbody tr.selected { background: #edf9f7; }
+      .two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.9fr);
+        gap: 1rem;
+      }
+      .section-title {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.1;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+      .section-subtitle {
+        margin: 0.35rem 0 0;
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      .pulse {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px rgba(15, 118, 110, 0.12);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border-radius: 999px;
+        padding: 0.45rem 0.75rem;
+        font-size: 12px;
+        font-weight: 800;
+        border: 1px solid var(--line);
+        background: white;
+      }
+      .panel-title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+      .detail-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+      .detail-line {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 13px;
+        border-bottom: 1px dashed #eadfd1;
+        padding-bottom: 0.55rem;
+      }
+      .detail-line strong { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+      .product-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fcfbf8;
+        padding: 0.85rem 0.9rem;
+      }
+      .problem-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: white;
+        padding: 0.9rem 1rem;
+      }
+      .muted { color: var(--muted); }
+      .loading {
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), #3b82f6, var(--accent));
+        background-size: 200% 100%;
+        animation: load 0.9s linear infinite;
+      }
+      @keyframes load {
+        from { background-position: 0% 0%; }
+        to { background-position: 200% 0%; }
+      }
+
+      @media (max-width: 1100px) {
+        .two-col { grid-template-columns: 1fr; }
+        table { min-width: 780px; }
+      }
+      @media (max-width: 900px) {
+        .app-main { grid-template-columns: 1fr !important; }
+        .sidebar { position: static !important; height: auto !important; min-height: 0 !important; }
+        .login-grid { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="login-view" class="login-grid" style="display:grid;grid-template-columns:1.05fr 0.95fr;min-height:100vh;">
+        <div style="padding:3rem;display:flex;align-items:center;">
+          <div style="max-width:640px;">
+            <div style="display:flex;align-items:center;gap:0.85rem;">
+              <div style="width:3rem;height:3rem;border-radius:1rem;background:var(--dark);color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 10px 24px rgba(24,32,42,.2);">RC</div>
+              <div>
+                <div style="font-size:11px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(23,32,42,.45);">Repondeur</div>
+                <div style="font-weight:800;">Commandes BASCO</div>
+              </div>
+            </div>
+            <div style="margin-top:4rem;">
+              <div class="pill" style="background:rgba(15,118,110,.08);border-color:rgba(15,118,110,.18);color:var(--accent);">Nextcloud -> vocal -> validation -> Copilote</div>
+              <h1 style="margin:1rem 0 0;font-size:clamp(2.8rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.06em;font-weight:900;max-width:13ch;">Une console pour piloter les commandes du repondeur.</h1>
+              <p style="max-width:46rem;margin:1rem 0 0;color:var(--muted);font-size:1rem;line-height:1.7;">
+                On suit les commandes issues du repondeur, on corrige les cas problematiques, on valide le CSV et on envoie uniquement ce qui est pret vers Copilote.
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;">
+                <span class="pill">Selection par commande</span>
+                <span class="pill">Detail produits</span>
+                <span class="pill">Commandes problematiques</span>
+                <span class="pill">Envoi selected / all</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:3rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#1d2731 0%,#18202a 100%);">
+          <div class="card" style="width:min(100%,460px);padding:2rem;">
+            <div style="margin-bottom:1.5rem;">
+              <div style="font-size:11px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(23,32,42,.45);">Acces securise</div>
+              <h2 style="margin:.8rem 0 0;font-size:2rem;line-height:1.1;font-weight:900;">Connexion</h2>
+              <p style="margin:.65rem 0 0;color:var(--muted);line-height:1.6;">Compte local de travail pour la POC. Valeur par defaut: admin / admin.</p>
+            </div>
+            <form id="login-form" class="detail-grid">
+              <label>
+                <div class="panel-title">Utilisateur</div>
+                <input id="username" class="input" type="text" autocomplete="username" value="admin" />
+              </label>
+              <label>
+                <div class="panel-title">Mot de passe</div>
+                <input id="password" class="input" type="password" autocomplete="current-password" placeholder="admin" />
+              </label>
+              <p id="login-error" class="hidden" style="margin:0;padding:.8rem 1rem;border-radius:14px;background:#fff1f2;border:1px solid #fecdd3;color:var(--danger);font-weight:800;"></p>
+              <button class="btn btn-primary" type="submit" style="width:100%;padding:0.95rem 1rem;">Entrer</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="app-view" class="hidden" style="min-height:100vh;">
+        <div class="app-main" style="display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh;">
+          <aside class="sidebar" style="background:linear-gradient(180deg,var(--dark) 0%,#101722 100%);color:white;padding:1.1rem;position:sticky;top:0;height:100vh;">
+            <div class="surface" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);padding:1rem;">
+              <div style="display:flex;align-items:center;gap:.8rem;">
+                <div style="width:2.7rem;height:2.7rem;border-radius:.9rem;background:white;color:var(--dark);display:grid;place-items:center;font-weight:900;">RC</div>
+                <div>
+                  <div style="font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);">Repondeur</div>
+                  <div id="brand-title" style="font-size:1.05rem;font-weight:900;">BASCO</div>
+                </div>
+              </div>
+              <div style="margin-top:1rem;padding:.85rem .9rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);">
+                <div style="display:flex;justify-content:space-between;gap:1rem;align-items:center;">
+                  <div>
+                    <div style="font-size:10px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);">Session</div>
+                    <div id="sidebar-user" style="font-weight:800;">admin</div>
+                  </div>
+                  <div id="sidebar-role" class="badge" style="background:rgba(255,255,255,.08);color:white;border:1px solid rgba(255,255,255,.12);">ADMIN</div>
+                </div>
+                <div style="margin-top:.65rem;color:rgba(255,255,255,.52);font-size:12px;display:flex;align-items:center;gap:.45rem;">
+                  <span class="pulse"></span>
+                  Operations en cours
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <button class="sidebar-btn active" data-menu="dashboard"><span>Tableau de bord</span><span>></span></button>
+              <button class="sidebar-btn" data-menu="problematic"><span>Commandes problematiques</span><span>></span></button>
+              <button class="sidebar-btn" data-menu="password"><span>Mon mot de passe</span><span>></span></button>
+              <button class="sidebar-btn" data-menu="guide"><span>Guide utilisateur</span><span>></span></button>
+              <button class="sidebar-btn" data-menu="support"><span>Support</span><span>></span></button>
+            </div>
+
+            <button id="logout-btn" class="btn btn-secondary" style="margin-top:auto;width:100%;">Deconnexion</button>
+          </aside>
+
+          <section style="padding:1.1rem;min-width:0;">
+            <div class="surface" style="padding:1.1rem 1.15rem;">
+              <div style="display:flex;gap:1rem;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;">
+                <div>
+                  <div class="pill" style="background:#f7fafc;border-color:var(--line);">Pilotage repondeur</div>
+                  <h1 id="page-title" class="section-title" style="margin-top:.8rem;">Tableau de bord</h1>
+                  <p id="page-subtitle" class="section-subtitle">Les commandes affichées viennent du CSV validé issu des audios Nextcloud, puis partent vers Copilote.</p>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;">
+                  <span id="session-pill" class="pill">admin</span>
+                  <span id="selection-pill" class="pill">0 selectionnee</span>
+                  <span id="queue-pill" class="pill">0 a envoyer</span>
+                  <span id="problem-pill" class="pill">0 problematique</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="action-panel" class="surface" style="margin-top:1rem;padding:1rem 1.15rem;"></div>
+            <div id="stats-panel" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem;margin-top:1rem;"></div>
+            <div id="content-root" style="margin-top:1rem;"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./auth-config.js"></script>
+    <script>
+      const DEFAULT_PASSWORD = window.EMALO_REPONDEUR_DEFAULT_PASSWORD || "";
+      const PASSWORD_KEY = "repondeur.admin.password";
+      const data = (window.repondeur && window.repondeur.uiData) || window.REPONDEUR_DATA || { orders: [], problematic: [], paths: {} };
+      const state = {
+        menu: "dashboard",
+        selected: new Set(),
+        activeOrderRef: "",
+        query: "",
+      };
+
+      const $ = (id) => document.getElementById(id);
+      const loginView = $("login-view");
+      const appView = $("app-view");
+      const actionPanel = $("action-panel");
+      const statsPanel = $("stats-panel");
+      const contentRoot = $("content-root");
+      const pageTitle = $("page-title");
+      const pageSubtitle = $("page-subtitle");
+      const selectionPill = $("selection-pill");
+      const queuePill = $("queue-pill");
+      const problemPill = $("problem-pill");
+      const loginError = $("login-error");
+      const logoutBtn = $("logout-btn");
+      const menuButtons = [...document.querySelectorAll(".sidebar-btn[data-menu]")];
+
+      function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+      }
+
+      function normalize(value) {
+        return String(value ?? "").trim().toUpperCase();
+      }
+
+      function getPassword() {
+        return localStorage.getItem(PASSWORD_KEY) || DEFAULT_PASSWORD;
+      }
+
+      function setPassword(value) {
+        localStorage.setItem(PASSWORD_KEY, value);
+      }
+
+      function orderStatus(order) {
+        const explicit = normalize(order.statut);
+        if (explicit) return explicit;
+        if (order.products.every((p) => normalize(p.statut) === "IGNORE")) return "IGNORE";
+        if (order.products.every((p) => normalize(p.statut) === "ENVOYE")) return "ENVOYE";
+        if (order.products.every((p) => ["A_ENVOYE", "A_ENVOYER"].includes(normalize(p.statut)))) return "A_ENVOYE";
+        if (order.products.some((p) => normalize(p.statut) === "ERREUR")) return "ERREUR";
+        return "A_ENVOYE";
+      }
+
+      function isPending(order) {
+        return orderStatus(order) === "A_ENVOYE" && order.products.every((p) => ["A_ENVOYE", "A_ENVOYER"].includes(normalize(p.statut)));
+      }
+
+      function isSent(order) {
+        return orderStatus(order) === "ENVOYE";
+      }
+
+      function isError(order) {
+        return orderStatus(order) === "ERREUR";
+      }
+
+      function orderMatches(order, query) {
+        if (!query) return true;
+        const haystack = [
+          order.order_ref,
+          order.client,
+          order.client_code,
+          order.date_livraison,
+          order.copilote_numero,
+          order.message,
+          ...(order.products || []).flatMap((p) => [p.product_code, p.product_label, p.quantity, p.unit, p.statut]),
+        ].join(" ").toLowerCase();
+        return haystack.includes(query.toLowerCase());
+      }
+
+      function filteredOrders() {
+        return (data.orders || []).filter((order) => orderMatches(order, state.query));
+      }
+
+      function pendingOrders(list = filteredOrders()) {
+        return list.filter((order) => isPending(order));
+      }
+
+      function selectedOrders() {
+        return (data.orders || []).filter((order) => state.selected.has(order.order_ref));
+      }
+
+      function activeOrder() {
+        return (data.orders || []).find((order) => order.order_ref === state.activeOrderRef) || filteredOrders()[0] || null;
+      }
+
+      function badgeFor(order) {
+        const status = orderStatus(order);
+        if (status === "ENVOYE") return '<span class="badge badge-sent">Envoyee</span>';
+        if (status === "ERREUR") return '<span class="badge badge-error">Erreur</span>';
+        if (status === "IGNORE") return '<span class="badge badge-ignore">Ignoree</span>';
+        return '<span class="badge badge-pending">A envoyer</span>';
+      }
+
+      function metric(label, value, tone = "") {
+        return `<div class="metric"><div class="metric-label">${escapeHtml(label)}</div><div class="metric-value ${tone}">${escapeHtml(value)}</div></div>`;
+      }
+
+      function setMenu(menu) {
+        state.menu = menu;
+        menuButtons.forEach((button) => button.classList.toggle("active", button.dataset.menu === menu));
+      }
+
+      function renderStats() {
+        const orders = filteredOrders();
+        const pending = pendingOrders(orders);
+        const problematic = (data.problematic || []).length + orders.filter((o) => isError(o)).length;
+        statsPanel.innerHTML = [
+          metric("Commandes visibles", orders.length),
+          metric("A envoyer", pending.length, "accent"),
+          metric("Envoyees", orders.filter((o) => isSent(o)).length),
+          metric("Problematiques", problematic, "danger"),
+        ].join("");
+        selectionPill.textContent = `${state.selected.size} selectionnee${state.selected.size > 1 ? "s" : ""}`;
+        queuePill.textContent = `${pending.length} a envoyer`;
+        problemPill.textContent = `${problematic} problematique${problematic > 1 ? "s" : ""}`;
+      }
+
+      async function refreshData() {
+        if (!window.repondeur?.run) return;
+        await window.repondeur.run(["generate-ui-data"]);
+        location.reload();
+      }
+
+      async function runBackend(args, successLabel) {
+        actionPanel.innerHTML = '<div class="loading"></div><p style="margin:.7rem 0 0;font-weight:800;">Traitement en cours...</p>';
+        const result = await window.repondeur.run(args);
+        const logs = (result.logs || []).map((line) => `<li>${escapeHtml(line)}</li>`).join("");
+        actionPanel.innerHTML = `
+          <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;">
+            <div>
+              <div class="panel-title">${escapeHtml(successLabel || "Resultat")}</div>
+              <div style="margin-top:.35rem;font-weight:900;color:${result.ok ? "var(--accent)" : "var(--danger)"};">${escapeHtml(result.message || "Termine")}</div>
+            </div>
+            <button id="reload-data" class="btn btn-secondary">Recharger</button>
+          </div>
+          ${logs ? `<ul style="margin:.85rem 0 0;padding-left:1.2rem;color:var(--muted);font-size:13px;line-height:1.6;">${logs}</ul>` : ""}
+        `;
+        $("reload-data")?.addEventListener("click", refreshData);
+        if (result.ok) setTimeout(refreshData, 600);
+      }
+
+      function renderActionPanel() {
+        if (state.menu === "dashboard") {
+          actionPanel.innerHTML = `
+            <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;">
+              <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;">
+                <button id="sync-nextcloud" class="btn btn-secondary">Recuperer Nextcloud</button>
+                <button id="run-pipeline" class="btn btn-secondary">Traitement vocal</button>
+                <button id="select-all" class="btn btn-secondary">Tout selectionner</button>
+                <button id="clear-selection" class="btn btn-secondary">Vider selection</button>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;">
+                <button id="send-selected" class="btn btn-primary">Envoyer la selection</button>
+                <button id="send-all" class="btn btn-primary">Tout envoyer</button>
+              </div>
+            </div>
+            <div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;">
+              <input id="search-input" class="input" style="flex:1 1 280px;" placeholder="Recherche par commande, client, produit, code..." />
+              <button id="refresh-view" class="btn btn-secondary">Actualiser</button>
+            </div>
+          `;
+          $("sync-nextcloud").addEventListener("click", () => runBackend(["nextcloud-sync"], "Recuperation Nextcloud"));
+          $("run-pipeline").addEventListener("click", () => runBackend(["pipeline"], "Traitement vocal"));
+          $("select-all").addEventListener("click", () => {
+            pendingOrders().forEach((order) => state.selected.add(order.order_ref));
+            render();
+          });
+          $("clear-selection").addEventListener("click", () => {
+            state.selected.clear();
+            render();
+          });
+          $("send-selected").addEventListener("click", () => {
+            const refs = [...state.selected];
+            if (!refs.length) return alert("Selectionnez au moins une commande a envoyer.");
+            runBackend(["send", ...refs], "Envoi de la selection");
+          });
+          $("send-all").addEventListener("click", () => runBackend(["send", "--all"], "Envoi complet"));
+          $("refresh-view").addEventListener("click", refreshData);
+          $("search-input").value = state.query;
+          $("search-input").addEventListener("input", (event) => {
+            state.query = event.target.value.trim();
+            render();
+          });
+          return;
+        }
+
+        if (state.menu === "problematic") {
+          actionPanel.innerHTML = `
+            <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;">
+              <div>
+                <div class="panel-title">File de correction</div>
+                <div style="margin-top:.35rem;font-weight:900;">Commandes a revoir avant envoi Copilote</div>
+              </div>
+              <button id="go-dashboard" class="btn btn-secondary">Retour dashboard</button>
+            </div>
+          `;
+          $("go-dashboard").addEventListener("click", () => route("dashboard"));
+          return;
+        }
+
+        if (state.menu === "password") {
+          actionPanel.innerHTML = `
+            <form id="password-form" style="display:grid;gap:.75rem;max-width:420px;">
+              <div>
+                <div class="panel-title">Mot de passe local</div>
+                <p class="muted" style="margin:.35rem 0 0;line-height:1.5;">Change le mot de passe de la session admin stockee localement sur cette machine.</p>
+              </div>
+              <label>
+                <div class="panel-title">Nouveau mot de passe</div>
+                <input id="new-password" class="input" type="password" minlength="4" placeholder="Nouveau mot de passe" />
+              </label>
+              <button class="btn btn-primary" type="submit">Enregistrer</button>
+              <div id="password-feedback" class="muted" style="font-size:13px;"></div>
+            </form>
+          `;
+          $("password-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const value = $("new-password").value.trim();
+            if (value.length < 4) {
+              $("password-feedback").textContent = "4 caracteres minimum.";
+              return;
+            }
+            setPassword(value);
+            $("password-feedback").textContent = "Mot de passe mis a jour pour cette session locale.";
+          });
+          return;
+        }
+
+        if (state.menu === "guide") {
+          actionPanel.innerHTML = `
+            <div class="detail-grid" style="max-width:760px;">
+              <div class="problem-card">
+                <div class="panel-title">Procedure</div>
+                <div style="margin-top:.5rem;line-height:1.8;color:var(--text);">
+                  1. Recuperer les commandes Nextcloud.<br />
+                  2. Lancer le traitement vocal.<br />
+                  3. Verifier les commandes problematiques.<br />
+                  4. Selectionner les commandes valides.<br />
+                  5. Envoyer la selection ou tout envoyer vers Copilote.
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        if (state.menu === "support") {
+          actionPanel.innerHTML = `
+            <div class="detail-grid" style="max-width:860px;">
+              <div class="problem-card">
+                <div class="panel-title">Chemins</div>
+                <div style="margin-top:.75rem;display:grid;gap:.6rem;line-height:1.5;color:var(--text);">
+                  <div><strong style="color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px;">Projet</strong><br />${escapeHtml(data.paths?.project || "")}</div>
+                  <div><strong style="color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px;">CSV validé Nextcloud</strong><br />${escapeHtml(data.paths?.validated_csv || "")}</div>
+                  <div><strong style="color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px;">CSV Copilote</strong><br />${escapeHtml(data.paths?.copilote_csv || "")}</div>
+                  <div><strong style="color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px;">CSV problemes</strong><br />${escapeHtml(data.paths?.problem_csv || "")}</div>
+                </div>
+              </div>
+              <div class="problem-card">
+                <div class="panel-title">Point technique</div>
+                <p class="muted" style="margin:.75rem 0 0;line-height:1.6;">Copilote BASCO doit etre ouvert et connecte au moment de l'envoi direct. Le bouton d'envoi lance le backend local qui pousse les commandes depuis le CSV.</p>
+              </div>
+            </div>
+          `;
+          return;
+        }
+      }
+
+      function renderDashboard() {
+        const orders = filteredOrders();
+        if (!state.activeOrderRef && orders.length) state.activeOrderRef = orders[0].order_ref;
+        if (!orders.find((order) => order.order_ref === state.activeOrderRef)) state.activeOrderRef = orders[0]?.order_ref || "";
+
+        pageTitle.textContent = "Tableau de bord";
+        pageSubtitle.textContent = "Commandes regroupees par client avec selection, detail et envoi vers Copilote.";
+        renderActionPanel();
+        renderStats();
+
+        const active = activeOrder();
+        const activeSummary = active
+          ? `
+            <div class="problem-card">
+              <div class="panel-title">Commande active</div>
+              <div style="margin-top:.6rem;font-size:1.2rem;font-weight:900;">${escapeHtml(active.order_ref)}</div>
+              <div class="muted" style="margin-top:.35rem;line-height:1.5;">${escapeHtml(active.client_code)} - ${escapeHtml(active.client)}</div>
+              <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.45rem;">${badgeFor(active)}<span class="badge badge-info">${escapeHtml(active.date_livraison || "sans date")}</span></div>
+              <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+                <button class="btn btn-secondary" id="toggle-active-select">${state.selected.has(active.order_ref) ? "Retirer de la selection" : "Ajouter a la selection"}</button>
+                <button class="btn btn-primary" id="send-active">Envoyer cette commande</button>
+              </div>
+              <div style="margin-top:1rem;" class="detail-grid">
+                ${active.products.map((product) => `
+                  <div class="product-card">
+                    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+                      <div>
+                        <div style="font-weight:900;">${escapeHtml(product.product_code)}</div>
+                        <div class="muted" style="margin-top:.25rem;line-height:1.45;">${escapeHtml(product.product_label)}</div>
+                      </div>
+                      <span class="badge ${normalize(product.statut) === "ENVOYE" ? "badge-sent" : normalize(product.statut) === "ERREUR" ? "badge-error" : normalize(product.statut) === "IGNORE" ? "badge-ignore" : "badge-pending"}">${escapeHtml(product.statut || "A_ENVOYE")}</span>
+                    </div>
+                    <div style="margin-top:.75rem;display:flex;gap:.6rem;flex-wrap:wrap;color:var(--muted);font-size:13px;">
+                      <span><strong style="color:var(--text);">Qt:</strong> ${escapeHtml(product.quantity)}</span>
+                      <span><strong style="color:var(--text);">Unite:</strong> ${escapeHtml(product.unit)}</span>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          `
+          : `
+            <div class="problem-card">
+              <div class="panel-title">Aucune commande</div>
+              <p class="muted" style="margin:.75rem 0 0;">La recherche ne retourne rien pour le moment.</p>
+            </div>
+          `;
+
+        const tableRows = orders.map((order) => {
+          const selected = state.selected.has(order.order_ref);
+          const productPreview = order.products.slice(0, 2).map((p) => `${escapeHtml(p.product_code)} x ${escapeHtml(p.quantity)} ${escapeHtml(p.unit)}`).join("<br />");
+          const more = order.products.length > 2 ? `<div class="muted" style="margin-top:.35rem;font-size:12px;">+${order.products.length - 2} autre(s)</div>` : "";
+          return `
+            <tr class="${selected ? "selected" : ""}" data-order-row="${escapeHtml(order.order_ref)}">
+              <td><input type="checkbox" data-select-order="${escapeHtml(order.order_ref)}" ${selected ? "checked" : ""} ${isPending(order) ? "" : "disabled"} /></td>
+              <td style="font-weight:900;">${escapeHtml(order.order_ref)}</td>
+              <td><div style="font-weight:900;">${escapeHtml(order.client)}</div><div class="muted" style="font-size:12px;margin-top:.2rem;">${escapeHtml(order.client_code)}</div></td>
+              <td>${escapeHtml(order.date_livraison || "")}</td>
+              <td>${productPreview}${more}</td>
+              <td>${badgeFor(order)}</td>
+              <td>${escapeHtml(order.copilote_numero || "")}</td>
+              <td><button class="btn btn-secondary" data-open-order="${escapeHtml(order.order_ref)}" style="padding:.55rem .85rem;">Detail</button></td>
+            </tr>
+          `;
+        }).join("");
+
+        contentRoot.innerHTML = `
+          <div class="two-col">
+            <div class="card" style="padding:1rem;">
+              <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div class="panel-title">File de commandes</div>
+                  <h2 style="margin:.35rem 0 0;font-size:1.15rem;font-weight:900;">Commandes a envoyer</h2>
+                  <p class="muted" style="margin:.35rem 0 0;">Selectionne une ou plusieurs commandes, puis envoie-les vers Copilote.</p>
+                </div>
+                <div class="pill">${orders.length} visible(s)</div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Sel.</th>
+                      <th>Commande</th>
+                      <th>Client</th>
+                      <th>Livraison</th>
+                      <th>Produits</th>
+                      <th>Statut</th>
+                      <th>Copilote</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${tableRows || `<tr><td colspan="8" style="padding:2rem;text-align:center;color:var(--muted);">Aucune commande visible.</td></tr>`}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="detail-grid">
+              ${activeSummary}
+              <div class="problem-card">
+                <div class="panel-title">Selection</div>
+                <div style="margin-top:.6rem;font-size:1.05rem;font-weight:900;">${state.selected.size} commande(s)</div>
+                <div class="muted" style="margin-top:.35rem;line-height:1.6;">Les envois partent uniquement pour les commandes marquees A_ENVOYE ou A_ENVOYER.</div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        contentRoot.querySelectorAll("[data-select-order]").forEach((input) => {
+          input.addEventListener("change", (event) => {
+            const ref = event.target.dataset.selectOrder;
+            if (event.target.checked) state.selected.add(ref);
+            else state.selected.delete(ref);
+            render();
+          });
+        });
+
+        contentRoot.querySelectorAll("[data-open-order]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.activeOrderRef = button.dataset.openOrder;
+            render();
+          });
+        });
+
+        $("toggle-active-select")?.addEventListener("click", () => {
+          if (!active) return;
+          if (state.selected.has(active.order_ref)) state.selected.delete(active.order_ref);
+          else state.selected.add(active.order_ref);
+          render();
+        });
+
+        $("send-active")?.addEventListener("click", () => {
+          if (!active) return;
+          runBackend(["send", active.order_ref], "Envoi de la commande active");
+        });
+      }
+
+      function renderProblematic() {
+        const rows = [...(data.problematic || []), ...(data.orders || []).filter((order) => isError(order)).map((order) => ({
+          audio_source: order.order_ref,
+          client_code: order.client_code,
+          client_nom: order.client,
+          date_livraison: order.date_livraison,
+          raisons_problematiques: order.message || "Commande en erreur",
+          transcription: order.products.map((p) => `${p.product_code} x ${p.quantity} ${p.unit}`).join(" | "),
+        }))];
+
+        pageTitle.textContent = "Commandes problematiques";
+        pageSubtitle.textContent = "Cas a corriger avant envoi. Ouvre la commande, verifie les lignes et renvoie quand c'est pret.";
+        renderActionPanel();
+        renderStats();
+
+        contentRoot.innerHTML = `
+          <div class="two-col">
+            <div class="card" style="padding:1rem;">
+              <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div class="panel-title">File de correction</div>
+                  <h2 style="margin:.35rem 0 0;font-size:1.15rem;font-weight:900;">Cas a corriger</h2>
+                  <p class="muted" style="margin:.35rem 0 0;">Les elements remontes par la reconnaissance vocale ou marques en erreur sont ici.</p>
+                </div>
+                <div class="pill">${rows.length} ligne(s)</div>
+              </div>
+              <div style="display:grid;gap:.75rem;">
+                ${rows.length ? rows.map((row) => `
+                  <div class="problem-card">
+                    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap;">
+                      <div>
+                        <div style="font-weight:900;">${escapeHtml(row.client_code || row.audio_source || "")}</div>
+                        <div class="muted" style="margin-top:.3rem;line-height:1.55;">${escapeHtml(row.client_nom || "")}</div>
+                      </div>
+                      <span class="badge badge-error">${escapeHtml(row.raisons_problematiques || "A corriger")}</span>
+                    </div>
+                    <div class="muted" style="margin-top:.7rem;font-size:13px;line-height:1.6;">${escapeHtml(row.transcription || "")}</div>
+                    <div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+                      <button class="btn btn-secondary" data-open-problem="${escapeHtml(row.audio_source || row.client_code || "")}">Ouvrir</button>
+                    </div>
+                  </div>
+                `).join("") : `<div class="problem-card"><div class="muted">Aucune commande problematique.</div></div>`}
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="problem-card">
+                <div class="panel-title">Traitement</div>
+                <p class="muted" style="margin:.75rem 0 0;line-height:1.6;">Les corrections se font dans le tableau de bord en ouvrant la commande correspondante. Une fois la ligne propre, la selection part vers Copilote depuis le dashboard.</p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        contentRoot.querySelectorAll("[data-open-problem]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const ref = button.dataset.openProblem;
+            const match = (data.orders || []).find((order) => order.order_ref === ref || order.client_code === ref || order.client === ref);
+            if (match) {
+              state.activeOrderRef = match.order_ref;
+              route("dashboard");
+            }
+          });
+        });
+      }
+
+      function renderPassword() {
+        pageTitle.textContent = "Mon mot de passe";
+        pageSubtitle.textContent = "Gestion locale du mot de passe admin.";
+        renderActionPanel();
+        renderStats();
+        contentRoot.innerHTML = `<div class="card" style="padding:1rem;max-width:520px;"><div class="panel-title">Mot de passe local</div><p class="muted" style="margin:.55rem 0 1rem;line-height:1.6;">Le mot de passe est conserve dans le navigateur local de la machine. Il peut etre change ici sans toucher au backend.</p><form id="password-form" style="display:grid;gap:.75rem;"><label><div class="panel-title">Nouveau mot de passe</div><input id="new-password" class="input" type="password" minlength="4" placeholder="Nouveau mot de passe" /></label><button class="btn btn-primary" type="submit">Enregistrer</button><div id="password-feedback" class="muted" style="font-size:13px;"></div></form></div>`;
+        $("password-form").addEventListener("submit", (event) => {
+          event.preventDefault();
+          const value = $("new-password").value.trim();
+          if (value.length < 4) {
+            $("password-feedback").textContent = "4 caracteres minimum.";
+            return;
+          }
+          setPassword(value);
+          $("password-feedback").textContent = "Mot de passe mis a jour.";
+        });
+      }
+
+      function renderGuide() {
+        pageTitle.textContent = "Guide utilisateur";
+        pageSubtitle.textContent = "Le flux de travail du repondeur, dans l'ordre.";
+        renderActionPanel();
+        renderStats();
+        contentRoot.innerHTML = `
+          <div class="card" style="padding:1rem;max-width:820px;">
+            <div class="panel-title">Flux</div>
+            <div style="margin-top:.85rem;display:grid;gap:.8rem;">
+              <div class="problem-card"><strong>1.</strong> Recuperer les commandes vocales depuis Nextcloud.</div>
+              <div class="problem-card"><strong>2.</strong> Lancer le traitement vocal pour extraire client, produits et date.</div>
+              <div class="problem-card"><strong>3.</strong> Corriger les cas problemes dans la file dedicacee.</div>
+              <div class="problem-card"><strong>4.</strong> Selectionner les commandes prêtes.</div>
+              <div class="problem-card"><strong>5.</strong> Envoyer la selection ou tout le lot vers Copilote.</div>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderSupport() {
+        pageTitle.textContent = "Support";
+        pageSubtitle.textContent = "Chemins utiles et contraintes d'exploitation.";
+        renderActionPanel();
+        renderStats();
+        contentRoot.innerHTML = `
+          <div class="two-col">
+            <div class="card" style="padding:1rem;">
+              <div class="panel-title">Installation</div>
+              <div style="margin-top:.8rem;display:grid;gap:.75rem;">
+                <div class="problem-card"><strong>Projet</strong><div class="muted" style="margin-top:.25rem;">${escapeHtml(data.paths?.project || "")}</div></div>
+                <div class="problem-card"><strong>CSV validé Nextcloud</strong><div class="muted" style="margin-top:.25rem;">${escapeHtml(data.paths?.validated_csv || "")}</div></div>
+                <div class="problem-card"><strong>CSV Copilote</strong><div class="muted" style="margin-top:.25rem;">${escapeHtml(data.paths?.copilote_csv || "")}</div></div>
+                <div class="problem-card"><strong>CSV problemes</strong><div class="muted" style="margin-top:.25rem;">${escapeHtml(data.paths?.problem_csv || "")}</div></div>
+              </div>
+            </div>
+            <div class="card" style="padding:1rem;">
+              <div class="panel-title">Execution</div>
+              <p class="muted" style="margin:.8rem 0 0;line-height:1.7;">Copilote BASCO doit etre ouvert et connecte pour l'envoi direct. Le bouton d'envoi utilise le backend local, lit le CSV courant, puis pousse la commande vers Copilote.</p>
+            </div>
+          </div>
+        `;
+      }
+
+      function route(menu) {
+        setMenu(menu);
+        if (menu === "dashboard") renderDashboard();
+        else if (menu === "problematic") renderProblematic();
+        else if (menu === "password") renderPassword();
+        else if (menu === "guide") renderGuide();
+        else if (menu === "support") renderSupport();
+      }
+
+      function render() {
+        renderStats();
+        route(state.menu);
+      }
+
+      document.getElementById("login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const username = $("username").value.trim();
+        const password = $("password").value;
+        if (username !== "admin" || password !== getPassword()) {
+          loginError.textContent = "Identifiants incorrects.";
+          loginError.classList.remove("hidden");
+          return;
+        }
+        loginError.classList.add("hidden");
+        $("sidebar-user").textContent = username;
+        loginView.classList.add("hidden");
+        appView.classList.remove("hidden");
+        route("dashboard");
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        appView.classList.add("hidden");
+        loginView.classList.remove("hidden");
+      });
+
+      menuButtons.forEach((button) => {
+        button.addEventListener("click", () => route(button.dataset.menu));
+      });
+
+      render();
+    </script>
+  </body>
+</html>
