@@ -24,6 +24,8 @@ def _reappro(code: str, libelle: str, score: float = 35.0) -> dict:
         "nb_ventes_article_total": 0,
         "nb_ventes_article_recentes": 0,
         "derniere_vente_article_ordinal": -1,
+        "quantite_resolue": 1.0,
+        "unite_resolue": "COL",
         "prix": 1.0,
         "raisons": [],
     }
@@ -99,11 +101,21 @@ def test_secours_reappro_reste_dans_la_famille_explicitement_dite():
     bon = _reappro("A", "SAUCE SRIRACHA ROUGE")
     hors_famille = _reappro("B", "PUREE SRIRACHA ROUGE", score=70.0)
 
-    selection, _ = produits._selectionner_meilleur_candidat(
+    selection, score = produits._selection_secours_reappro(
+        "sauce shiracha rouge",
         [bon, hors_famille],
-        texte_source="sauce shiracha rouge",
     )
 
     assert selection is not None
     assert selection["code_article"] == "A"
-    assert selection.get("noyau_phonetique_reappro_prouve") is True
+    assert score >= 90.0
+
+
+def test_secours_reappro_ne_s_ouvre_pas_sans_famille_explicite():
+    candidat = _reappro("A", "PRODUIT SRIRACHA ROUGE")
+    selection, score = produits._selection_secours_reappro(
+        "shiracha rouge",
+        [candidat],
+    )
+    assert selection is None
+    assert score == 0.0
