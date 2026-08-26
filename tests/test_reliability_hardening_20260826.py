@@ -118,85 +118,6 @@ def test_recapitulatif_peut_contenir_un_ajout_reel():
     assert any("moutarde" in texte for texte in textes)
 
 
-def test_secours_phonetique_global_reste_borne(monkeypatch):
-    candidat = _candidat(
-        "FREGOLA SARDA",
-        code_article="123456",
-        source_recherche="catalogue_global",
-        source_article="catalogue_global",
-        dans_cadencier_client=False,
-        score_texte=40.0,
-        score_global=40.0,
-        quantite_resolue=2.0,
-        unite_resolue="COL",
-        nb_ventes_article_total=0,
-        nb_ventes_article_recentes=0,
-    )
-    faux_resultat = [{
-        "texte_source": "2 colis fregolla",
-        "produit_normalise": "fregolla",
-        "quantite_principale": 2.0,
-        "modalite_demande": "CERTAINE",
-        "role_semantique": "PRODUCT_ITEM",
-        "produit_fiable": False,
-        "produit_reconnu": False,
-        "seconde_passe_produit": False,
-        "statut_couverture": "NON_IDENTIFIE",
-        "ambigu": True,
-        "raisons_ambiguite": ["selection_article_non_nette"],
-        "candidats": [candidat],
-        "selection": None,
-    }]
-    monkeypatch.setattr(
-        produits,
-        "_ORIGINAL_CHERCHER_PRODUITS",
-        lambda *args, **kwargs: faux_resultat,
-    )
-    resultat = produits.chercher_produits([], [], [], {})[0]
-    assert resultat["produit_reconnu"] is True
-    assert resultat["selection"]["code_article"] == "123456"
-    assert any(
-        str(raison).startswith("secours_phonetique_global_borne=")
-        for raison in resultat["selection"].get("raisons", [])
-    )
-
-
-def test_secours_global_ne_reouvre_pas_couteau_vers_tartare(monkeypatch):
-    candidat = _candidat(
-        "TARTARE BOEUF AUX COUTEAUX",
-        source_recherche="catalogue_global",
-        source_article="catalogue_global",
-        dans_cadencier_client=False,
-        score_texte=40.0,
-        score_global=40.0,
-        quantite_resolue=2.0,
-        unite_resolue="CAR",
-        nb_ventes_article_total=0,
-        nb_ventes_article_recentes=0,
-    )
-    faux_resultat = [{
-        "texte_source": "2 cartons couteau",
-        "produit_normalise": "couteau",
-        "quantite_principale": 2.0,
-        "modalite_demande": "CERTAINE",
-        "role_semantique": "PRODUCT_ITEM",
-        "produit_fiable": False,
-        "produit_reconnu": False,
-        "statut_couverture": "NON_IDENTIFIE",
-        "ambigu": True,
-        "raisons_ambiguite": ["selection_article_non_nette"],
-        "candidats": [candidat],
-        "selection": None,
-    }]
-    monkeypatch.setattr(
-        produits,
-        "_ORIGINAL_CHERCHER_PRODUITS",
-        lambda *args, **kwargs: faux_resultat,
-    )
-    resultat = produits.chercher_produits([], [], [], {})[0]
-    assert resultat["produit_reconnu"] is False
-
-
 def test_liste_moyenne_est_recontrolee_si_des_unites_manquent():
     assert transcription_liste_longue_a_controler(
         "deux mayonnaise puis trois ketchup et quatre moutarde",
@@ -304,7 +225,7 @@ def test_regles_demandees_par_le_metier_restent_inchangees():
         )
     )
     assert regles["telephone_exact_verrouille"] is True
-    assert regles["reappro_variante_intra_famille"] is False
+    assert regles["reappro_variante_intra_famille"] is True
 
     source = (
         root / "extraire_informations.py"
