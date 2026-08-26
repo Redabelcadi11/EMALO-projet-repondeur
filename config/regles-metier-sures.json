@@ -4,7 +4,7 @@
   "telephone_exact_verrouille": true,
   "contexte_enumeration_ambigu": true,
   "normalisation_saveurs_flechies": true,
-  "reappro_variante_intra_famille": false,
+  "reappro_variante_intra_famille": true,
   "fallback_phonetique_intra_famille": true,
   "attributs_explicites_prioritaires": true,
   "reappro_attribut_explicite": true,
