@@ -32,7 +32,14 @@ def transcription_liste_longue_a_controler(
     duree_audio: float,
     nb_segments: int,
 ) -> bool:
-    """Contrôle une énumération même si Whisper a déjà perdu des unités."""
+    """Contrôle une énumération même si Whisper a déjà perdu des unités.
+
+    Le contrôle reste borné aux audios multi-segments d'au moins 18 s, mais
+    trois quantités survivantes suffisent désormais. Une longue liste dictée
+    avec des pauses plutôt qu'avec ``et/puis`` ne doit plus échapper à la
+    seconde écoute précisément parce que Whisper a perdu sa ponctuation ou
+    certaines unités.
+    """
     if duree_audio < 18.0 or nb_segments < 2:
         return False
 
@@ -45,13 +52,10 @@ def transcription_liste_longue_a_controler(
         normalise,
     )
     quantites = _QTE_RE.findall(normalise)
-    transitions = re.findall(
-        r"\b(?:et|puis|ensuite|aussi|egalement|apres)\b",
-        normalise,
-    )
     return (
         len(quantite_unite) >= 2
-        or (len(quantites) >= 3 and len(transitions) >= 2)
+        or len(quantites) >= 3
+        or (duree_audio >= 30.0 and len(quantites) >= 2)
     )
 
 
