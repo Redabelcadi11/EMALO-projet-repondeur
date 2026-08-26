@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "commandes_courtes": [
+    {
+      "client_code": "XIPIRONANGLET",
+      "triggers": ["xipiron"],
+      "occurrences_min": 2,
+      "code_article": "00010900",
+      "quantite": 1,
+      "unite": "COL"
+    }
+  ]
+}

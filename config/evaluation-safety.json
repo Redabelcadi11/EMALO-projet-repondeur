@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "mode": "strict_no_target_leakage",
+  "allow_aggressive_profiles": false,
+  "allow_historical_erp_enrichment": false,
+  "allow_client_specific_learned_rules": false,
+  "allowed_prediction_rule_origins": [
+    "manual_general",
+    "business_reference"
+  ]
+}

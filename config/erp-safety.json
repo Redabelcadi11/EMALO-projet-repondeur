@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "mode": "evaluation",
+  "evaluation_lock": true,
+  "allow_erp_reads": true,
+  "allow_erp_writes": false,
+  "write_confirmation_env": "REPONDEUR_ERP_WRITE_CONFIRMATION",
+  "write_confirmation_value": "J_AUTORISE_EXPLICITEMENT_LES_ECRITURES_ERP"
+}

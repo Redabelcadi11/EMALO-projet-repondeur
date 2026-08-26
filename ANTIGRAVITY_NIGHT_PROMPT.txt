@@ -1,0 +1,138 @@
+Lis intégralement `ANTIGRAVITY_HANDOFF.md` puis, s'il existe, `ANTIGRAVITY_NIGHT_STATE.json`.
+
+Tu reprends exactement le travail là où l'agent précédent l'a laissé.
+
+OBJECTIF FINAL
+
+Obtenir au moins 90 % de commandes strictement exactes sur un lot d'audios réellement nouveau et jamais utilisé pour régler, déboguer ou optimiser le système.
+
+PRIORITÉS ABSOLUES
+
+1. Aucune commande ne doit jamais être créée, importée, modifiée ou envoyée vers l'ERP.
+2. L'ERP et les commandes réellement passées ne servent que comme vérité terrain APRÈS enregistrement définitif d'une prédiction.
+3. Ne contourne jamais les protections ERP déjà installées.
+4. Ne transmets jamais la commande cible ERP au prédicteur, à Llama ou à tout autre composant qui produit une prédiction.
+5. N'ouvre pas le holdout de 20 audios pendant l'optimisation.
+6. Ne code jamais en dur une réponse issue des données d'évaluation.
+
+TRAVAIL À EFFECTUER
+
+Travaille de manière réellement autonome.
+
+À partir de l'état laissé dans `ANTIGRAVITY_HANDOFF.md` :
+
+mesure
+→ analyse les erreurs
+→ identifie la cause dominante
+→ formule une hypothèse généralisable
+→ implémente réellement la modification
+→ exécute les tests
+→ mesure à nouveau
+→ conserve les améliorations
+→ rejette les régressions
+→ recommence.
+
+Ne refais pas l'audit déjà effectué par l'agent précédent.
+
+Exploite en priorité les enseignements déjà obtenus :
+
+* résolution et couverture produit ;
+* variantes produit ;
+* quantités et conditionnements ;
+* normalisation des mauvaises transcriptions Whisper ;
+* utilisation du cadencier et de l'historique client disponibles en production ;
+* résolveur Llama 70,6B existant ;
+* contrôles déterministes après le LLM.
+
+N'utilise pas Qwen comme remplacement du Llama 70,6B existant.
+
+Le Llama ne doit pas recevoir la vérité ERP.
+
+Évite les prompts exhaustifs extrêmement longs au Llama si une récupération en deux étapes ou un préfiltrage permet d'obtenir le même résultat plus efficacement.
+
+PLATEAU
+
+Ne considère pas de petites variantes d'une même heuristique comme de nouvelles stratégies.
+
+Si trois approches réellement différentes n'apportent plus d'amélioration significative, inscris :
+
+"status": "PLATEAU"
+
+dans `ANTIGRAVITY_NIGHT_STATE.json` et termine proprement le run.
+
+Une prochaine session avec un modèle de raisonnement plus profond reprendra alors le problème.
+
+ÉTAT PERSISTANT
+
+Crée et maintiens :
+
+`ANTIGRAVITY_NIGHT_STATE.json`
+
+Après chaque expérience significative, mets-le à jour avec au minimum :
+
+{
+"status": "CONTINUE",
+"best_dev_strict": 0.0,
+"best_reference_precision": 0.0,
+"best_reference_recall": 0.0,
+"best_line_exact_precision": 0.0,
+"best_line_exact_recall": 0.0,
+"last_experiment": "",
+"last_result": "",
+"next_hypothesis": "",
+"holdout_opened": false,
+"erp_write_attempted": false,
+"truth_leak_detected": false
+}
+
+Les valeurs doivent refléter les vraies mesures.
+
+Le champ `status` doit être l'un des suivants :
+
+CONTINUE
+PLATEAU
+READY_FOR_FINAL_HOLDOUT
+GOAL_REACHED
+BLOCKED
+
+PASSAGE AU HOLDOUT
+
+Le holdout doit rester fermé pendant toute l'optimisation.
+
+Ne mets `READY_FOR_FINAL_HOLDOUT` que lorsque :
+
+* la version est figée ;
+* tous les tests sont verts ;
+* aucune fuite de vérité n'est détectée ;
+* aucune écriture ERP n'a été tentée ;
+* la précision stricte sur le développement est au moins de 90 % ;
+* les résultats sont suffisamment stables pour justifier une validation finale.
+
+Lorsque tu reprends une session dont le statut est `READY_FOR_FINAL_HOLDOUT` :
+
+1. ne modifies plus la version ;
+2. produis et fige toutes les prédictions du holdout AVANT de lire les commandes réelles ;
+3. ouvre ensuite la vérité du holdout une seule fois ;
+4. calcule la précision stricte.
+
+Sur 20 commandes :
+
+* 18/20 ou mieux = objectif atteint ;
+* inscris alors `GOAL_REACHED`.
+
+Si le holdout est inférieur à 90 % :
+
+* ne modifie jamais le système à partir des erreurs individuelles du holdout ;
+* ne réutilise jamais ce même holdout comme preuve finale ;
+* inscris `BLOCKED` s'il n'existe pas de nouveau lot réellement aveugle disponible ;
+* si un nouveau lot réellement jamais consulté est disponible, il pourra devenir un nouveau holdout après une nouvelle phase de développement.
+
+FIN D'UN RUN
+
+Même si tu dois arrêter parce qu'un quota, un timeout ou une limite approche, laisse toujours :
+
+* le projet dans un état exécutable ;
+* `ANTIGRAVITY_NIGHT_STATE.json` à jour ;
+* `ANTIGRAVITY_HANDOFF.md` mis à jour si une découverte importante a été faite.
+
+Ne te contente jamais de proposer des idées : implémente, teste et mesure réellement tant que les ressources disponibles le permettent.

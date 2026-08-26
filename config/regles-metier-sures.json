@@ -1,0 +1,16 @@
+{
+  "conditionnement_physique_sur": true,
+  "relations_semantiques_variantes": true,
+  "telephone_exact_verrouille": true,
+  "contexte_enumeration_ambigu": true,
+  "normalisation_saveurs_flechies": true,
+  "reappro_variante_intra_famille": false,
+  "fallback_phonetique_intra_famille": true,
+  "attributs_explicites_prioritaires": true,
+  "reappro_attribut_explicite": true,
+  "references_controle_fallback": true,
+  "product_gate_noyau": true,
+  "historique_modificateur": true,
+  "parfum_glace_explicite_prioritaire": true,
+  "code_article_prononce_prioritaire": true
+}

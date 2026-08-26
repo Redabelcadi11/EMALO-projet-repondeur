@@ -1,0 +1,72 @@
+# Environnements et caches locaux
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+cache/
+ms-playwright/
+.codex/
+.codex
+
+# Donnees metier, audios et exports locaux
+ressources-originales/
+resultats/
+evaluation/
+backups/
+sauvegardes/
+scratch/
+.antigravity-night/
+ANTIGRAVITY_NIGHT_STATE.json
+copilote/runs/
+app-desktop/renderer/live-data.json
+app-desktop/renderer/live-data-meta.json
+app-desktop/renderer/live-data-*.json
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+
+# Fichiers temporaires, anciennes copies et diagnostics locaux
+*.bak*
+*.tmp
+*.log
+.tmp_*
+MAX_RECOVERY_REPORT.txt
+
+# Configurations portail/live locales
+portal_config.json
+
+# Configurations locales pouvant contenir identifiants, IP ou donnees clients
+config/*.json
+config/*.csv
+config/*.xlsx
+
+# Configurations generiques et necessaires au fonctionnement sans secrets
+!config/erp-safety.json
+!config/evaluation-safety.json
+!config/regles-metier-sures.json
+!config/synonymes-produits.json
+!config/commandes-courtes-clients.json
+
+# Secrets et cles
+*.pem
+*.key
+*.p12
+*.pfx
+id_*
+.env
+.env.*
+!.env.example
+
+# Fichiers de build et artefacts UI locaux
+app-desktop/node_modules/
+app-desktop/dist/
+app-desktop/build/

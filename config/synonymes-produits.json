@@ -1,0 +1,652 @@
+{
+  "riz thai": [
+    "riz long cambodge"
+  ],
+  "grana padano": [
+    "parmesan",
+    "grana",
+    "parmegiano",
+    "parmigiano",
+    "parmegiano regiano",
+    "parmigiano reggiano"
+  ],
+  "tenders": [
+    "aiguillettes",
+    "aiguillette",
+    "nuggets"
+  ],
+  "cream cheese": [
+    "fromage fouette",
+    "creme cheese",
+    "madame loik",
+    "madame loic",
+    "mme loik",
+    "mme loic",
+    "arla"
+  ],
+  "gambas": [
+    "crevettes",
+    "crevette"
+  ],
+  "steak vegetarien": [
+    "burger potiron"
+  ],
+  "taloa": [
+    "talouac",
+    "talouak",
+    "talouaz",
+    "taloak"
+  ],
+  "pain buns gourmand multigrains": [
+    "pain du tirin",
+    "pain du terrain",
+    "pain multigrain",
+    "pain multigrains",
+    "pain buns multigrains"
+  ],
+  "frite bi temp": [
+    "frites de temperature",
+    "frite de temperature",
+    "frites temperature",
+    "frite temperature",
+    "frites bi temp",
+    "frite bi temp"
+  ],
+  "lait entier": [
+    "citron lait entier",
+    "six lait entier",
+    "pack lait entier",
+    "packs lait entier"
+  ],
+  "glace vanille": [
+    "creme glacee vanille",
+    "vanille delice",
+    "vanille delice creme glacee",
+    "vanille madagascar"
+  ],
+  "creme glacee cafe": [
+    "glace cafe",
+    "glace au cafe",
+    "creme glacee cafe",
+    "cafe expresso",
+    "cafe moka",
+    "glace expresso",
+    "expresso creme glacee"
+  ],
+  "creme glacee chocolat": [
+    "glace chocolat",
+    "chocolat essentielle",
+    "chocolat noir",
+    "creme glacee chocolat",
+    "glace au chocolat",
+    "chocolat essentielle creme glacee"
+  ],
+  "creme glacee yaourt": [
+    "glace yaourt",
+    "yaourt bulgare",
+    "yaourt bulgare nature",
+    "creme glacee yaourt",
+    "glace au yaourt",
+    "yaourt bulgare nature creme glacee"
+  ],
+  "sorbet citron": [
+    "glace citron",
+    "sorbet citron",
+    "citron jaune delice",
+    "citron delice",
+    "citron vert",
+    "sorbet citron jaune",
+    "citron jaune delice sorbet"
+  ],
+  "creme glacee fraise": [
+    "glace fraise",
+    "fraise essentielle",
+    "fraise excellence",
+    "creme glacee fraise",
+    "sorbet fraise",
+    "fraise creme glacee"
+  ],
+  "sorbet framboise": [
+    "glace framboise",
+    "sorbet framboise",
+    "framboise sorbet",
+    "framboise artisanale",
+    "framboise sorbet artisanal"
+  ],
+  "creme glacee rhum raisins": [
+    "glace rhum raisin",
+    "glace rhum raisins",
+    "glace pomme raisin",
+    "glace pomme raisins",
+    "rhum raisin",
+    "rhum raisins",
+    "pomme raisin",
+    "pomme raisins",
+    "rhum raisins creme glacee"
+  ],
+  "amande effilee": [
+    "amandes effilees",
+    "amandes et filets",
+    "amande effilee",
+    "amandes effilee",
+    "amande et filet"
+  ],
+  "gingembre rose": [
+    "gingembre rose",
+    "gingembre rose sushi",
+    "poche de gingembre rose"
+  ],
+  "polenta extra fine": [
+    "polenta",
+    "polenta fine",
+    "polenta extra fine",
+    "polente fine"
+  ],
+  "nutella": [
+    "nutella",
+    "nutella 3k",
+    "pot de nutella",
+    "pate a tartiner nutella"
+  ],
+  "comte bloc": [
+    "comte blocs",
+    "comtes blocs",
+    "blocs de comte",
+    "bloc comte",
+    "comte bloc"
+  ],
+  "arome vanille": [
+    "arome vanille"
+  ],
+  "moutarde de dijon": [
+    "moutarde"
+  ],
+  "moutarde a l ancienne": [
+    "moutarde grainee",
+    "moutarde grain"
+  ],
+  "cotelette": [
+    "cote d agneau"
+  ],
+  "buche": [
+    "buchette"
+  ],
+  "brebis caussenard": [
+    "brebis chosenard",
+    "brebis chosennard",
+    "fromage brebis chosenard",
+    "fromage brebis chosennard"
+  ],
+  "cochon": [
+    "porc"
+  ],
+  "emmental": [
+    "gruyere"
+  ],
+  "tomates confites": [
+    "tomates seches",
+    "tomates sechees"
+  ],
+  "fromage fouette": [
+    "fromage blanc",
+    "fromage frais",
+    "fromage a tartiner",
+    "arla pro"
+  ],
+  "oeuf plein air": [
+    "oeufs plein air",
+    "oeuf de plein air",
+    "oeufs de plein air",
+    "plein air",
+    "asplenair",
+    "asclenaire",
+    "as plenaire",
+    "as pleinere",
+    "as plein air",
+    "as plein-air",
+    "asp lenaire",
+    "asp le ner"
+  ],
+  "sauce anglaise": [
+    "worcestershire sauce",
+    "sauce worcestershire",
+    "worcester sauce",
+    "sauce worcester"
+  ],
+  "biscuits cuiller": [
+    "boudoir",
+    "boudoirs",
+    "biscuit boudoir",
+    "biscuits boudoirs"
+  ],
+  "mozzarella cossette": [
+    "mozzarella en morceaux",
+    "morceaux de mozzarella",
+    "mozzarella morceaux",
+    "mozzarella pas rapee"
+  ],
+  "chantilly debic": [
+    "chantilly de bic",
+    "chantilly debic",
+    "chantilly debik",
+    "chantilly de debic",
+    "spray chantilly debic"
+  ],
+  "cerise amarena": [
+    "cerises amarena",
+    "cerise amarena",
+    "amarena"
+  ],
+  "piquillo lanieres": [
+    "piquillot slanier",
+    "piquillos lanieres",
+    "piquillo laniere",
+    "piquillos",
+    "piquillo"
+  ],
+  "bobine essuie mains": [
+    "bobine devidoir",
+    "bobines devidoir",
+    "papier devidoir",
+    "bobine sopalin",
+    "bobines sopalin",
+    "papier sopalin bobine"
+  ],
+  "chapelure panko": [
+    "chapure panko",
+    "chaperpanko",
+    "chapelure pankot"
+  ],
+  "mozzarella billes": [
+    "mozzadilles",
+    "mozza billes",
+    "petites mozzarella"
+  ],
+  "piperade": [
+    "petite rade",
+    "piperade basquaise"
+  ],
+  "noix cerneaux": [
+    "noix decortiquee",
+    "noix decortiquees",
+    "sachet de noix"
+  ],
+  "jambon cuit": [
+    "jambon blanc",
+    "jambon blanc tranche",
+    "jambon blanc italien"
+  ],
+  "prosciutto cotto": [
+    "jambon blanc italien"
+  ],
+  "topping cafe": [
+    "top cafe"
+  ],
+  "puree cerise noire": [
+    "pulpe cerise noire",
+    "pulpes de cerises noires"
+  ],
+  "tagliatelle aux oeufs": [
+    "tagliatelle al nuevo",
+    "pate fraiche d aguillatel"
+  ],
+  "brebis urdina": [
+    "bleu basque"
+  ],
+  "poitrine entiere": [
+    "vingt treche plate entiere",
+    "20 treche plate entiere"
+  ],
+  "nettoyant sol": [
+    "produit pour le sol",
+    "produit pour laver le sol"
+  ],
+  "jambon serrano reserva": [
+    "jambon serrano a reserve"
+  ],
+  "grana padano petales": [
+    "parmesan cope",
+    "parmesans cope",
+    "copeaux de parmesan"
+  ],
+  "emmental rape": [
+    "gruyere rapee"
+  ],
+  "parmigiano reggiano bloc": [
+    "pointes de parmesan",
+    "parmesan en bloc"
+  ],
+  "fruits rouges melange": [
+    "cocktail fruits rouges",
+    "cocktail de fruits rouges"
+  ],
+  "ail gousse epluche": [
+    "ail pele",
+    "ail pelee"
+  ],
+  "mozzarella fiordilatte": [
+    "mozzarella fjords dilates",
+    "fiordilaste",
+    "fiordilatte"
+  ],
+  "huile gidolive": [
+    "gilles d olive",
+    "huile gilles d olive",
+    "jus d olive"
+  ],
+  "sauce sweet chili thai": [
+    "sauce shiritai",
+    "sauce shiritaï"
+  ],
+  "menthe chocolat": [
+    "manchoco",
+    "manchocos"
+  ],
+  "jambon serrano": [
+    "ceramo tranche",
+    "ceramo tranchees"
+  ],
+  "wings tex mex": [
+    "chicken wings a la mexicaine",
+    "chicken wings mexicaine"
+  ],
+  "philadelphia": [
+    "pitadessia"
+  ],
+  "creme uht": [
+    "creme liquide",
+    "creme liquide uht",
+    "cremes liquides",
+    "cremes liquides uht"
+  ],
+  "riz long grain etuve": [
+    "riz us",
+    "riz u s",
+    "riz usa",
+    "riz etuve"
+  ],
+  "fraise essentielle": [
+    "fraise excellence",
+    "fraises excellence",
+    "fraise d excellence",
+    "fraises d excellence"
+  ],
+  "film alimentaire": [
+    "film plastique"
+  ],
+  "levure cube": [
+    "levure boulangere",
+    "levure belangere"
+  ],
+  "cassonade": [
+    "castanade"
+  ],
+  "os de veau": [
+    "oeuf de veau",
+    "oeufs de veau"
+  ],
+  "txistorra": [
+    "chistora",
+    "shistora"
+  ],
+  "sriracha": [
+    "shiracha",
+    "siracha"
+  ],
+  "rabas": [
+    "orabas",
+    "horabas"
+  ],
+  "pignons de pin": [
+    "pignon de pain",
+    "pignons de pain"
+  ],
+  "passion creme glacee": [
+    "patient creme glacee",
+    "patients creme glacee"
+  ],
+  "magret de canard frais france": [
+    "mag de frais francais",
+    "mags de frais francais"
+  ],
+  "paellador del mar": [
+    "paella de la mer"
+  ],
+  "mayonnaise": [
+    "mayo"
+  ],
+  "burrata": [
+    "mozzarella burrata"
+  ],
+  "fregola sarda": [
+    "frigo la sarda",
+    "fregola la sarda"
+  ],
+  "fromacreme": [
+    "fromage creme"
+  ],
+  "nuggets de filet de poulet": [
+    "nuggets de poulet"
+  ],
+  "oeuf arradoy": [
+    "oeufs",
+    "oeuf",
+    "carton d oeufs",
+    "cartons d oeufs"
+  ],
+  "sucre semoule": [
+    "sucre",
+    "sucre en poudre"
+  ],
+  "pain buns brioche nature ambiant 11cm x36p": [
+    "buns",
+    "bun",
+    "pain buns",
+    "pains buns",
+    "pain bun",
+    "pain burger",
+    "pains burger",
+    "pains burgers",
+    "pain hamburger",
+    "pains hamburger",
+    "pains hamburgers"
+  ],
+  "huile olive extra vierge 5l 100% arbequina": [
+    "huile d olive",
+    "huile olive"
+  ],
+  "lait 1/2 ecreme uht 6x1l": [
+    "lait",
+    "lait demi ecreme",
+    "lait demi-ecrem",
+    "lait demi-ecreme"
+  ],
+  "chips sarriegui": [
+    "chips sarayagi",
+    "sarayagi",
+    "sarriegui",
+    "sariegi",
+    "chips de sarayagi",
+    "chips sariegi",
+    "chips a l huile d olive"
+  ],
+  "rabas": [
+    "rhabas en farinata",
+    "rabas en farinata",
+    "rabas farine",
+    "rabas farinees",
+    "rabats",
+    "orabas",
+    "horabas",
+    "rabas gourmet",
+    "rabas gourmet farinees"
+  ],
+  "piment jalapeno": [
+    "jalapenos",
+    "jalapeno",
+    "piments jalapenos",
+    "piment jalapenos",
+    "seaux de jalapenos",
+    "seau de jalapenos"
+  ],
+  "coulis mangue passion": [
+    "coulis passion",
+    "coulis de passion",
+    "coulis fruits de la passion",
+    "coulis passion en surgele",
+    "coulis passion surgele"
+  ],
+  "flacon verseur": [
+    "flacons verseurs",
+    "flacon verseur",
+    "flacon verseur souple",
+    "flacons verseurs souples"
+  ],
+  "creme anglaise": [
+    "creme anglaise",
+    "cremes anglaises",
+    "creme anglaise 1l",
+    "creme anglaise grandcoeur"
+  ],
+  "peche au sirop": [
+    "peches au sirop",
+    "peche au sirop",
+    "peche 6p",
+    "peches 6p"
+  ],
+  "vinaigre de xeres": [
+    "vinaigre de xeres",
+    "vinaigre xeres",
+    "vinaigres de xeres"
+  ],
+  "tartare boeuf": [
+    "tartare de boeuf",
+    "tartare boeuf",
+    "tartares de boeuf",
+    "tartare boeuf aux couteaux",
+    "tartare de boeuf aux couteaux"
+  ],
+  "sauce soja": [
+    "soja salee",
+    "soja sale",
+    "sauce soja salee",
+    "sauce soja sale",
+    "sauce soja dek som boon"
+  ],
+  "lait de coco": [
+    "lait de coco",
+    "lait coco",
+    "laits de coco"
+  ],
+  "riz basmati": [
+    "riz basmati",
+    "riz basmati 5k"
+  ],
+  "poivre moulu": [
+    "poivre noir moulu",
+    "poivre moulu",
+    "poivre noir",
+    "poivre gris moulu",
+    "poivre gris"
+  ],
+  "poivre gris moulu": [
+    "poivre noir moulu",
+    "poivre noir",
+    "poivre moulu"
+  ],
+  "poivre noir concasse": [
+    "poivre mignonnette",
+    "poivre mignonette"
+  ],
+  "miel squeez": [
+    "pipette de miel",
+    "pipettes de miel",
+    "miel en pipette",
+    "miel en pipettes",
+    "squeeze de miel",
+    "squeez de miel"
+  ],
+  "xipiron": [
+    "chipiron",
+    "chipirons",
+    "xipirons",
+    "txipiron",
+    "txipirons",
+    "chipirons patagonica",
+    "xipiron patagonica"
+  ],
+  "chipirons": [
+    "xipiron",
+    "xipirons",
+    "txipiron",
+    "txipirons",
+    "chipiron",
+    "chipirons patagonica"
+  ],
+  "glacons": [
+    "glacons",
+    "glacons 10k",
+    "glacon",
+    "glaçons",
+    "sac de glacons",
+    "sacs de glacons",
+    "poche de glacons",
+    "poches de glacons"
+  ],
+  "mozza cossette": [
+    "mozzarella cossette",
+    "mozza cossette",
+    "cossette",
+    "mozzarella cossette 100",
+    "mozzarella cossette 100% 12k"
+  ],
+  "ecreme 35%": [
+    "creme 35%",
+    "creme liquide 35%",
+    "creme fluide 35%",
+    "creme liquide 35% grand fermage"
+  ],
+  "ecreme": [
+    "creme 35%",
+    "creme liquide 35%",
+    "creme fluide 35%"
+  ],
+  "oeufs gros": [
+    "oeufs frais gros",
+    "caisse d oeuf",
+    "caisse d oeufs",
+    "caisse d oeuf taille gros de 90 unites",
+    "carton de 90 oeufs",
+    "oeufs 90",
+    "oeufs frais gros cello 90p"
+  ],
+  "puree mangue boiron": [
+    "puree de mangue boiron",
+    "puree de mangue boiron 100% sans sucre",
+    "puree mangue s/s boiron 1k"
+  ],
+  "mangue cube": [
+    "cubes de mangue",
+    "cube de mangue",
+    "cubes mangue",
+    "cube mangue",
+    "mangue cube 10x10",
+    "mangue cubes",
+    "mangue cube"
+  ],
+  "riz nouvo maratelli": [
+    "riz maratelli",
+    "riz nouvo",
+    "riz aragon",
+    "riz nouvo maratelli aragon",
+    "riz 25kg",
+    "riz 25 kg",
+    "riz etuve 25kg",
+    "riz etuves"
+  ],
+  "moutarde dijon": [
+    "moutarde de dijon",
+    "moutarde dijon",
+    "seau de moutarde"
+  ]
+}
