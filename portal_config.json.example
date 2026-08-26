@@ -1,0 +1,8 @@
+{
+    "port":  8764,
+    "powershell":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "achats_project_root":  "L:\\Public\\EMALO-Achats\\EMALO-Achats-TSE-Simple",
+    "achats_script":  "windows_tse\\DEMARRER_EMALO_ACHATS.ps1",
+    "repondeur_project_root":  "L:\\Public\\EMALO-Achats\\EMALO-Repondeur",
+    "repondeur_script":  "DEMARRER_REPONDEUR_BROWSER.ps1"
+}
