@@ -5,14 +5,15 @@ from __future__ import annotations
 Le moteur historique reste conservé intégralement dans ``src._produits_legacy``.
 Cette façade ne modifie que des garde-fous généraux : preuve du noyau produit,
 interprétation prudente des synonymes, disponibilité d'un candidat sans prix
-local, récupération des ajouts présents dans un récapitulatif et secours
-phonétique très borné pour les références hors cadencier.
+local, récupération des mentions perdues et secours Réappro intra-famille.
 """
 
 import re
+from collections import Counter
 from typing import Any
 
 from . import _produits_legacy as _legacy
+from .product_hierarchy import PRIMARY_PRODUCT_FAMILIES
 
 _ORIGINAL_PREUVE_NOYAU = _legacy._preuve_positive_noyau_produit
 _ORIGINAL_VARIANTES = _legacy._generer_variantes_recherche
@@ -45,14 +46,9 @@ def _noyau_unique_est_secondaire_du_libelle(
 ) -> bool:
     """Détecte un mot qui décrit un produit composé sans en être le noyau.
 
-    Exemples génériques : ``couteau`` dans ``tartare boeuf aux couteaux``,
-    ``olive`` dans ``huile d'olive`` ou ``poulet`` dans ``filet de poulet``.
-    La règle n'agit que lorsque le client n'a prononcé qu'un seul noyau utile.
-
-    Un terme métier autonome absent de l'ontologie (par exemple le nom usuel
-    d'un fromage) n'est cependant pas rejeté simplement parce que le libellé
-    contient ``fromage de ...`` : il faut soit une famille explicitement
-    contradictoire, soit un véritable noyau composé avant le complément.
+    Exemple générique : ``couteau`` dans ``tartare boeuf aux couteaux``.
+    Le garde-fou n'agit que lorsqu'un unique noyau utile a été prononcé et
+    qu'il apparaît comme complément d'une famille produit déjà exprimée.
     """
     tokens_source = _tokens_significatifs_source(texte_source)
     if len(tokens_source) != 1:
@@ -66,17 +62,32 @@ def _noyau_unique_est_secondaire_du_libelle(
         or ""
     )
     tokens_bruts = _legacy.normaliser_texte(libelle).split()
-    liaisons = {
+    liaisons_simples = {
         "a", "au", "aux", "avec", "de", "des", "du", "d", "saveur",
     }
+    articles_liaison = {"l", "la", "le", "les"}
 
     for index, token_libelle in enumerate(tokens_bruts):
         if _legacy._score_token_produit(token_source, token_libelle) < 95.0:
             continue
-        if index <= 0 or tokens_bruts[index - 1] not in liaisons:
+        if index <= 0:
             continue
 
-        prefixe = " ".join(tokens_bruts[:index])
+        debut_liaison: int | None = None
+        precedent = tokens_bruts[index - 1]
+        if precedent in liaisons_simples:
+            debut_liaison = index - 1
+        elif (
+            precedent in articles_liaison
+            and index >= 2
+            and tokens_bruts[index - 2] in {"a", "de"}
+        ):
+            debut_liaison = index - 2
+
+        if debut_liaison is None:
+            continue
+
+        prefixe = " ".join(tokens_bruts[:debut_liaison])
         famille_prefixe = _legacy.primary_product_family(prefixe)
         if not famille_prefixe:
             continue
@@ -124,10 +135,9 @@ def _generer_variantes_recherche(
 ) -> list[str]:
     """Conserve les corrections ASR mais refuse les spécialisations inventées.
 
-    Si une variante ne fait qu'ajouter des mots à ce qui a été prononcé
-    (``moutarde`` -> ``moutarde de dijon``), elle n'est plus utilisée comme
-    preuve lexicale. Les vraies substitutions (``chistora`` -> ``txistorra``)
-    restent autorisées.
+    ``moutarde`` ne devient plus automatiquement ``moutarde de dijon`` parce
+    que l'alias ne doit pas ajouter un attribut absent. Une vraie substitution
+    phonétique déclarée, telle que ``chistora`` -> ``txistorra``, reste valide.
     """
     base = _legacy.normaliser_texte(produit_normalise)
     tokens_base = _tokens_semantiques(base)
@@ -162,9 +172,6 @@ def _candidat_commandable(candidat: dict[str, Any]) -> bool:
     ):
         return False
 
-    # Exception étroite : article déjà réellement vendu à ce client, retrouvé
-    # lexicalement, mais dont le prix local n'est pas exploitable. Le product
-    # gate reste ensuite obligatoire pour prouver que l'article a été dit.
     return bool(
         candidat.get("source_recherche") == "cadencier_client"
         and int(candidat.get("nb_ventes_article_total", 0) or 0) > 0
@@ -194,10 +201,50 @@ _ENUM_MARKER_RE = re.compile(
 )
 
 
+def _cle_repetition_sure(mention: dict[str, Any]) -> tuple[str, str, str]:
+    quantite = mention.get("quantite_principale")
+    try:
+        quantite_cle = f"{float(quantite):.4f}"
+    except (TypeError, ValueError):
+        quantite_cle = ""
+    return (
+        _legacy.normaliser_texte(mention.get("produit_normalise", "")),
+        quantite_cle,
+        str(mention.get("unite_principale") or ""),
+    )
+
+
+def _dedupliquer_repetitions_differees_sures(
+    mentions: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Ne retire que des répétitions réellement identiques de Whisper."""
+    if not any(
+        "repetition_transcription_supprimee"
+        in (item.get("raisons_ambiguite") or [])
+        for item in mentions
+    ):
+        return mentions
+
+    cles = [_cle_repetition_sure(item) for item in mentions]
+    comptes = Counter(cle for cle in cles if cle[0])
+    repetes = {cle for cle, compte in comptes.items() if compte >= 2}
+    if len(repetes) < 2:
+        return mentions
+
+    resultat: list[dict[str, Any]] = []
+    vus: set[tuple[str, str, str]] = set()
+    for item, cle in zip(mentions, cles):
+        if cle in repetes and cle in vus:
+            continue
+        resultat.append(item)
+        vus.add(cle)
+    return resultat
+
+
 def _stabiliser_mentions(mentions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     resultat = _legacy._dedupliquer_repetitions_mentions(mentions)
     resultat = _legacy._dedupliquer_repetitions_mentions(resultat)
-    resultat = _legacy._dedupliquer_repetitions_differees(resultat)
+    resultat = _dedupliquer_repetitions_differees_sures(resultat)
     return _legacy._fusionner_mentions_dupliquees_proches(resultat)
 
 
@@ -205,66 +252,151 @@ def extraire_mentions_produits(
     transcription: str,
 ) -> list[dict[str, Any]]:
     """Ne perd plus un ajout annoncé dans un récapitulatif ou une liste dense."""
-    mentions = list(_ORIGINAL_EXTRAIRE_MENTIONS(transcription))
+    source = str(transcription or "")
+    mentions = list(_ORIGINAL_EXTRAIRE_MENTIONS(source))
 
-    recap = _RECAP_RE.search(str(transcription or ""))
+    recap = _RECAP_RE.search(source)
     if recap:
-        suffixe = str(transcription or "")[recap.end():].strip()
+        suffixe = source[recap.end():].strip()
         if suffixe:
             mentions.extend(_ORIGINAL_EXTRAIRE_MENTIONS(suffixe))
 
-    marqueurs = len(_ENUM_MARKER_RE.findall(str(transcription or "")))
-    if marqueurs >= 3 and len(mentions) + 1 < marqueurs:
-        segmente = _ENUM_SPLIT_RE.sub("; ", str(transcription or ""))
-        if segmente != transcription:
+    marqueurs = list(_ENUM_MARKER_RE.finditer(source))
+    if len(marqueurs) >= 3 and len(mentions) < len(marqueurs):
+        segmente = _ENUM_SPLIT_RE.sub("; ", source)
+        if segmente != source:
             mentions.extend(_ORIGINAL_EXTRAIRE_MENTIONS(segmente))
+
+    if not mentions and marqueurs and marqueurs[0].start() > 0:
+        queue_commande = source[marqueurs[0].start():].strip()
+        mentions.extend(_ORIGINAL_EXTRAIRE_MENTIONS(queue_commande))
 
     return _stabiliser_mentions(mentions)
 
 
-def _score_phonetique_global_borne(
+def _score_phonetique_reappro(
     texte_source: str,
     candidat: dict[str, Any],
 ) -> float:
-    """Mesure une déformation ASR légère sans faire de fuzzy catalogue ouvert."""
+    """Score phonétique porté par la variante, pas par la famille commune."""
+    famille = _legacy.primary_product_family(texte_source)
+    aliases_famille = set(PRIMARY_PRODUCT_FAMILIES.get(famille or "", ()))
+    aliases_famille.add(str(famille or ""))
+
     tokens_source = [
         token
         for token in _tokens_significatifs_source(texte_source)
-        if len(token) >= 6
+        if len(token) >= 4 and token not in aliases_famille
     ]
-    tokens_libelle = [
+    tokens_candidat = [
         token
-        for token in _legacy._tokens_produit(
+        for token in _tokens_significatifs_source(
             str(
                 candidat.get("libelle_normalise")
                 or candidat.get("libelle_article")
                 or ""
             )
         )
-        if len(token) >= 6
-        and token not in _legacy.TOKENS_CONDITIONNEMENT_SANS_PRODUIT
+        if len(token) >= 4 and token not in aliases_famille
     ]
-    return max(
-        (
-            float(_legacy._score_token_produit(source, cible))
-            for source in tokens_source
-            for cible in tokens_libelle
-        ),
-        default=0.0,
+    if not tokens_source or not tokens_candidat:
+        return 0.0
+
+    groupes_source = [*tokens_source]
+    groupes_source.extend(
+        "".join(tokens_source[index:index + 2])
+        for index in range(len(tokens_source) - 1)
     )
+    groupes_candidat = [*tokens_candidat]
+    groupes_candidat.extend(
+        "".join(tokens_candidat[index:index + 2])
+        for index in range(len(tokens_candidat) - 1)
+    )
+
+    scores = [
+        float(_legacy._score_phonetique_borne(source, cible))
+        for source in groupes_source
+        for cible in groupes_candidat
+        if _legacy.normaliser_texte(source) != _legacy.normaliser_texte(cible)
+    ]
+    return max(scores, default=0.0)
+
+
+def _selection_secours_reappro(
+    texte_source: str,
+    candidats: list[dict[str, Any]],
+) -> tuple[dict[str, Any] | None, float]:
+    """Choisit un candidat Réappro uniquement dans une famille déjà dite."""
+    if not _legacy.business_rule_enabled("reappro_variante_intra_famille"):
+        return None, 0.0
+
+    famille_source = _legacy.primary_product_family(texte_source)
+    if not famille_source:
+        return None, 0.0
+
+    eligibles: list[tuple[float, dict[str, Any]]] = []
+    for candidat in candidats:
+        if candidat.get("source_recherche") != "catalogue_reappro":
+            continue
+        if not candidat.get("semantiquement_compatible", True):
+            continue
+        if candidat.get("quantite_resolue") is None:
+            continue
+        if not _candidat_commandable(candidat):
+            continue
+        famille_candidat = _legacy.primary_product_family(
+            str(
+                candidat.get("libelle_normalise")
+                or candidat.get("libelle_article")
+                or ""
+            )
+        )
+        if famille_candidat != famille_source:
+            continue
+        score = _score_phonetique_reappro(texte_source, candidat)
+        if score >= 90.0:
+            eligibles.append((score, candidat))
+
+    eligibles.sort(
+        key=lambda item: (
+            item[0],
+            float(item[1].get("score_texte", 0.0) or 0.0),
+        ),
+        reverse=True,
+    )
+    if not eligibles:
+        return None, 0.0
+
+    score_premier, premier = eligibles[0]
+    score_second = eligibles[1][0] if len(eligibles) > 1 else 0.0
+    if score_premier - score_second < 8.0:
+        return None, 0.0
+    return premier, score_premier
 
 
 def chercher_produits(*args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-    """Rattrape exceptionnellement un produit hors cadencier déformé par l'ASR.
+    """Rattrape un produit Réappro seulement après échec du moteur normal.
 
-    Le cadencier garde exactement sa priorité habituelle. Ce secours ne se
-    déclenche qu'après échec de la reconnaissance normale, parmi les candidats
-    globaux/Réappro déjà produits par le moteur, avec une ressemblance sur un
-    mot long >=92, une marge >=10 points, une quantité résolue et aucune
-    contradiction sémantique. Le cas ``couteau -> tartare ... aux couteaux``
-    reste bloqué par le garde-fou de noyau composé.
+    Le +80 du cadencier n'est pas modifié : tout produit cadencier déjà
+    reconnu garde donc sa priorité. Le secours ne s'ouvre qu'une fois la
+    reconnaissance normale en échec, dans la famille explicitement dite et
+    avec une preuve phonétique unique portée par la variante elle-même.
     """
     resultats = _ORIGINAL_CHERCHER_PRODUITS(*args, **kwargs)
+    raisons_recuperables = {
+        "aucun_article_trouve",
+        "score_produit_trop_faible",
+        "selection_article_non_nette",
+        "product_gate_noyau_non_prouve",
+        "quantite_commande_non_resolue",
+        "quantite_absente_a_resoudre",
+        "unite_absente_a_resoudre",
+        "unite_absente",
+        "repetition_transcription_supprimee",
+        "reformulation_proche_fusionnee",
+        "precision_quantite_rattachee",
+        "conditionnement_multiple",
+    }
 
     for produit in resultats:
         if produit.get("produit_reconnu"):
@@ -274,60 +406,29 @@ def chercher_produits(*args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         ):
             continue
 
+        raisons_existantes = set(produit.get("raisons_ambiguite") or [])
+        if raisons_existantes - raisons_recuperables:
+            continue
+
         texte_source = str(
             produit.get("produit_normalise")
             or produit.get("texte_source")
             or ""
         )
-        candidats_scores: list[tuple[float, dict[str, Any]]] = []
-        for candidat in produit.get("candidats", []) or []:
-            if candidat.get("source_recherche") not in {
-                "catalogue_global",
-                "catalogue_reappro",
-            }:
-                continue
-            if not candidat.get("semantiquement_compatible", True):
-                continue
-            if candidat.get("quantite_resolue") is None:
-                continue
-            if not _candidat_commandable(candidat):
-                continue
-            score = _score_phonetique_global_borne(texte_source, candidat)
-            if score >= 92.0:
-                candidats_scores.append((score, candidat))
-
-        candidats_scores.sort(
-            key=lambda item: (
-                item[0],
-                float(item[1].get("score_texte", 0.0) or 0.0),
-            ),
-            reverse=True,
-        )
-        if not candidats_scores:
-            continue
-
-        score_premier, candidat_premier = candidats_scores[0]
-        score_second = (
-            candidats_scores[1][0]
-            if len(candidats_scores) > 1
-            else 0.0
-        )
-        if score_premier - score_second < 10.0:
-            continue
-        if float(candidat_premier.get("score_texte", 0.0) or 0.0) < 25.0:
-            continue
-
-        # Le garde-fou spécifique des noyaux secondaires reste obligatoire.
-        if _noyau_unique_est_secondaire_du_libelle(
+        candidat, score = _selection_secours_reappro(
             texte_source,
-            candidat_premier,
-        ):
+            list(produit.get("candidats", []) or []),
+        )
+        if candidat is None:
+            continue
+        if _noyau_unique_est_secondaire_du_libelle(texte_source, candidat):
             continue
 
-        selection = dict(candidat_premier)
+        selection = dict(candidat)
         selection["noyau_produit_prouve"] = True
+        selection["noyau_phonetique_reappro_prouve"] = True
         selection.setdefault("raisons", []).append(
-            f"secours_phonetique_global_borne={score_premier:.2f}"
+            f"secours_phonetique_reappro_intra_famille={score:.2f}"
         )
         produit["selection"] = selection
         produit["quantite_resolue"] = selection.get("quantite_resolue")
@@ -335,35 +436,21 @@ def chercher_produits(*args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         produit["produit_fiable"] = True
         produit["produit_reconnu"] = True
         produit["seconde_passe_produit"] = True
-
-        raisons = [
-            raison
-            for raison in (produit.get("raisons_ambiguite") or [])
-            if raison not in {
-                "aucun_article_trouve",
-                "score_produit_trop_faible",
-                "selection_article_non_nette",
-                "product_gate_noyau_non_prouve",
-                "quantite_commande_non_resolue",
-                "unite_absente_a_resoudre",
-            }
-        ]
-        produit["raisons_ambiguite"] = sorted(set(raisons))
-        produit["ambigu"] = bool(raisons)
-        produit["statut_couverture"] = (
-            "AMBIGU"
-            if produit.get("modalite_demande") == "ALTERNATIVE" or raisons
-            else "RECONNU"
-        )
+        produit["raisons_ambiguite"] = []
+        produit["ambigu"] = False
+        produit["statut_couverture"] = "RECONNU"
 
     return resultats
 
 
-# Les fonctions du moteur historique résolvent leurs dépendances dans leurs
-# globals. On remplace donc aussi ces globals avant de réexporter l'API.
+# Les fonctions historiques résolvent leurs dépendances dans leurs globals :
+# on les remplace avant toute exécution puis on réexporte l'API publique.
 _legacy._preuve_positive_noyau_produit = _preuve_positive_noyau_produit
 _legacy._generer_variantes_recherche = _generer_variantes_recherche
 _legacy._candidat_commandable = _candidat_commandable
+_legacy._dedupliquer_repetitions_differees = (
+    _dedupliquer_repetitions_differees_sures
+)
 _legacy.extraire_mentions_produits = extraire_mentions_produits
 _legacy.chercher_produits = chercher_produits
 
@@ -376,6 +463,10 @@ for _nom in dir(_legacy):
 globals()["_preuve_positive_noyau_produit"] = _preuve_positive_noyau_produit
 globals()["_generer_variantes_recherche"] = _generer_variantes_recherche
 globals()["_candidat_commandable"] = _candidat_commandable
+globals()["_dedupliquer_repetitions_differees_sures"] = (
+    _dedupliquer_repetitions_differees_sures
+)
 globals()["extraire_mentions_produits"] = extraire_mentions_produits
-globals()["_score_phonetique_global_borne"] = _score_phonetique_global_borne
+globals()["_score_phonetique_reappro"] = _score_phonetique_reappro
+globals()["_selection_secours_reappro"] = _selection_secours_reappro
 globals()["chercher_produits"] = chercher_produits
